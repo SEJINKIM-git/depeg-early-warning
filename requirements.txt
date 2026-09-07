@@ -1,0 +1,7 @@
+# 정확한 버전 고정(==)이 랩 원칙 — >= 로 풀지 말 것 (OT 자료 7장 참고)
+pandas==2.2.2
+requests==2.32.3
+PyMuPDF==1.24.9
+jsonschema==4.23.0
+pytest==8.3.2
+ruff==0.6.4

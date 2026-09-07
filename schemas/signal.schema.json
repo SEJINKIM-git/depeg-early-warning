@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lab.local/schemas/signal.schema.json",
+  "title": "Signal",
+  "description": "온체인/오프체인 수집기가 리스크 엔진으로 보내는 단일 시그널. 역할 1·2의 출력 계약.",
+  "type": "object",
+  "required": ["signal_id", "source", "coin", "observed_at", "metric", "value"],
+  "additionalProperties": false,
+  "properties": {
+    "signal_id": { "type": "string", "description": "수집기가 생성하는 고유 ID (중복 방지 키)" },
+    "source": { "type": "string", "enum": ["onchain", "offchain"], "description": "시그널 계열" },
+    "coin": { "type": "string", "enum": ["USDC", "USDT"], "description": "대상 스테이블코인 (USDC부터 시작)" },
+    "observed_at": { "type": "string", "format": "date-time", "description": "관측 시각 (UTC ISO 8601)" },
+    "metric": {
+      "type": "string",
+      "enum": [
+        "price_usd",
+        "peg_deviation_bps",
+        "pool_imbalance_ratio",
+        "redemption_volume_usd",
+        "reserve_cash_ratio",
+        "reserve_tbill_ratio",
+        "attestation_age_days",
+        "news_risk_flag"
+      ],
+      "description": "지표 종류 — 추가 시 팀 리뷰 필수"
+    },
+    "value": { "type": "number", "description": "지표 값" },
+    "meta": {
+      "type": "object",
+      "description": "출처 URL, 원본 파일명 등 부가 정보 (자유 형식)",
+      "additionalProperties": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+# 가상환경 / 캐시
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# 비밀값 — 애초에 이 저장소에는 비밀값이 없어야 정상
+.env
+*.pem
+
+# 로컬 산출물
+*.log
+.DS_Store

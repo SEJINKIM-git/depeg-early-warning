@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lab.local/schemas/score_event.schema.json",
+  "title": "ScoreEvent",
+  "description": "리스크 엔진이 대응 계층으로 보내는 스코어 이벤트. 역할 3의 출력 계약.",
+  "type": "object",
+  "required": ["event_id", "coin", "scored_at", "risk_score", "confidence", "top_factors"],
+  "additionalProperties": false,
+  "properties": {
+    "event_id": { "type": "string" },
+    "coin": { "type": "string", "enum": ["USDC", "USDT"] },
+    "scored_at": { "type": "string", "format": "date-time" },
+    "risk_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "0(안전)~100(위험)" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1, "description": "스코어 신뢰도" },
+    "top_factors": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "description": "스코어에 가장 크게 기여한 시그널 (설명가능성)",
+      "items": {
+        "type": "object",
+        "required": ["metric", "contribution"],
+        "additionalProperties": false,
+        "properties": {
+          "metric": { "type": "string" },
+          "contribution": { "type": "number" }
+        }
+      }
+    },
+    "threshold_breached": { "type": "boolean", "description": "대응 트리거 임계값 초과 여부" }
+  }
+}
