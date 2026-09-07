@@ -7,6 +7,7 @@
 
 - 개발 환경 준비: `docs/개발환경_세팅_가이드.md` 를 따라 세팅할 것
 - 프로젝트 배경: `docs/랩_OT_자료.md`, `docs/스테이블코인_배경지식_온보딩.md` 필독
+- 시스템 연결 구조: `docs/코드_통합_설계.md` — 이 저장소가 ThreatWatch와 어떻게 결합되는지
 
 ```bash
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\Activate.ps1
@@ -24,6 +25,7 @@ src/
   collectors/     역할 1: 온체인 수집기
   intelligence/   역할 2: 오프체인 attestation 파서
   engine/         역할 3: 리스크 스코어 엔진 + 백테스트
+  adapters/       score_event → ThreatWatch 경보(AlertRequest) 변환 (docs/코드_통합_설계.md 참고)
   response/       대응 설계: 대응 매트릭스 문서
 tests/       계약 테스트 — 모든 모듈 출력이 스키마를 지키는지 검증
 main.py      로컬 러너 (I/O는 전부 여기서, src/ 는 순수 함수만)

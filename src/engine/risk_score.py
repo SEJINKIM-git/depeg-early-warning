@@ -41,6 +41,10 @@ def _normalize(metric: str, value: float) -> float:
         return max(0.0, 1.0 - value)  # 현금 비중이 낮을수록 위험
     if metric == "attestation_age_days":
         return min(value / 90.0, 1.0)  # 공시가 오래될수록 위험
+    if metric == "redemption_volume_usd":
+        return min(value / 1_000_000_000, 1.0)  # 10억 달러 환매면 최대 위험
+    if metric == "pool_imbalance_ratio":
+        return min(max(value, 0.0), 1.0)  # 이미 0~1 비율
     return 0.0  # 미정의 지표는 기여 없음 — 조용히 0 처리하지 말지 여부는 팀 결정 사항
 
 

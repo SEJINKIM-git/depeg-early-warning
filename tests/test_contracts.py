@@ -5,6 +5,7 @@
 import json
 from pathlib import Path
 
+import pytest
 from jsonschema import Draft202012Validator
 
 from src.collectors.onchain import to_peg_deviation_signal, to_price_signal
@@ -59,3 +60,39 @@ def test_usdc_crisis_mock_breaches_nothing_yet():
     signals = json.loads(MOCK.read_text(encoding="utf-8"))
     event = compute_risk_score(signals, coin="USDC")
     assert 0 <= event["risk_score"] <= 100
+
+
+# ---------- 어댑터 계약 (통합 설계 4장) ----------
+
+from src.adapters.threatwatch_sender import to_alert_request  # noqa: E402
+
+alert_v = _validator("alert_request.schema.json")
+CRISIS = Path("data/mock/signals_usdc_crisis.json")
+
+
+def _crisis_event():
+    signals = json.loads(CRISIS.read_text(encoding="utf-8"))
+    return compute_risk_score(signals, coin="USDC")
+
+
+def test_adapter_output_follows_threatwatch_contract():
+    event = _crisis_event()
+    assert event["threshold_breached"], "위기 mock은 임계값을 넘어야 함"
+    alert_v.validate(to_alert_request(event))
+
+
+def test_adapter_severity_mapping():
+    event = _crisis_event()
+    alert = to_alert_request(event)
+    expected = "high" if event["risk_score"] >= 85 else "medium"
+    assert alert["severity"] == expected
+    assert alert["alert_id"] == event["event_id"]  # 멱등성 키 보존
+    assert alert["incident_type"] == "stablecoin_depeg_risk_usdc"
+
+
+def test_adapter_rejects_non_breached_event():
+    signals = json.loads(MOCK.read_text(encoding="utf-8"))
+    calm = compute_risk_score(signals, coin="USDC")
+    assert not calm["threshold_breached"]
+    with pytest.raises(ValueError):
+        to_alert_request(calm)

@@ -1,0 +1,15 @@
+[
+  { "signal_id": "onchain-usdc-20230311-1001", "source": "onchain", "coin": "USDC",
+    "observed_at": "2023-03-11T08:00:00Z", "metric": "price_usd", "value": 0.87 },
+  { "signal_id": "onchain-usdc-20230311-1002", "source": "onchain", "coin": "USDC",
+    "observed_at": "2023-03-11T08:00:00Z", "metric": "peg_deviation_bps", "value": -1300 },
+  { "signal_id": "onchain-usdc-20230311-1003", "source": "onchain", "coin": "USDC",
+    "observed_at": "2023-03-11T08:00:00Z", "metric": "redemption_volume_usd", "value": 3200000000 },
+  { "signal_id": "onchain-usdc-20230311-1004", "source": "onchain", "coin": "USDC",
+    "observed_at": "2023-03-11T08:00:00Z", "metric": "pool_imbalance_ratio", "value": 0.9 },
+  { "signal_id": "offchain-usdc-20230311-1005", "source": "offchain", "coin": "USDC",
+    "observed_at": "2023-03-11T07:30:00Z", "metric": "news_risk_flag", "value": 1,
+    "meta": { "note": "SVB collapse - reserve exposure confirmed" } },
+  { "signal_id": "offchain-usdc-20230311-1006", "source": "offchain", "coin": "USDC",
+    "observed_at": "2023-03-11T07:30:00Z", "metric": "reserve_cash_ratio", "value": 0.2 }
+]
