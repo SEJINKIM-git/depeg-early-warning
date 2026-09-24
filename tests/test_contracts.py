@@ -6,18 +6,23 @@ import json
 from pathlib import Path
 
 import pytest
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, FormatChecker, ValidationError
 
 from src.collectors.onchain import to_peg_deviation_signal, to_price_signal
+from src.contracts import validate_signals
 from src.engine.risk_score import compute_risk_score
 from src.intelligence.attestation_parser import to_reserve_signals
 
 SCHEMAS = Path("schemas")
 MOCK = Path("data/mock/signals_usdc_sample.json")
+MOCK_FILES = sorted(Path("data/mock").glob("signals_*.json"))
 
 
 def _validator(name: str) -> Draft202012Validator:
-    return Draft202012Validator(json.loads((SCHEMAS / name).read_text(encoding="utf-8")))
+    return Draft202012Validator(
+        json.loads((SCHEMAS / name).read_text(encoding="utf-8")),
+        format_checker=FormatChecker(),
+    )
 
 
 signal_v = _validator("signal.schema.json")
@@ -25,8 +30,85 @@ score_v = _validator("score_event.schema.json")
 
 
 def test_mock_signals_follow_contract():
-    for sig in json.loads(MOCK.read_text(encoding="utf-8")):
-        signal_v.validate(sig)
+    for mock_file in MOCK_FILES:
+        for sig in json.loads(mock_file.read_text(encoding="utf-8")):
+            signal_v.validate(sig)
+
+
+def _valid_signal(**overrides):
+    signal = {
+        "schema_version": 1,
+        "signal_id": "onchain-usdc-20230311-0001",
+        "source": "onchain",
+        "coin": "USDC",
+        "observed_at": "2023-03-11T02:00:00Z",
+        "metric": "price_usd",
+        "value": 1.0,
+    }
+    signal.update(overrides)
+    return signal
+
+
+@pytest.mark.parametrize(
+    "observed_at",
+    [
+        "어제 새벽",
+        "2023-03-11T11:00:00+09:00",
+        "2023-03-11T02:00:00z",
+        "2023-03-11T02:00:00.123Z",
+        "2023-02-30T02:00:00Z",
+    ],
+)
+def test_signal_contract_rejects_noncanonical_utc_timestamp(observed_at):
+    with pytest.raises(ValidationError):
+        signal_v.validate(_valid_signal(observed_at=observed_at))
+
+
+def test_signal_contract_rejects_empty_signal_id():
+    with pytest.raises(ValidationError):
+        signal_v.validate(_valid_signal(signal_id=""))
+
+
+@pytest.mark.parametrize("schema_version", [None, 0, 2, "1"])
+def test_signal_contract_rejects_missing_or_unsupported_version(schema_version):
+    signal = _valid_signal()
+    if schema_version is None:
+        signal.pop("schema_version")
+    else:
+        signal["schema_version"] = schema_version
+    with pytest.raises(ValidationError):
+        signal_v.validate(signal)
+
+
+def test_runtime_gate_dispatches_by_version_and_rejects_invalid_signal():
+    validators = {1: signal_v}
+    validate_signals([_valid_signal()], validators)
+
+    with pytest.raises(ValidationError):
+        validate_signals([_valid_signal(observed_at="어제 새벽")], validators)
+    with pytest.raises(ValidationError, match="unsupported schema_version"):
+        validate_signals([_valid_signal(schema_version=2)], validators)
+
+
+@pytest.mark.parametrize(
+    ("metric", "value"),
+    [
+        ("price_usd", -0.01),
+        ("peg_deviation_bps", -10001),
+        ("pool_imbalance_ratio", -0.01),
+        ("pool_imbalance_ratio", 1.01),
+        ("redemption_volume_usd", -1),
+        ("reserve_cash_ratio", -1),
+        ("reserve_cash_ratio", 1.01),
+        ("reserve_tbill_ratio", -0.01),
+        ("reserve_tbill_ratio", 1.01),
+        ("attestation_age_days", -1),
+        ("news_risk_flag", 0.5),
+    ],
+)
+def test_signal_contract_rejects_out_of_domain_metric_values(metric, value):
+    with pytest.raises(ValidationError):
+        signal_v.validate(_valid_signal(metric=metric, value=value))
 
 
 def test_onchain_collector_output_follows_contract():
@@ -43,6 +125,19 @@ def test_offchain_parser_output_follows_contract():
 def test_engine_output_follows_contract():
     signals = json.loads(MOCK.read_text(encoding="utf-8"))
     score_v.validate(compute_risk_score(signals, coin="USDC"))
+
+
+@pytest.mark.parametrize(
+    "scored_at",
+    ["2023-03-11T11:00:00+09:00", "2023-03-11T02:00:00z"],
+)
+def test_score_contract_rejects_noncanonical_utc_timestamp(scored_at):
+    event = compute_risk_score(
+        [_valid_signal(observed_at="2023-03-11T02:00:00Z")], coin="USDC"
+    )
+    event["scored_at"] = scored_at
+    with pytest.raises(ValidationError):
+        score_v.validate(event)
 
 
 def test_engine_is_pure():
@@ -79,6 +174,17 @@ def test_adapter_output_follows_threatwatch_contract():
     event = _crisis_event()
     assert event["threshold_breached"], "위기 mock은 임계값을 넘어야 함"
     alert_v.validate(to_alert_request(event))
+
+
+@pytest.mark.parametrize(
+    "timestamp",
+    ["2023-03-11T11:00:00+09:00", "2023-03-11T02:00:00z"],
+)
+def test_alert_contract_rejects_noncanonical_utc_timestamp(timestamp):
+    alert = to_alert_request(_crisis_event())
+    alert["timestamp"] = timestamp
+    with pytest.raises(ValidationError):
+        alert_v.validate(alert)
 
 
 def test_adapter_severity_mapping():

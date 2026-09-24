@@ -1,5 +1,6 @@
 [
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T00:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -8,6 +9,7 @@
     "value": 0.99988
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T00:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -16,6 +18,7 @@
     "value": -1.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T01:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -24,6 +27,7 @@
     "value": 0.99988
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T01:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -32,6 +36,7 @@
     "value": -1.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T02:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -40,6 +45,7 @@
     "value": 0.99989
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T02:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -48,6 +54,7 @@
     "value": -1.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T03:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -56,6 +63,7 @@
     "value": 0.99987
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T03:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -64,6 +72,7 @@
     "value": -1.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T04:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -72,6 +81,7 @@
     "value": 0.99987
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T04:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -80,6 +90,7 @@
     "value": -1.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T05:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -88,6 +99,7 @@
     "value": 0.99987
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T05:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -96,6 +108,7 @@
     "value": -1.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T06:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -104,6 +117,7 @@
     "value": 0.99987
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T06:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -112,6 +126,7 @@
     "value": -1.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T07:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -120,6 +135,7 @@
     "value": 0.99987
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T07:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -128,6 +144,7 @@
     "value": -1.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T08:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -136,6 +153,7 @@
     "value": 0.99988
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T08:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -144,6 +162,7 @@
     "value": -1.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T09:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -152,6 +171,7 @@
     "value": 0.99987
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T09:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -160,6 +180,7 @@
     "value": -1.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T10:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -168,6 +189,7 @@
     "value": 0.99988
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T10:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -176,6 +198,7 @@
     "value": -1.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T11:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -184,6 +207,7 @@
     "value": 0.99983
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T11:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -192,6 +216,7 @@
     "value": -1.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T12:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -200,6 +225,7 @@
     "value": 0.99982
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T12:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -208,6 +234,7 @@
     "value": -1.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T13:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -216,6 +243,7 @@
     "value": 0.99992
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T13:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -224,6 +252,7 @@
     "value": -0.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T14:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -232,6 +261,7 @@
     "value": 0.99994
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T14:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -240,6 +270,7 @@
     "value": -0.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T15:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -248,6 +279,7 @@
     "value": 0.99994
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T15:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -256,6 +288,7 @@
     "value": -0.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T16:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -264,6 +297,7 @@
     "value": 0.99993
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T16:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -272,6 +306,7 @@
     "value": -0.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T17:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -280,6 +315,7 @@
     "value": 0.99994
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T17:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -288,6 +324,7 @@
     "value": -0.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T18:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -296,6 +333,7 @@
     "value": 0.99983
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T18:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -304,6 +342,7 @@
     "value": -1.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T19:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -312,6 +351,7 @@
     "value": 0.99994
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T19:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -320,6 +360,7 @@
     "value": -0.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T20:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -328,6 +369,7 @@
     "value": 0.99994
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T20:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -336,6 +378,7 @@
     "value": -0.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T21:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -344,6 +387,7 @@
     "value": 0.99994
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T21:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -352,6 +396,7 @@
     "value": -0.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T22:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -360,6 +405,7 @@
     "value": 0.99992
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T22:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -368,6 +414,7 @@
     "value": -0.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T23:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -376,6 +423,7 @@
     "value": 0.99993
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T23:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -384,6 +432,7 @@
     "value": -0.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T00:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -392,6 +441,7 @@
     "value": 0.99994
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T00:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -400,6 +450,7 @@
     "value": -0.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T01:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -408,6 +459,7 @@
     "value": 0.99993
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T01:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -416,6 +468,7 @@
     "value": -0.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T02:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -424,6 +477,7 @@
     "value": 0.99993
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T02:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -432,6 +486,7 @@
     "value": -0.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T03:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -440,6 +495,7 @@
     "value": 0.99992
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T03:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -448,6 +504,7 @@
     "value": -0.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T04:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -456,6 +513,7 @@
     "value": 0.99996
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T04:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -464,6 +522,7 @@
     "value": -0.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T05:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -472,6 +531,7 @@
     "value": 1.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T05:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -480,6 +540,7 @@
     "value": 0.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T06:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -488,6 +549,7 @@
     "value": 1.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T06:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -496,6 +558,7 @@
     "value": 0.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T07:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -504,6 +567,7 @@
     "value": 0.99995
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T07:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -512,6 +576,7 @@
     "value": -0.5
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T08:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -520,6 +585,7 @@
     "value": 0.9993
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T08:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -528,6 +594,7 @@
     "value": -7.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T09:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -536,6 +603,7 @@
     "value": 0.99997
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T09:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -544,6 +612,7 @@
     "value": -0.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T10:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -552,6 +621,7 @@
     "value": 1.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T10:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -560,6 +630,7 @@
     "value": 0.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T11:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -568,6 +639,7 @@
     "value": 0.99999
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T11:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -576,6 +648,7 @@
     "value": -0.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T12:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -584,6 +657,7 @@
     "value": 0.99999
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T12:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -592,6 +666,7 @@
     "value": -0.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T13:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -600,6 +675,7 @@
     "value": 0.99998
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T13:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -608,6 +684,7 @@
     "value": -0.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T14:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -616,6 +693,7 @@
     "value": 0.99997
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T14:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -624,6 +702,7 @@
     "value": -0.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T15:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -632,6 +711,7 @@
     "value": 0.99997
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T15:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -640,6 +720,7 @@
     "value": -0.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T16:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -648,6 +729,7 @@
     "value": 1.00002
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T16:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -656,6 +738,7 @@
     "value": 0.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T17:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -664,6 +747,7 @@
     "value": 1.00002
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T17:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -672,6 +756,7 @@
     "value": 0.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T18:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -680,6 +765,7 @@
     "value": 0.99997
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T18:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -688,6 +774,7 @@
     "value": -0.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T19:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -696,6 +783,7 @@
     "value": 0.99997
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T19:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -704,6 +792,7 @@
     "value": -0.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T20:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -712,6 +801,7 @@
     "value": 0.99987
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T20:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -720,6 +810,7 @@
     "value": -1.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T21:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -728,6 +819,7 @@
     "value": 0.9998
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T21:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -736,6 +828,7 @@
     "value": -2.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T22:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -744,6 +837,7 @@
     "value": 0.99799
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T22:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -752,6 +846,7 @@
     "value": -20.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T23:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -760,6 +855,7 @@
     "value": 0.99773
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-10T23:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -768,6 +864,7 @@
     "value": -22.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T00:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -776,6 +873,7 @@
     "value": 0.99666
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T00:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -784,6 +882,7 @@
     "value": -33.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T01:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -792,6 +891,7 @@
     "value": 0.99792
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T01:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -800,6 +900,7 @@
     "value": -20.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T02:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -808,6 +909,7 @@
     "value": 0.9993
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T02:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -816,6 +918,7 @@
     "value": -7.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T03:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -824,6 +927,7 @@
     "value": 0.997
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T03:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -832,6 +936,7 @@
     "value": -30.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T04:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -840,6 +945,7 @@
     "value": 0.98622
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T04:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -848,6 +954,7 @@
     "value": -137.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T05:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -856,6 +963,7 @@
     "value": 0.933
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T05:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -864,6 +972,7 @@
     "value": -670.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T06:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -872,6 +981,7 @@
     "value": 0.88194
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T06:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -880,6 +990,7 @@
     "value": -1180.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T07:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -888,6 +999,7 @@
     "value": 0.86267
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T07:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -896,6 +1008,7 @@
     "value": -1373.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T08:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -904,6 +1017,7 @@
     "value": 0.92
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T08:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -912,6 +1026,7 @@
     "value": -800.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T09:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -920,6 +1035,7 @@
     "value": 0.90205
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T09:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -928,6 +1044,7 @@
     "value": -979.5
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T10:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -936,6 +1053,7 @@
     "value": 0.88364
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T10:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -944,6 +1062,7 @@
     "value": -1163.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T11:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -952,6 +1071,7 @@
     "value": 0.90911
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T11:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -960,6 +1080,7 @@
     "value": -908.9
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T12:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -968,6 +1089,7 @@
     "value": 0.90446
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T12:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -976,6 +1098,7 @@
     "value": -955.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T13:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -984,6 +1107,7 @@
     "value": 0.91158
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T13:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -992,6 +1116,7 @@
     "value": -884.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T14:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1000,6 +1125,7 @@
     "value": 0.915
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T14:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1008,6 +1134,7 @@
     "value": -850.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T15:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1016,6 +1143,7 @@
     "value": 0.92399
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T15:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1024,6 +1152,7 @@
     "value": -760.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T16:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1032,6 +1161,7 @@
     "value": 0.92839
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T16:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1040,6 +1170,7 @@
     "value": -716.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T17:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1048,6 +1179,7 @@
     "value": 0.95001
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T17:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1056,6 +1188,7 @@
     "value": -499.9
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T18:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1064,6 +1197,7 @@
     "value": 0.95359
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T18:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1072,6 +1206,7 @@
     "value": -464.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T19:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1080,6 +1215,7 @@
     "value": 0.9548
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T19:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1088,6 +1224,7 @@
     "value": -452.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T20:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1096,6 +1233,7 @@
     "value": 0.97333
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T20:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1104,6 +1242,7 @@
     "value": -266.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T21:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1112,6 +1251,7 @@
     "value": 0.95891
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T21:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1120,6 +1260,7 @@
     "value": -410.9
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T22:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1128,6 +1269,7 @@
     "value": 0.95002
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T22:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1136,6 +1278,7 @@
     "value": -499.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T23:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1144,6 +1287,7 @@
     "value": 0.96853
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-11T23:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1152,6 +1296,7 @@
     "value": -314.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T00:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1160,6 +1305,7 @@
     "value": 0.96763
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T00:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1168,6 +1314,7 @@
     "value": -323.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T01:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1176,6 +1323,7 @@
     "value": 0.985
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T01:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1184,6 +1332,7 @@
     "value": -150.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T02:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1192,6 +1341,7 @@
     "value": 0.985
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T02:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1200,6 +1350,7 @@
     "value": -150.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T03:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1208,6 +1359,7 @@
     "value": 0.985
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T03:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1216,6 +1368,7 @@
     "value": -150.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T04:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1224,6 +1377,7 @@
     "value": 0.985
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T04:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1232,6 +1386,7 @@
     "value": -150.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T05:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1240,6 +1395,7 @@
     "value": 0.98
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T05:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1248,6 +1404,7 @@
     "value": -200.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T06:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1256,6 +1413,7 @@
     "value": 0.95737
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T06:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1264,6 +1422,7 @@
     "value": -426.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T07:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1272,6 +1431,7 @@
     "value": 0.94757
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T07:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1280,6 +1440,7 @@
     "value": -524.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T08:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1288,6 +1449,7 @@
     "value": 0.95234
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T08:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1296,6 +1458,7 @@
     "value": -476.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T09:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1304,6 +1467,7 @@
     "value": 0.95553
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T09:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1312,6 +1476,7 @@
     "value": -444.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T10:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1320,6 +1485,7 @@
     "value": 0.9588
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T10:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1328,6 +1494,7 @@
     "value": -412.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T11:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1336,6 +1503,7 @@
     "value": 0.95789
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T11:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1344,6 +1512,7 @@
     "value": -421.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T12:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1352,6 +1521,7 @@
     "value": 0.95723
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T12:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1360,6 +1530,7 @@
     "value": -427.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T13:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1368,6 +1539,7 @@
     "value": 0.95826
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T13:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1376,6 +1548,7 @@
     "value": -417.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T14:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1384,6 +1557,7 @@
     "value": 0.9591
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T14:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1392,6 +1566,7 @@
     "value": -409.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T15:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1400,6 +1575,7 @@
     "value": 0.95904
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T15:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1408,6 +1584,7 @@
     "value": -409.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T16:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1416,6 +1593,7 @@
     "value": 0.95856
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T16:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1424,6 +1602,7 @@
     "value": -414.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T17:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1432,6 +1611,7 @@
     "value": 0.9657
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T17:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1440,6 +1620,7 @@
     "value": -343.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T18:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1448,6 +1629,7 @@
     "value": 0.96956
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T18:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1456,6 +1638,7 @@
     "value": -304.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T19:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1464,6 +1647,7 @@
     "value": 0.96731
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T19:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1472,6 +1656,7 @@
     "value": -326.9
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T20:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1480,6 +1665,7 @@
     "value": 0.9692
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T20:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1488,6 +1674,7 @@
     "value": -308.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T21:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1496,6 +1683,7 @@
     "value": 0.96833
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T21:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1504,6 +1692,7 @@
     "value": -316.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T22:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1512,6 +1701,7 @@
     "value": 0.98945
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T22:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1520,6 +1710,7 @@
     "value": -105.5
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T23:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1528,6 +1719,7 @@
     "value": 0.99153
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-12T23:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1536,6 +1728,7 @@
     "value": -84.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T00:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1544,6 +1737,7 @@
     "value": 0.99516
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T00:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1552,6 +1746,7 @@
     "value": -48.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T01:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1560,6 +1755,7 @@
     "value": 0.99409
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T01:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1568,6 +1764,7 @@
     "value": -59.1
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T02:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1576,6 +1773,7 @@
     "value": 0.99465
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T02:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1584,6 +1782,7 @@
     "value": -53.5
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T03:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1592,6 +1791,7 @@
     "value": 0.99301
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T03:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1600,6 +1800,7 @@
     "value": -69.9
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T04:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1608,6 +1809,7 @@
     "value": 0.99174
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T04:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1616,6 +1818,7 @@
     "value": -82.6
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T05:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1624,6 +1827,7 @@
     "value": 0.99028
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T05:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1632,6 +1836,7 @@
     "value": -97.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T06:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1640,6 +1845,7 @@
     "value": 0.99097
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T06:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1648,6 +1854,7 @@
     "value": -90.3
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T07:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1656,6 +1863,7 @@
     "value": 0.99151
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T07:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1664,6 +1872,7 @@
     "value": -84.9
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T08:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1672,6 +1881,7 @@
     "value": 0.98843
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T08:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1680,6 +1890,7 @@
     "value": -115.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T09:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1688,6 +1899,7 @@
     "value": 0.99036
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T09:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1696,6 +1908,7 @@
     "value": -96.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T10:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1704,6 +1917,7 @@
     "value": 0.99
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T10:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1712,6 +1926,7 @@
     "value": -100.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T11:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1720,6 +1935,7 @@
     "value": 0.99
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T11:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1728,6 +1944,7 @@
     "value": -100.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T12:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1736,6 +1953,7 @@
     "value": 0.99058
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T12:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1744,6 +1962,7 @@
     "value": -94.2
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T13:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1752,6 +1971,7 @@
     "value": 0.99636
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T13:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1760,6 +1980,7 @@
     "value": -36.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T14:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1768,6 +1989,7 @@
     "value": 0.99921
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T14:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1776,6 +1998,7 @@
     "value": -7.9
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T15:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1784,6 +2007,7 @@
     "value": 0.99866
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T15:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1792,6 +2016,7 @@
     "value": -13.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T16:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1800,6 +2025,7 @@
     "value": 0.99793
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T16:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1808,6 +2034,7 @@
     "value": -20.7
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T17:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1816,6 +2043,7 @@
     "value": 0.99812
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T17:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1824,6 +2052,7 @@
     "value": -18.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T18:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1832,6 +2061,7 @@
     "value": 0.99851
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T18:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1840,6 +2070,7 @@
     "value": -14.9
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T19:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1848,6 +2079,7 @@
     "value": 0.9987
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T19:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1856,6 +2088,7 @@
     "value": -13.0
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T20:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1864,6 +2097,7 @@
     "value": 0.99732
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T20:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1872,6 +2106,7 @@
     "value": -26.8
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T21:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1880,6 +2115,7 @@
     "value": 0.99665
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T21:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1888,6 +2124,7 @@
     "value": -33.5
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T22:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1896,6 +2133,7 @@
     "value": 0.99596
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T22:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",
@@ -1904,6 +2142,7 @@
     "value": -40.4
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T23:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -1912,6 +2151,7 @@
     "value": 0.99553
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-13T23:00:00Z-pegdev",
     "source": "onchain",
     "coin": "USDC",

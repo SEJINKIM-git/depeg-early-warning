@@ -12,6 +12,8 @@ from typing import Any
 
 import requests
 
+from src.contracts import SIGNAL_SCHEMA_VERSION
+
 BITSTAMP_OHLC_URL = "https://www.bitstamp.net/api/v2/ohlc/usdcusd/"
 BITSTAMP_STEP_SECONDS = 3_600
 BITSTAMP_MAX_LIMIT = 1_000
@@ -22,6 +24,7 @@ SUPPORTED_COINS = frozenset({"USDC"})
 def to_price_signal(coin: str, observed_at: str, price_usd: float) -> dict[str, Any]:
     """원시 가격 값을 Signal 계약(schemas/signal.schema.json)으로 변환한다. 순수 함수."""
     return {
+        "schema_version": SIGNAL_SCHEMA_VERSION,
         "signal_id": f"onchain-{coin.lower()}-{observed_at}-price",
         "source": "onchain",
         "coin": coin,
@@ -37,6 +40,7 @@ def to_peg_deviation_signal(
     """가격에서 페그 이탈(bps)을 계산해 Signal로 변환한다. 순수 함수."""
     deviation_bps = (price_usd - 1.0) * 10_000
     return {
+        "schema_version": SIGNAL_SCHEMA_VERSION,
         "signal_id": f"onchain-{coin.lower()}-{observed_at}-pegdev",
         "source": "onchain",
         "coin": coin,
