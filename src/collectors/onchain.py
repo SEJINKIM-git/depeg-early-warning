@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from collections.abc import Iterable, Mapping
 from datetime import datetime, timezone
-from math import ceil
+from math import ceil, isfinite
 from typing import Any
 
 import requests
@@ -19,6 +19,7 @@ BITSTAMP_STEP_SECONDS = 3_600
 BITSTAMP_MAX_LIMIT = 1_000
 REQUEST_TIMEOUT_SECONDS = 30
 SUPPORTED_COINS = frozenset({"USDC"})
+TimestampValue = str | int | float | datetime
 
 
 def to_price_signal(coin: str, observed_at: str, price_usd: float) -> dict[str, Any]:
@@ -57,17 +58,61 @@ def _normalize_coin(coin: str) -> str:
     return normalized_coin
 
 
-def _to_utc_datetime(value: str) -> datetime:
-    parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+def _to_utc_datetime(value: TimestampValue) -> datetime:
+    if value is None:
+        raise ValueError("timestamp must not be null")
+    if isinstance(value, bool):
+        raise ValueError("timestamp must be an ISO 8601 value or Unix epoch seconds")
+    if isinstance(value, datetime):
+        parsed = value
+    elif isinstance(value, (int, float)):
+        if not isfinite(value):
+            raise ValueError("timestamp must be finite")
+        parsed = datetime.fromtimestamp(value, tz=timezone.utc)
+    elif isinstance(value, str):
+        stripped = value.strip()
+        if not stripped:
+            raise ValueError("timestamp must not be empty")
+        try:
+            epoch_seconds = int(stripped)
+        except ValueError:
+            try:
+                parsed = datetime.fromisoformat(stripped.replace("Z", "+00:00"))
+            except ValueError as exc:
+                raise ValueError(f"invalid timestamp: {value!r}") from exc
+        else:
+            parsed = datetime.fromtimestamp(epoch_seconds, tz=timezone.utc)
+    else:
+        raise ValueError("timestamp must be an ISO 8601 value or Unix epoch seconds")
+
     if parsed.tzinfo is None:
-        raise ValueError("start_time and end_time must include a timezone")
+        raise ValueError("timestamp must include a timezone")
+    if parsed.microsecond:
+        raise ValueError("timestamp must have whole-second precision")
     return parsed.astimezone(timezone.utc)
 
 
-def _to_iso8601(timestamp: int) -> str:
-    return datetime.fromtimestamp(timestamp, tz=timezone.utc).strftime(
-        "%Y-%m-%dT%H:%M:%SZ"
-    )
+def normalize_timestamp(value: TimestampValue) -> str:
+    """지원되는 timestamp를 Signal v1의 초 단위 UTC Z 형식으로 정규화한다."""
+    return _to_utc_datetime(value).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _to_epoch_seconds(value: TimestampValue) -> int:
+    return int(_to_utc_datetime(value).timestamp())
+
+
+def _normalize_price(value: Any) -> float:
+    if value is None:
+        raise ValueError("price must not be null")
+    if isinstance(value, bool):
+        raise ValueError("price must be a finite non-negative number")
+    try:
+        price = float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("price must be a finite non-negative number") from exc
+    if not isfinite(price) or price < 0:
+        raise ValueError("price must be a finite non-negative number")
+    return price
 
 
 def _validate_hourly_timestamps(
@@ -92,31 +137,31 @@ def _validate_hourly_timestamps(
 def rows_to_signals(
     coin: str,
     rows: Iterable[Mapping[str, Any]],
-    start_time: str,
-    end_time: str,
+    start_time: TimestampValue,
+    end_time: TimestampValue,
 ) -> list[dict[str, Any]]:
-    """Bitstamp OHLC 행을 범위 필터링하고 시간순 Signal로 변환한다."""
+    """OHLC 행을 UTC로 정규화하고 완전한 시간대의 Signal로 변환한다."""
     normalized_coin = _normalize_coin(coin)
-    start_timestamp = int(_to_utc_datetime(start_time).timestamp())
-    end_timestamp = int(_to_utc_datetime(end_time).timestamp())
+    start_timestamp = _to_epoch_seconds(start_time)
+    end_timestamp = _to_epoch_seconds(end_time)
 
-    sorted_rows = sorted(rows, key=lambda row: int(row["timestamp"]))
+    normalized_rows = [(_to_epoch_seconds(row.get("timestamp")), row) for row in rows]
+    sorted_rows = sorted(normalized_rows, key=lambda item: item[0])
     filtered_rows = [
-        row
-        for row in sorted_rows
-        if start_timestamp <= int(row["timestamp"]) < end_timestamp
+        (timestamp, row)
+        for timestamp, row in sorted_rows
+        if start_timestamp <= timestamp < end_timestamp
     ]
     _validate_hourly_timestamps(
-        [int(row["timestamp"]) for row in filtered_rows],
+        [timestamp for timestamp, _ in filtered_rows],
         start_timestamp,
         end_timestamp,
     )
 
     signals: list[dict[str, Any]] = []
-    for row in filtered_rows:
-        timestamp = int(row["timestamp"])
-        observed_at = _to_iso8601(timestamp)
-        price_usd = float(row["close"])
+    for timestamp, row in filtered_rows:
+        observed_at = normalize_timestamp(timestamp)
+        price_usd = _normalize_price(row.get("close"))
         signals.extend(
             (
                 to_price_signal(normalized_coin, observed_at, price_usd),

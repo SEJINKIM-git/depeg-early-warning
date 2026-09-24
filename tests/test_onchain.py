@@ -9,6 +9,7 @@ from jsonschema import Draft202012Validator
 
 from src.collectors.onchain import (
     fetch_signals,
+    normalize_timestamp,
     rows_to_signals,
 )
 
@@ -48,6 +49,73 @@ def test_rows_to_signals_converts_timestamps_filters_range_and_sorts():
         "peg_deviation_bps",
     ] * 3
     assert all(signal["coin"] == "USDC" for signal in signals)
+    assert all(signal["schema_version"] == 1 for signal in signals)
+
+    schema = json.loads(SIGNAL_SCHEMA.read_text(encoding="utf-8"))
+    validator = Draft202012Validator(
+        schema, format_checker=Draft202012Validator.FORMAT_CHECKER
+    )
+    for signal in signals:
+        validator.validate(signal)
+
+
+@pytest.mark.parametrize(
+    ("raw_timestamp", "expected"),
+    [
+        ("2023-03-11T02:00:00Z", "2023-03-11T02:00:00Z"),
+        ("2023-03-11T11:00:00+09:00", "2023-03-11T02:00:00Z"),
+        (
+            datetime(2023, 3, 11, 11, tzinfo=timezone(timedelta(hours=9))),
+            "2023-03-11T02:00:00Z",
+        ),
+        ("1678500000", "2023-03-11T02:00:00Z"),
+    ],
+)
+def test_normalize_timestamp_outputs_canonical_utc(raw_timestamp, expected):
+    assert normalize_timestamp(raw_timestamp) == expected
+
+
+def test_rows_to_signals_normalizes_mixed_timestamp_types_and_sorts():
+    rows = [
+        {"timestamp": "2023-03-09T11:00:00+09:00", "close": "0.98"},
+        {
+            "timestamp": datetime(2023, 3, 9, 9, tzinfo=timezone(timedelta(hours=9))),
+            "close": "1.00",
+        },
+        {"timestamp": "2023-03-09T01:00:00Z", "close": "0.99"},
+    ]
+
+    signals = rows_to_signals(
+        "USDC", rows, "2023-03-09T09:00:00+09:00", "2023-03-09T03:00:00Z"
+    )
+
+    assert [signal["observed_at"] for signal in signals[::2]] == [
+        "2023-03-09T00:00:00Z",
+        "2023-03-09T01:00:00Z",
+        "2023-03-09T02:00:00Z",
+    ]
+
+
+@pytest.mark.parametrize("raw_timestamp", [None, "", "2023-03-11T02:00:00"])
+def test_normalize_timestamp_rejects_null_empty_or_timezone_naive_values(
+    raw_timestamp,
+):
+    with pytest.raises(ValueError, match="timestamp"):
+        normalize_timestamp(raw_timestamp)
+
+
+def test_rows_to_signals_rejects_null_price():
+    rows = [{"timestamp": "1678320000", "close": None}]
+
+    with pytest.raises(ValueError, match="price must not be null"):
+        rows_to_signals("USDC", rows, START_TIME, "2023-03-09T01:00:00Z")
+
+
+def test_rows_to_signals_rejects_null_timestamp():
+    rows = [{"timestamp": None, "close": "0.99"}]
+
+    with pytest.raises(ValueError, match="timestamp must not be null"):
+        rows_to_signals("USDC", rows, START_TIME, "2023-03-09T01:00:00Z")
 
 
 @patch("src.collectors.onchain.requests.get")
@@ -125,7 +193,7 @@ def test_rows_to_signals_rejects_missing_hourly_timestamp():
 def test_rows_to_signals_rejects_duplicate_hourly_timestamp():
     rows = [
         {"timestamp": "1678320000", "close": "0.99"},
-        {"timestamp": "1678320000", "close": "0.99"},
+        {"timestamp": "2023-03-09T09:00:00+09:00", "close": "0.99"},
         {"timestamp": "1678323600", "close": "0.98"},
     ]
 
