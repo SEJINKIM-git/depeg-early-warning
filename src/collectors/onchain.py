@@ -5,10 +5,11 @@
 """
 from __future__ import annotations
 
+import time
 from collections.abc import Iterable, Mapping
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from math import ceil, isfinite
-from typing import Any
+from typing import Any, Callable
 
 import requests
 
@@ -17,9 +18,14 @@ from src.contracts import SIGNAL_SCHEMA_VERSION
 BITSTAMP_OHLC_URL = "https://www.bitstamp.net/api/v2/ohlc/usdcusd/"
 BITSTAMP_STEP_SECONDS = 3_600
 BITSTAMP_MAX_LIMIT = 1_000
+BITSTAMP_MAX_HOURS_PER_REQUEST = BITSTAMP_MAX_LIMIT - 1
 REQUEST_TIMEOUT_SECONDS = 30
+DEFAULT_REQUEST_DELAY_SECONDS = 1.0
+DEFAULT_MAX_RETRIES = 3
 SUPPORTED_COINS = frozenset({"USDC"})
 TimestampValue = str | int | float | datetime
+FetchSignals = Callable[[str, TimestampValue, TimestampValue], list[dict[str, Any]]]
+Sleep = Callable[[float], None]
 
 
 def to_price_signal(coin: str, observed_at: str, price_usd: float) -> dict[str, Any]:
@@ -173,8 +179,8 @@ def rows_to_signals(
 
 def fetch_signals(
     coin: str,
-    start_time: str,
-    end_time: str,
+    start_time: TimestampValue,
+    end_time: TimestampValue,
 ) -> list[dict[str, Any]]:
     """Bitstamp Public API에서 시간별 종가를 수집해 Signal 목록을 반환한다."""
     normalized_coin = _normalize_coin(coin)
@@ -201,3 +207,82 @@ def fetch_signals(
     response.raise_for_status()
     rows = response.json()["data"]["ohlc"]
     return rows_to_signals(normalized_coin, rows, start_time, end_time)
+
+
+def _is_retryable_request_error(error: requests.RequestException) -> bool:
+    if isinstance(error, (requests.ConnectionError, requests.Timeout)):
+        return True
+    if isinstance(error, requests.HTTPError) and error.response is not None:
+        status_code = error.response.status_code
+        return status_code == 429 or 500 <= status_code < 600
+    return False
+
+
+def fetch_signals_range(
+    coin: str,
+    start_time: TimestampValue,
+    end_time: TimestampValue,
+    *,
+    request_delay_seconds: float = DEFAULT_REQUEST_DELAY_SECONDS,
+    max_retries: int = DEFAULT_MAX_RETRIES,
+    sleep_fn: Sleep = time.sleep,
+    fetch_fn: FetchSignals | None = None,
+) -> list[dict[str, Any]]:
+    """긴 기간을 안전한 Bitstamp 요청으로 나눠 완전한 Signal 목록을 수집한다."""
+    normalized_coin = _normalize_coin(coin)
+    start = _to_utc_datetime(start_time)
+    end = _to_utc_datetime(end_time)
+    if end <= start:
+        raise ValueError("end_time must be later than start_time")
+    if int(start.timestamp()) % BITSTAMP_STEP_SECONDS or int(
+        end.timestamp()
+    ) % BITSTAMP_STEP_SECONDS:
+        raise ValueError("start_time and end_time must be aligned to an hour")
+    if request_delay_seconds < 0:
+        raise ValueError("request_delay_seconds must be non-negative")
+    if max_retries < 0:
+        raise ValueError("max_retries must be non-negative")
+
+    fetch = fetch_fn or fetch_signals
+    max_chunk_duration = timedelta(
+        seconds=BITSTAMP_MAX_HOURS_PER_REQUEST * BITSTAMP_STEP_SECONDS
+    )
+    collected: list[dict[str, Any]] = []
+    request_count = 0
+    chunk_start = start
+
+    while chunk_start < end:
+        chunk_end = min(chunk_start + max_chunk_duration, end)
+        attempt = 0
+        while True:
+            if request_count and request_delay_seconds:
+                sleep_fn(request_delay_seconds)
+            request_count += 1
+            try:
+                chunk_signals = fetch(
+                    normalized_coin,
+                    normalize_timestamp(chunk_start),
+                    normalize_timestamp(chunk_end),
+                )
+            except requests.RequestException as error:
+                if not _is_retryable_request_error(error):
+                    raise
+                if attempt >= max_retries:
+                    raise RuntimeError(
+                        "Bitstamp request failed after "
+                        f"{attempt + 1} attempts for "
+                        f"{normalize_timestamp(chunk_start)} to "
+                        f"{normalize_timestamp(chunk_end)}"
+                    ) from error
+                attempt += 1
+                continue
+            collected.extend(chunk_signals)
+            break
+        chunk_start = chunk_end
+
+    price_rows = [
+        {"timestamp": signal["observed_at"], "close": signal["value"]}
+        for signal in collected
+        if signal["metric"] == "price_usd"
+    ]
+    return rows_to_signals(normalized_coin, price_rows, start, end)

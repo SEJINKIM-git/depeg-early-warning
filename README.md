@@ -16,6 +16,15 @@ python main.py            # mock 데이터로 파이프라인 관통
 python -m pytest -q       # 계약 테스트
 ```
 
+## Bitstamp hourly 수집
+
+USDC/USD hourly 데이터를 Signal v1 JSON으로 표준 출력한다. 긴 기간은 Bitstamp
+요청 제한에 맞춰 자동으로 나누며, `--end`는 포함하지 않는 종료 시각이다.
+
+```bash
+python -m scripts.collect_bitstamp_usdc --start 2023-03-09T00:00:00Z --end 2023-03-14T00:00:00Z
+```
+
 ## 구조
 
 ```text
