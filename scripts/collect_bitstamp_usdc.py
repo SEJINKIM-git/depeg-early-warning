@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from pathlib import Path
 
 import requests
 
@@ -13,6 +14,9 @@ from src.collectors.onchain import (
     DEFAULT_REQUEST_DELAY_SECONDS,
     fetch_signals_range,
 )
+from src.collectors.raw_store import RawResponseDirectory
+
+DEFAULT_RAW_DIRECTORY = Path("data/raw/bitstamp/usdcusd")
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -33,6 +37,12 @@ def _parser() -> argparse.ArgumentParser:
         default=DEFAULT_MAX_RETRIES,
         help="Retries after the initial attempt for each chunk",
     )
+    parser.add_argument(
+        "--raw-directory",
+        type=Path,
+        default=DEFAULT_RAW_DIRECTORY,
+        help="Directory for unchanged successful HTTP response bodies",
+    )
     return parser
 
 
@@ -46,6 +56,7 @@ def main(argv: list[str] | None = None) -> int:
             args.end,
             request_delay_seconds=args.request_delay,
             max_retries=args.max_retries,
+            raw_response_sink=RawResponseDirectory(args.raw_directory),
         )
     except (ValueError, RuntimeError, requests.RequestException) as error:
         parser.exit(1, f"error: {error}\n")

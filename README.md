@@ -19,11 +19,18 @@ python -m pytest -q       # 계약 테스트
 ## Bitstamp hourly 수집
 
 USDC/USD hourly 데이터를 Signal v1 JSON으로 표준 출력한다. 긴 기간은 Bitstamp
-요청 제한에 맞춰 자동으로 나누며, `--end`는 포함하지 않는 종료 시각이다.
+요청 제한에 맞춰 자동으로 나누며, `--end`는 포함하지 않는 종료 시각이다. 성공한
+각 chunk의 원본 HTTP body는 변형 없이 `data/raw/bitstamp/usdcusd/`에 저장한다.
 
 ```bash
 python -m scripts.collect_bitstamp_usdc --start 2023-03-09T00:00:00Z --end 2023-03-14T00:00:00Z
 ```
+
+Raw 파일명은
+`bitstamp_usdcusd_<chunk-start>_<chunk-end>.json`이고 Windows 호환을 위해 시각의
+`:`를 `-`로 바꾼다. `data/raw/`는 API 원본 증거이고 `data/historical/`은 Signal v1
+변환 결과다. 같은 요청을 다시 실행했을 때 raw bytes가 같으면 기존 파일을 재사용하고,
+다르면 덮어쓰지 않고 오류로 중단한다. 저장 위치는 `--raw-directory`로 바꿀 수 있다.
 
 ## 구조
 

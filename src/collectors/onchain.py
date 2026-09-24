@@ -26,6 +26,7 @@ SUPPORTED_COINS = frozenset({"USDC"})
 TimestampValue = str | int | float | datetime
 FetchSignals = Callable[[str, TimestampValue, TimestampValue], list[dict[str, Any]]]
 Sleep = Callable[[float], None]
+RawResponseSink = Callable[[bytes, str, str], object]
 
 
 def to_price_signal(coin: str, observed_at: str, price_usd: float) -> dict[str, Any]:
@@ -181,6 +182,8 @@ def fetch_signals(
     coin: str,
     start_time: TimestampValue,
     end_time: TimestampValue,
+    *,
+    raw_response_sink: RawResponseSink | None = None,
 ) -> list[dict[str, Any]]:
     """Bitstamp Public API에서 시간별 종가를 수집해 Signal 목록을 반환한다."""
     normalized_coin = _normalize_coin(coin)
@@ -205,6 +208,12 @@ def fetch_signals(
         timeout=REQUEST_TIMEOUT_SECONDS,
     )
     response.raise_for_status()
+    if raw_response_sink is not None:
+        raw_response_sink(
+            response.content,
+            normalize_timestamp(start),
+            normalize_timestamp(end),
+        )
     rows = response.json()["data"]["ohlc"]
     return rows_to_signals(normalized_coin, rows, start_time, end_time)
 
@@ -227,6 +236,7 @@ def fetch_signals_range(
     max_retries: int = DEFAULT_MAX_RETRIES,
     sleep_fn: Sleep = time.sleep,
     fetch_fn: FetchSignals | None = None,
+    raw_response_sink: RawResponseSink | None = None,
 ) -> list[dict[str, Any]]:
     """긴 기간을 안전한 Bitstamp 요청으로 나눠 완전한 Signal 목록을 수집한다."""
     normalized_coin = _normalize_coin(coin)
@@ -242,6 +252,8 @@ def fetch_signals_range(
         raise ValueError("request_delay_seconds must be non-negative")
     if max_retries < 0:
         raise ValueError("max_retries must be non-negative")
+    if fetch_fn is not None and raw_response_sink is not None:
+        raise ValueError("raw_response_sink requires the default fetch_signals")
 
     fetch = fetch_fn or fetch_signals
     max_chunk_duration = timedelta(
@@ -259,11 +271,21 @@ def fetch_signals_range(
                 sleep_fn(request_delay_seconds)
             request_count += 1
             try:
-                chunk_signals = fetch(
-                    normalized_coin,
-                    normalize_timestamp(chunk_start),
-                    normalize_timestamp(chunk_end),
-                )
+                chunk_start_text = normalize_timestamp(chunk_start)
+                chunk_end_text = normalize_timestamp(chunk_end)
+                if fetch_fn is None:
+                    chunk_signals = fetch_signals(
+                        normalized_coin,
+                        chunk_start_text,
+                        chunk_end_text,
+                        raw_response_sink=raw_response_sink,
+                    )
+                else:
+                    chunk_signals = fetch(
+                        normalized_coin,
+                        chunk_start_text,
+                        chunk_end_text,
+                    )
             except requests.RequestException as error:
                 if not _is_retryable_request_error(error):
                     raise
