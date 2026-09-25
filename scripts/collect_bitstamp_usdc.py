@@ -58,10 +58,15 @@ def main(argv: list[str] | None = None) -> int:
             max_retries=args.max_retries,
             raw_response_sink=RawResponseDirectory(args.raw_directory),
         )
+        output = json.dumps(
+            signals,
+            ensure_ascii=False,
+            indent=2,
+            allow_nan=False,
+        )
     except (ValueError, RuntimeError, requests.RequestException) as error:
         parser.exit(1, f"error: {error}\n")
-    json.dump(signals, sys.stdout, ensure_ascii=False, indent=2)
-    sys.stdout.write("\n")
+    sys.stdout.write(f"{output}\n")
     return 0
 
 

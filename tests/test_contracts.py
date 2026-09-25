@@ -90,6 +90,12 @@ def test_runtime_gate_dispatches_by_version_and_rejects_invalid_signal():
         validate_signals([_valid_signal(schema_version=2)], validators)
 
 
+@pytest.mark.parametrize("value", [float("nan"), float("inf"), float("-inf")])
+def test_runtime_gate_rejects_non_finite_signal_values(value):
+    with pytest.raises(ValidationError, match="value must be finite"):
+        validate_signals([_valid_signal(value=value)], {1: signal_v})
+
+
 @pytest.mark.parametrize(
     ("metric", "value"),
     [

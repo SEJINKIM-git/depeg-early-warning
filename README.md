@@ -18,9 +18,10 @@ python -m pytest -q       # 계약 테스트
 
 ## Bitstamp hourly 수집
 
-USDC/USD hourly 데이터를 Signal v1 JSON으로 표준 출력한다. 긴 기간은 Bitstamp
+USDC/USD의 완료된 hourly candle만 Signal v1 JSON으로 표준 출력한다. 긴 기간은 Bitstamp
 요청 제한에 맞춰 자동으로 나누며, `--end`는 포함하지 않는 종료 시각이다. 성공한
 각 chunk의 원본 HTTP body는 변형 없이 `data/raw/bitstamp/usdcusd/`에 저장한다.
+`--end`는 실행 시점의 현재 UTC hour boundary보다 늦을 수 없다.
 
 ```bash
 python -m scripts.collect_bitstamp_usdc --start 2023-03-09T00:00:00Z --end 2023-03-14T00:00:00Z

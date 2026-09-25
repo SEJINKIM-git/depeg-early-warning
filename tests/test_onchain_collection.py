@@ -51,6 +51,22 @@ def test_fetch_signals_range_uses_one_request_for_short_period():
     assert len(signals) == 6
 
 
+def test_fetch_signals_range_rejects_current_candle_before_fetch():
+    now = datetime(2023, 1, 1, 10, 30, tzinfo=timezone.utc)
+    fetch = Mock()
+
+    with pytest.raises(ValueError, match="current UTC hour"):
+        fetch_signals_range(
+            "USDC",
+            "2023-01-01T10:00:00Z",
+            "2023-01-01T11:00:00Z",
+            fetch_fn=fetch,
+            now_fn=lambda: now,
+        )
+
+    fetch.assert_not_called()
+
+
 def test_fetch_signals_range_chunks_without_duplicate_or_missing_hours():
     start = _iso(START)
     boundary = _iso(START + timedelta(hours=999))

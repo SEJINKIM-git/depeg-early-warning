@@ -11,6 +11,7 @@ from src.collectors.onchain import (
     fetch_signals,
     normalize_timestamp,
     rows_to_signals,
+    to_peg_deviation_signal,
 )
 
 START_TIME = "2023-03-09T00:00:00Z"
@@ -111,6 +112,19 @@ def test_rows_to_signals_rejects_null_price():
         rows_to_signals("USDC", rows, START_TIME, "2023-03-09T01:00:00Z")
 
 
+@pytest.mark.parametrize("price", [float("nan"), float("inf"), float("-inf")])
+def test_rows_to_signals_rejects_non_finite_price(price):
+    rows = [{"timestamp": "1678320000", "close": price}]
+
+    with pytest.raises(ValueError, match="finite non-negative number"):
+        rows_to_signals("USDC", rows, START_TIME, "2023-03-09T01:00:00Z")
+
+
+def test_peg_deviation_rejects_finite_price_when_calculation_overflows():
+    with pytest.raises(ValueError, match="peg deviation must be finite"):
+        to_peg_deviation_signal("USDC", START_TIME, 1e308)
+
+
 def test_rows_to_signals_rejects_null_timestamp():
     rows = [{"timestamp": None, "close": "0.99"}]
 
@@ -149,6 +163,46 @@ def test_fetch_signals_uses_bitstamp_parameters(mock_get):
     mock_get.return_value.raise_for_status.assert_called_once_with()
     assert len(signals) == 240
     assert signals[0]["observed_at"] == START_TIME
+
+
+@patch("src.collectors.onchain.requests.get")
+def test_fetch_signals_rejects_current_candle_before_http_request(mock_get):
+    now = datetime(2023, 3, 9, 10, 30, tzinfo=timezone.utc)
+
+    with pytest.raises(ValueError, match="current UTC hour"):
+        fetch_signals(
+            "USDC",
+            "2023-03-09T10:00:00Z",
+            "2023-03-09T11:00:00Z",
+            now_fn=lambda: now,
+        )
+
+    mock_get.assert_not_called()
+
+
+@patch("src.collectors.onchain.requests.get")
+def test_fetch_signals_accepts_range_ending_at_current_hour(mock_get):
+    now = datetime(2023, 3, 9, 10, 30, tzinfo=timezone.utc)
+    mock_get.return_value = _response(
+        {
+            "data": {
+                "ohlc": [
+                    {"timestamp": "1678352400", "close": "0.99"},
+                    {"timestamp": "1678356000", "close": "1.00"},
+                ]
+            }
+        }
+    )
+
+    signals = fetch_signals(
+        "USDC",
+        "2023-03-09T09:00:00Z",
+        "2023-03-09T10:00:00Z",
+        now_fn=lambda: now,
+    )
+
+    assert len(signals) == 2
+    mock_get.assert_called_once()
 
 
 @patch("src.collectors.onchain.requests.get")

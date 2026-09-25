@@ -1,6 +1,7 @@
 import json
 import re
 import shutil
+import subprocess
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
@@ -60,7 +61,9 @@ def _response(body: bytes, rows: list[dict[str, str]], status: int = 200) -> Moc
 
 
 @patch("src.collectors.onchain.requests.get")
-def test_fetch_signals_stores_successful_body_before_json_conversion(mock_get):
+def test_fetch_signals_stages_body_before_json_and_publishes_after_validation(
+    mock_get,
+):
     events = []
     body = b'{"data": {"ohlc": [{"timestamp": "1672531200", "close": "0.9900"}]}}'
     response = _response(body, _rows(START, 1))
@@ -69,20 +72,103 @@ def test_fetch_signals_stores_successful_body_before_json_conversion(mock_get):
     }
     mock_get.return_value = response
 
-    def sink(raw_body, start, end):
-        events.append("raw")
-        assert raw_body == body
-        assert start == "2023-01-01T00:00:00Z"
-        assert end == "2023-01-01T01:00:00Z"
+    class Provisional:
+        def publish(self):
+            events.append("publish")
+
+        def quarantine(self):
+            events.append("quarantine")
+
+    class Sink:
+        def stage(self, raw_body, start, end):
+            events.append("stage")
+            assert raw_body == body
+            assert start == "2023-01-01T00:00:00Z"
+            assert end == "2023-01-01T01:00:00Z"
+            return Provisional()
 
     fetch_signals(
         "USDC",
         "2023-01-01T00:00:00Z",
         "2023-01-01T01:00:00Z",
-        raw_response_sink=sink,
+        raw_response_sink=Sink(),
     )
 
-    assert events == ["raw", "json"]
+    assert events == ["stage", "json", "publish"]
+
+
+@pytest.mark.parametrize(
+    ("payload", "error"),
+    [
+        (ValueError("invalid JSON"), "invalid JSON"),
+        ({}, "missing data object"),
+        ({"data": {}}, "missing ohlc array"),
+        ({"data": {"ohlc": []}}, "missing hourly OHLC timestamps"),
+    ],
+)
+@patch("src.collectors.onchain.requests.get")
+def test_invalid_success_response_is_quarantined_not_canonical(
+    mock_get, payload, error, raw_tmp_path
+):
+    body = b"invalid-success-body"
+    response = _response(body, [])
+    if isinstance(payload, Exception):
+        response.json.side_effect = payload
+    else:
+        response.json.return_value = payload
+    mock_get.return_value = response
+    raw_directory = raw_tmp_path / "raw"
+
+    with pytest.raises(ValueError, match=error):
+        fetch_signals(
+            "USDC",
+            "2023-01-01T00:00:00Z",
+            "2023-01-01T01:00:00Z",
+            raw_response_sink=RawResponseDirectory(raw_directory),
+        )
+
+    canonical = raw_directory / raw_response_filename(
+        "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+    )
+    failed_files = list((raw_directory / "failed").glob("*.json"))
+    assert not canonical.exists()
+    assert len(failed_files) == 1
+    assert failed_files[0].read_bytes() == body
+
+
+@patch("src.collectors.onchain.requests.get")
+def test_quarantined_response_does_not_block_later_valid_response(
+    mock_get, raw_tmp_path
+):
+    valid_rows = _rows(START, 1)
+    invalid_response = _response(b"invalid", [])
+    invalid_response.json.return_value = {"data": {"ohlc": []}}
+    mock_get.side_effect = [
+        invalid_response,
+        _response(b"valid", valid_rows),
+    ]
+    raw_directory = raw_tmp_path / "raw"
+    sink = RawResponseDirectory(raw_directory)
+
+    with pytest.raises(ValueError, match="missing hourly OHLC timestamps"):
+        fetch_signals(
+            "USDC",
+            "2023-01-01T00:00:00Z",
+            "2023-01-01T01:00:00Z",
+            raw_response_sink=sink,
+        )
+
+    signals = fetch_signals(
+        "USDC",
+        "2023-01-01T00:00:00Z",
+        "2023-01-01T01:00:00Z",
+        raw_response_sink=sink,
+    )
+    canonical = raw_directory / raw_response_filename(
+        "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+    )
+    assert len(signals) == 2
+    assert canonical.read_bytes() == b"valid"
 
 
 @patch("src.collectors.onchain.requests.get")
@@ -216,6 +302,69 @@ def test_different_raw_response_for_same_request_raises_conflict(raw_tmp_path):
     assert target.read_bytes() == b'{"version":1}'
 
 
+def test_two_staged_identical_responses_publish_one_complete_file(raw_tmp_path):
+    store = RawResponseDirectory(raw_tmp_path)
+    first = store.stage(
+        b"same", "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+    )
+    second = store.stage(
+        b"same", "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+    )
+
+    first_path = first.publish()
+    second_path = second.publish()
+
+    assert first_path == second_path
+    assert first_path.read_bytes() == b"same"
+    assert not list(raw_tmp_path.glob("*.tmp"))
+
+
+def test_two_staged_different_responses_conflict_without_overwrite(raw_tmp_path):
+    store = RawResponseDirectory(raw_tmp_path)
+    first = store.stage(
+        b"first", "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+    )
+    second = store.stage(
+        b"second", "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+    )
+
+    target = first.publish()
+    with pytest.raises(RawResponseConflictError):
+        second.publish()
+
+    assert target.read_bytes() == b"first"
+    assert not list(raw_tmp_path.glob("*.tmp"))
+
+
+@patch("src.collectors.raw_store.os.link", side_effect=OSError("publish failed"))
+def test_publish_failure_leaves_no_partial_canonical(mock_link, raw_tmp_path):
+    store = RawResponseDirectory(raw_tmp_path)
+    staged = store.stage(
+        b"body", "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+    )
+    canonical = raw_tmp_path / raw_response_filename(
+        "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+    )
+
+    with pytest.raises(OSError, match="publish failed"):
+        staged.publish()
+
+    assert not canonical.exists()
+    assert not list(raw_tmp_path.glob("*.tmp"))
+
+
+@patch("src.collectors.raw_store.os.fsync", side_effect=OSError("write failed"))
+def test_write_failure_leaves_no_partial_canonical(mock_fsync, raw_tmp_path):
+    store = RawResponseDirectory(raw_tmp_path)
+
+    with pytest.raises(OSError, match="write failed"):
+        store.stage(
+            b"body", "2023-01-01T00:00:00Z", "2023-01-01T01:00:00Z"
+        )
+
+    assert not list(raw_tmp_path.iterdir())
+
+
 @patch("src.collectors.onchain.requests.get")
 def test_fetch_signals_without_sink_does_not_access_raw_body(mock_get):
     class ResponseWithoutRawAccess:
@@ -253,3 +402,40 @@ def test_cli_enables_default_raw_directory(mock_fetch, capsys):
     assert isinstance(sink, RawResponseDirectory)
     assert sink.directory == DEFAULT_RAW_DIRECTORY
     assert capsys.readouterr().out == "[]\n"
+
+
+@patch(
+    "scripts.collect_bitstamp_usdc.fetch_signals_range",
+    return_value=[{"value": float("nan")}],
+)
+def test_cli_rejects_non_finite_json_without_partial_stdout(mock_fetch, capsys):
+    with pytest.raises(SystemExit) as error:
+        main(
+            [
+                "--start",
+                "2023-01-01T00:00:00Z",
+                "--end",
+                "2023-01-01T01:00:00Z",
+            ]
+        )
+
+    captured = capsys.readouterr()
+    assert error.value.code == 1
+    assert captured.out == ""
+    assert "Out of range float values" in captured.err
+
+
+def test_raw_json_and_temp_are_ignored_but_gitkeep_is_retained():
+    raw_json = "data/raw/bitstamp/usdcusd/example.json"
+    raw_temp = "data/raw/bitstamp/usdcusd/example.tmp"
+    gitkeep = "data/raw/bitstamp/usdcusd/.gitkeep"
+
+    assert subprocess.run(
+        ["git", "check-ignore", "-q", raw_json], check=False
+    ).returncode == 0
+    assert subprocess.run(
+        ["git", "check-ignore", "-q", raw_temp], check=False
+    ).returncode == 0
+    assert subprocess.run(
+        ["git", "check-ignore", "-q", gitkeep], check=False
+    ).returncode == 1

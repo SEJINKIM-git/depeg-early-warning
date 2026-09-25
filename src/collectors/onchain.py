@@ -9,7 +9,7 @@ import time
 from collections.abc import Iterable, Mapping
 from datetime import datetime, timedelta, timezone
 from math import ceil, isfinite
-from typing import Any, Callable
+from typing import Any, Callable, Protocol
 
 import requests
 
@@ -26,11 +26,28 @@ SUPPORTED_COINS = frozenset({"USDC"})
 TimestampValue = str | int | float | datetime
 FetchSignals = Callable[[str, TimestampValue, TimestampValue], list[dict[str, Any]]]
 Sleep = Callable[[float], None]
-RawResponseSink = Callable[[bytes, str, str], object]
+UtcNow = Callable[[], datetime]
+
+
+class ProvisionalRawResponse(Protocol):
+    def publish(self) -> object: ...
+
+    def quarantine(self) -> object: ...
+
+
+class RawResponseSink(Protocol):
+    def stage(
+        self, body: bytes, start_time: str, end_time: str
+    ) -> ProvisionalRawResponse: ...
+
+
+def _utc_now() -> datetime:
+    return datetime.now(timezone.utc)
 
 
 def to_price_signal(coin: str, observed_at: str, price_usd: float) -> dict[str, Any]:
     """원시 가격 값을 Signal 계약(schemas/signal.schema.json)으로 변환한다. 순수 함수."""
+    normalized_price = _normalize_price(price_usd)
     return {
         "schema_version": SIGNAL_SCHEMA_VERSION,
         "signal_id": f"onchain-{coin.lower()}-{observed_at}-price",
@@ -38,7 +55,7 @@ def to_price_signal(coin: str, observed_at: str, price_usd: float) -> dict[str, 
         "coin": coin,
         "observed_at": observed_at,
         "metric": "price_usd",
-        "value": price_usd,
+        "value": normalized_price,
     }
 
 
@@ -46,7 +63,10 @@ def to_peg_deviation_signal(
     coin: str, observed_at: str, price_usd: float
 ) -> dict[str, Any]:
     """가격에서 페그 이탈(bps)을 계산해 Signal로 변환한다. 순수 함수."""
-    deviation_bps = (price_usd - 1.0) * 10_000
+    normalized_price = _normalize_price(price_usd)
+    deviation_bps = (normalized_price - 1.0) * 10_000
+    if not isfinite(deviation_bps):
+        raise ValueError("peg deviation must be finite")
     return {
         "schema_version": SIGNAL_SCHEMA_VERSION,
         "signal_id": f"onchain-{coin.lower()}-{observed_at}-pegdev",
@@ -106,6 +126,16 @@ def normalize_timestamp(value: TimestampValue) -> str:
 
 def _to_epoch_seconds(value: TimestampValue) -> int:
     return int(_to_utc_datetime(value).timestamp())
+
+
+def _validate_completed_hour_end(end: datetime, now: datetime) -> None:
+    if now.tzinfo is None:
+        raise ValueError("current time must include a timezone")
+    current_utc_hour = now.astimezone(timezone.utc).replace(
+        minute=0, second=0, microsecond=0
+    )
+    if end > current_utc_hour:
+        raise ValueError("end_time must not be later than the current UTC hour")
 
 
 def _normalize_price(value: Any) -> float:
@@ -184,6 +214,7 @@ def fetch_signals(
     end_time: TimestampValue,
     *,
     raw_response_sink: RawResponseSink | None = None,
+    now_fn: UtcNow = _utc_now,
 ) -> list[dict[str, Any]]:
     """Bitstamp Public API에서 시간별 종가를 수집해 Signal 목록을 반환한다."""
     normalized_coin = _normalize_coin(coin)
@@ -191,6 +222,7 @@ def fetch_signals(
     end = _to_utc_datetime(end_time)
     if end <= start:
         raise ValueError("end_time must be later than start_time")
+    _validate_completed_hour_end(end, now_fn())
 
     required_rows = ceil((end - start).total_seconds() / BITSTAMP_STEP_SECONDS)
     request_rows = required_rows + 1
@@ -208,14 +240,31 @@ def fetch_signals(
         timeout=REQUEST_TIMEOUT_SECONDS,
     )
     response.raise_for_status()
+    provisional_raw = None
     if raw_response_sink is not None:
-        raw_response_sink(
+        provisional_raw = raw_response_sink.stage(
             response.content,
             normalize_timestamp(start),
             normalize_timestamp(end),
         )
-    rows = response.json()["data"]["ohlc"]
-    return rows_to_signals(normalized_coin, rows, start_time, end_time)
+    try:
+        payload = response.json()
+        if not isinstance(payload, Mapping):
+            raise ValueError("invalid Bitstamp response: expected an object")
+        data = payload.get("data")
+        if not isinstance(data, Mapping):
+            raise ValueError("invalid Bitstamp response: missing data object")
+        rows = data.get("ohlc")
+        if not isinstance(rows, list):
+            raise ValueError("invalid Bitstamp response: missing ohlc array")
+        signals = rows_to_signals(normalized_coin, rows, start_time, end_time)
+    except Exception:
+        if provisional_raw is not None:
+            provisional_raw.quarantine()
+        raise
+    if provisional_raw is not None:
+        provisional_raw.publish()
+    return signals
 
 
 def _is_retryable_request_error(error: requests.RequestException) -> bool:
@@ -237,6 +286,7 @@ def fetch_signals_range(
     sleep_fn: Sleep = time.sleep,
     fetch_fn: FetchSignals | None = None,
     raw_response_sink: RawResponseSink | None = None,
+    now_fn: UtcNow = _utc_now,
 ) -> list[dict[str, Any]]:
     """긴 기간을 안전한 Bitstamp 요청으로 나눠 완전한 Signal 목록을 수집한다."""
     normalized_coin = _normalize_coin(coin)
@@ -244,6 +294,8 @@ def fetch_signals_range(
     end = _to_utc_datetime(end_time)
     if end <= start:
         raise ValueError("end_time must be later than start_time")
+    now = now_fn()
+    _validate_completed_hour_end(end, now)
     if int(start.timestamp()) % BITSTAMP_STEP_SECONDS or int(
         end.timestamp()
     ) % BITSTAMP_STEP_SECONDS:
@@ -279,6 +331,7 @@ def fetch_signals_range(
                         chunk_start_text,
                         chunk_end_text,
                         raw_response_sink=raw_response_sink,
+                        now_fn=lambda: now,
                     )
                 else:
                     chunk_signals = fetch(

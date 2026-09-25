@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
+from math import isfinite
 from typing import Any
 
 from jsonschema import Draft202012Validator, ValidationError
@@ -16,6 +17,10 @@ def validate_signals(
 ) -> None:
     """각 Signal의 schema_version에 맞는 계약으로 검증한다."""
     for index, signal in enumerate(signals):
+        value = signal.get("value")
+        if isinstance(value, (int, float)) and not isinstance(value, bool):
+            if not isfinite(value):
+                raise ValidationError(f"signal[{index}] value must be finite")
         version = signal.get("schema_version")
         validator = validators.get(version) if isinstance(version, int) else None
         if validator is None:
