@@ -8,6 +8,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from src.contracts import SIGNAL_SCHEMA_VERSION
+
 
 def to_reserve_signals(
     coin: str, observed_at: str, cash_ratio: float, tbill_ratio: float
@@ -16,6 +18,7 @@ def to_reserve_signals(
     base = f"offchain-{coin.lower()}-{observed_at}"
     return [
         {
+            "schema_version": SIGNAL_SCHEMA_VERSION,
             "signal_id": f"{base}-cash",
             "source": "offchain",
             "coin": coin,
@@ -24,6 +27,7 @@ def to_reserve_signals(
             "value": cash_ratio,
         },
         {
+            "schema_version": SIGNAL_SCHEMA_VERSION,
             "signal_id": f"{base}-tbill",
             "source": "offchain",
             "coin": coin,

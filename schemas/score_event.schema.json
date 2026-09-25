@@ -9,7 +9,11 @@
   "properties": {
     "event_id": { "type": "string" },
     "coin": { "type": "string", "enum": ["USDC", "USDT"] },
-    "scored_at": { "type": "string", "format": "date-time" },
+    "scored_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
     "risk_score": { "type": "number", "minimum": 0, "maximum": 100, "description": "0(안전)~100(위험)" },
     "confidence": { "type": "number", "minimum": 0, "maximum": 1, "description": "스코어 신뢰도" },
     "top_factors": {

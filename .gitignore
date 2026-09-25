@@ -12,3 +12,7 @@ __pycache__/
 # 로컬 산출물
 *.log
 .DS_Store
+
+# Bitstamp API 원본은 로컬 증거 자료이며 repository에 추가하지 않는다.
+data/raw/**/*.json
+data/raw/**/*.tmp

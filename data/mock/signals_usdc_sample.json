@@ -1,5 +1,6 @@
 [
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-20230311-0001",
     "source": "onchain",
     "coin": "USDC",
@@ -9,6 +10,7 @@
     "meta": { "exchange": "aggregate" }
   },
   {
+    "schema_version": 1,
     "signal_id": "onchain-usdc-20230311-0002",
     "source": "onchain",
     "coin": "USDC",
@@ -17,6 +19,7 @@
     "value": -188
   },
   {
+    "schema_version": 1,
     "signal_id": "offchain-usdc-20230310-0001",
     "source": "offchain",
     "coin": "USDC",

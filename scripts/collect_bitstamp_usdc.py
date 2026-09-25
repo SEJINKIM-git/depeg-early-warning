@@ -1,0 +1,74 @@
+"""Collect Bitstamp USDC/USD hourly prices and print Signal v1 JSON."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+import requests
+
+from src.collectors.onchain import (
+    DEFAULT_MAX_RETRIES,
+    DEFAULT_REQUEST_DELAY_SECONDS,
+    fetch_signals_range,
+)
+from src.collectors.raw_store import RawResponseDirectory
+
+DEFAULT_RAW_DIRECTORY = Path("data/raw/bitstamp/usdcusd")
+
+
+def _parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Collect Bitstamp USDC/USD hourly Signal v1 JSON."
+    )
+    parser.add_argument("--start", required=True, help="Inclusive UTC start timestamp")
+    parser.add_argument("--end", required=True, help="Exclusive UTC end timestamp")
+    parser.add_argument(
+        "--request-delay",
+        type=float,
+        default=DEFAULT_REQUEST_DELAY_SECONDS,
+        help="Seconds between consecutive HTTP requests",
+    )
+    parser.add_argument(
+        "--max-retries",
+        type=int,
+        default=DEFAULT_MAX_RETRIES,
+        help="Retries after the initial attempt for each chunk",
+    )
+    parser.add_argument(
+        "--raw-directory",
+        type=Path,
+        default=DEFAULT_RAW_DIRECTORY,
+        help="Directory for unchanged successful HTTP response bodies",
+    )
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = _parser()
+    args = parser.parse_args(argv)
+    try:
+        signals = fetch_signals_range(
+            "USDC",
+            args.start,
+            args.end,
+            request_delay_seconds=args.request_delay,
+            max_retries=args.max_retries,
+            raw_response_sink=RawResponseDirectory(args.raw_directory),
+        )
+        output = json.dumps(
+            signals,
+            ensure_ascii=False,
+            indent=2,
+            allow_nan=False,
+        )
+    except (ValueError, RuntimeError, requests.RequestException) as error:
+        parser.exit(1, f"error: {error}\n")
+    sys.stdout.write(f"{output}\n")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

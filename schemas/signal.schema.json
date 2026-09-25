@@ -1,16 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://lab.local/schemas/signal.schema.json",
+  "$id": "https://lab.local/schemas/signal.v1.schema.json",
   "title": "Signal",
   "description": "온체인/오프체인 수집기가 리스크 엔진으로 보내는 단일 시그널. 역할 1·2의 출력 계약.",
   "type": "object",
-  "required": ["signal_id", "source", "coin", "observed_at", "metric", "value"],
+  "required": ["schema_version", "signal_id", "source", "coin", "observed_at", "metric", "value"],
   "additionalProperties": false,
   "properties": {
-    "signal_id": { "type": "string", "description": "수집기가 생성하는 고유 ID (중복 방지 키)" },
+    "schema_version": { "type": "integer", "const": 1, "description": "Signal 계약 버전. 이 스키마는 v1만 허용" },
+    "signal_id": { "type": "string", "minLength": 1, "description": "수집기가 생성하는 고유 ID (중복 방지 키)" },
     "source": { "type": "string", "enum": ["onchain", "offchain"], "description": "시그널 계열" },
     "coin": { "type": "string", "enum": ["USDC", "USDT"], "description": "대상 스테이블코인 (USDC부터 시작)" },
-    "observed_at": { "type": "string", "format": "date-time", "description": "관측 시각 (UTC ISO 8601)" },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$",
+      "description": "관측 시각 (초 단위 UTC ISO 8601, YYYY-MM-DDTHH:MM:SSZ)"
+    },
     "metric": {
       "type": "string",
       "enum": [
@@ -31,5 +37,39 @@
       "description": "출처 URL, 원본 파일명 등 부가 정보 (자유 형식)",
       "additionalProperties": true
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "metric": { "const": "price_usd" } } },
+      "then": { "properties": { "value": { "minimum": 0, "description": "코인 1개당 미국 달러 가격 (USD/coin)" } } }
+    },
+    {
+      "if": { "properties": { "metric": { "const": "peg_deviation_bps" } } },
+      "then": { "properties": { "value": { "minimum": -10000, "description": "1 USD 페그 대비 부호 있는 이탈폭, (price_usd - 1.0) × 10,000 bps. 음수는 페그 아래" } } }
+    },
+    {
+      "if": { "properties": { "metric": { "const": "pool_imbalance_ratio" } } },
+      "then": { "properties": { "value": { "minimum": 0, "maximum": 1, "description": "유동성 풀 불균형 비율 (0~1 fraction, 퍼센트 아님)" } } }
+    },
+    {
+      "if": { "properties": { "metric": { "const": "redemption_volume_usd" } } },
+      "then": { "properties": { "value": { "minimum": 0, "description": "해당 관측 구간의 상환 거래량 (USD)" } } }
+    },
+    {
+      "if": { "properties": { "metric": { "const": "reserve_cash_ratio" } } },
+      "then": { "properties": { "value": { "minimum": 0, "maximum": 1, "description": "전체 준비금 중 현금 비중 (0~1 fraction, 퍼센트 아님)" } } }
+    },
+    {
+      "if": { "properties": { "metric": { "const": "reserve_tbill_ratio" } } },
+      "then": { "properties": { "value": { "minimum": 0, "maximum": 1, "description": "전체 준비금 중 미국 단기국채 비중 (0~1 fraction, 퍼센트 아님)" } } }
+    },
+    {
+      "if": { "properties": { "metric": { "const": "attestation_age_days" } } },
+      "then": { "properties": { "value": { "minimum": 0, "description": "관측 시점 기준 최신 준비금 증명서의 경과 일수 (days)" } } }
+    },
+    {
+      "if": { "properties": { "metric": { "const": "news_risk_flag" } } },
+      "then": { "properties": { "value": { "enum": [0, 1], "description": "뉴스 위험 없음은 0, 있음은 1" } } }
+    }
+  ]
 }
