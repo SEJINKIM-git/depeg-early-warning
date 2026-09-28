@@ -320,7 +320,8 @@ def fetch_signals_range(
         attempt = 0
         while True:
             if request_count and request_delay_seconds:
-                sleep_fn(request_delay_seconds)
+                delay_multiplier = 2 ** max(attempt - 1, 0)
+                sleep_fn(request_delay_seconds * delay_multiplier)
             request_count += 1
             try:
                 chunk_start_text = normalize_timestamp(chunk_start)

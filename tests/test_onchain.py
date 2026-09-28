@@ -16,7 +16,12 @@ from src.collectors.onchain import (
 
 START_TIME = "2023-03-09T00:00:00Z"
 END_TIME = "2023-03-14T00:00:00Z"
-HISTORICAL_DATA = Path("data/historical/signals_usdc_2023_depeg_hourly.json")
+DEPEG_HISTORICAL_DATA = Path(
+    "data/historical/signals_usdc_2023_depeg_hourly.json"
+)
+CALM_HISTORICAL_DATA = Path(
+    "data/historical/signals_usdc_2023_calm_hourly.json"
+)
 SIGNAL_SCHEMA = Path("schemas/signal.schema.json")
 
 
@@ -255,16 +260,41 @@ def test_rows_to_signals_rejects_duplicate_hourly_timestamp():
         rows_to_signals("USDC", rows, START_TIME, "2023-03-09T02:00:00Z")
 
 
-def test_historical_signals_are_complete_unique_and_schema_valid():
-    signals = json.loads(HISTORICAL_DATA.read_text(encoding="utf-8"))
+@pytest.mark.parametrize(
+    ("historical_data", "start_time", "expected_hours"),
+    [
+        (
+            DEPEG_HISTORICAL_DATA,
+            datetime(2023, 3, 9, tzinfo=timezone.utc),
+            120,
+        ),
+        (
+            CALM_HISTORICAL_DATA,
+            datetime(2023, 1, 15, tzinfo=timezone.utc),
+            672,
+        ),
+    ],
+)
+def test_historical_signals_are_complete_unique_and_schema_valid(
+    historical_data,
+    start_time,
+    expected_hours,
+):
+    signals = json.loads(historical_data.read_text(encoding="utf-8"))
     schema = json.loads(SIGNAL_SCHEMA.read_text(encoding="utf-8"))
     validator = Draft202012Validator(
         schema, format_checker=Draft202012Validator.FORMAT_CHECKER
     )
 
-    assert len(signals) == 240
+    assert len(signals) == expected_hours * 2
     for signal in signals:
         validator.validate(signal)
+
+    signal_keys = [
+        (signal["observed_at"], signal["metric"])
+        for signal in signals
+    ]
+    assert len(signal_keys) == len(set(signal_keys))
 
     price_times = [
         signal["observed_at"]
@@ -272,25 +302,30 @@ def test_historical_signals_are_complete_unique_and_schema_valid():
         if signal["metric"] == "price_usd"
     ]
     expected_times = [
-        (datetime(2023, 3, 9, tzinfo=timezone.utc) + timedelta(hours=hour)).strftime(
-            "%Y-%m-%dT%H:%M:%SZ"
-        )
-        for hour in range(120)
+        (start_time + timedelta(hours=hour)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        for hour in range(expected_hours)
     ]
+
+    # Historical exports must be complete and stored in chronological order.
     assert price_times == expected_times
-    assert len(price_times) == len(set(price_times)) == 120
-    assert price_times[0] == "2023-03-09T00:00:00Z"
-    assert price_times[-1] == "2023-03-13T23:00:00Z"
+    assert len(price_times) == len(set(price_times)) == expected_hours
 
     metrics_by_time: dict[str, set[str]] = {}
     prices_by_time: dict[str, float] = {}
     peg_deviations_by_time: dict[str, float] = {}
+
     for signal in signals:
-        metrics_by_time.setdefault(signal["observed_at"], set()).add(signal["metric"])
+        metrics_by_time.setdefault(
+            signal["observed_at"], set()
+        ).add(signal["metric"])
+
         if signal["metric"] == "price_usd":
             prices_by_time[signal["observed_at"]] = signal["value"]
+
         if signal["metric"] == "peg_deviation_bps":
             peg_deviations_by_time[signal["observed_at"]] = signal["value"]
+
+    assert set(metrics_by_time) == set(expected_times)
     assert all(
         metrics == {"price_usd", "peg_deviation_bps"}
         for metrics in metrics_by_time.values()
