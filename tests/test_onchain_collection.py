@@ -95,7 +95,7 @@ def test_fetch_signals_range_chunks_without_duplicate_or_missing_hours():
     ]
     assert len(price_times) == len(set(price_times)) == 1_001
     assert price_times == [
-        _iso(START + timedelta(hours=hour)) for hour in range(1_001)
+        _iso(START + timedelta(hours=hour + 1)) for hour in range(1_001)
     ]
 
 

@@ -5,18 +5,30 @@ USDC/USD 가격을 Signal v1 형식으로 변환한 결과다. 각 `price_usd` �
 1시간 캔들의 종가이며, 같은 시각의 `peg_deviation_bps`는
 `(price_usd - 1.0) * 10,000`을 소수 둘째 자리로 반올림해 계산한다.
 
-## 수집 구간
+## 시각 의미와 수집 구간
 
-| 구분 | 파일 | 시작(포함) | 종료(제외) | 시간 | 시그널 수 |
-| --- | --- | --- | --- | ---: | ---: |
-| 위기 | `signals_usdc_2023_depeg_hourly.json` | `2023-03-09T00:00:00Z` | `2023-03-14T00:00:00Z` | 120 | 240 |
-| 평시 | `signals_usdc_2023_calm_hourly.json` | `2023-01-15T00:00:00Z` | `2023-02-12T00:00:00Z` | 672 | 1,344 |
+Bitstamp OHLC의 `timestamp`는 1시간 캔들의 시작 시각이다. 해당 캔들의 `close`는
+1시간 뒤 캔들이 종료되어야 확정되므로, Signal의 `observed_at`과 `signal_id`에는
+캔들 시작 시각에 1시간을 더한 시각을 사용한다. 반면 API 요청 범위와 캔들 누락·중복
+및 시간 연속성 검사는 변환 전 캔들 시작 시각을 기준으로 유지한다.
 
-## 출처 기록
+| 구분 | 파일 | 요청 시작(포함) | 요청 종료(제외) | Signal 시각 범위 | 시간 | 시그널 수 |
+| --- | --- | --- | --- | --- | ---: | ---: |
+| 위기 | `signals_usdc_2023_depeg_hourly.json` | `2023-03-09T00:00:00Z` | `2023-03-14T00:00:00Z` | `2023-03-09T01:00:00Z`–`2023-03-14T00:00:00Z` | 120 | 240 |
+| 평시 | `signals_usdc_2023_calm_hourly.json` | `2023-01-15T00:00:00Z` | `2023-02-12T00:00:00Z` | `2023-01-15T01:00:00Z`–`2023-02-12T00:00:00Z` | 672 | 1,344 |
+
+## 출처와 Bitstamp 선정 이유
 
 기존 데이터의 출처 기록 파일은 `USDC price data.xlsx`다. 이 파일에는 공통으로
 `Source: Bitstamp Public API, USDC/USD OHLC endpoint`, 데이터 접근·수집일
 `2026-09-18`, `Interval: 1 hour (step=3600)`이 기록되어 있다.
+
+초기 후보였던 CryptoCompare와 DefiLlama는 필요한 과거 USDC/USD 시간 단위 데이터를
+무료 조건으로 확보하기 어려워 유료 접근이 필요했다. Bitstamp public OHLC API는
+무료로 사용할 수 있었고, 회원가입이나 API 키 없이 필요한 2023년 USDC/USD hourly
+OHLC 데이터를 수집할 수 있었다. 따라서 비용과 재현 가능성 때문에 Bitstamp를
+선택했다. 공개 엔드포인트이지만 정확한 호출 한도는 문서에서 확인하지 못했으므로
+수집기는 요청 간 대기와 재시도를 적용한다.
 
 | 구분 | 엑셀에 기록된 기간 | API URL |
 | --- | --- | --- |
@@ -87,9 +99,10 @@ raw 파일명은 요청 청크의 시작과 종료를 포함하는
 기록한 엑셀 파일의 SHA-256은 당시 raw JSON의 해시를 대신하지 않는다.
 
 raw 출처를 복구하기 위해 `2026-09-28T09:03:16Z`에 같은 요청 기간을 다시 수집했다.
-재수집한 Signal 결과를 기존 historical JSON과 비교한 결과 전체 시그널 수,
-`(observed_at, metric)` 키와 배열 순서, 각 `value`, `schema_version`, 시간 범위 및
-전체 JSON 배열이 두 기간 모두 동일했다. 기존 historical JSON은 수정하지 않았다.
+재수집한 Signal 결과를 시각 보정 전 기존 historical JSON과 비교한 결과 전체 시그널
+수, 배열 순서, 각 `value`, `metric`, `schema_version` 및 나머지 Signal 필드는 두
+기간 모두 동일했다. 현재 historical JSON은 캔들 종가 확정 시각을 표현하기 위해
+`observed_at`과 이에 포함되는 `signal_id`만 정확히 1시간 뒤로 보정했다.
 
 | 구분 | 요청 기간 (`--start` 포함, `--end` 제외) | 재검증 raw 파일명 | SHA-256 |
 | --- | --- | --- | --- |
@@ -106,8 +119,8 @@ Get-FileHash -Algorithm SHA256 data/raw/bitstamp/usdcusd/*.json
 ```
 
 엑셀을 이용한 검토 과정에서 데이터 값을 수동으로 수정하지 않았다. historical
-파일은 수집 결과를 코드로 변환한 값이며, 테스트에서 시간 연속성, 중복, 스키마,
-가격과 페그 이탈값의 일치 여부를 검사한다.
+파일은 수집 결과를 코드로 변환한 값이며, 테스트에서 시간 연속성, `(observed_at,
+metric)` 및 `signal_id` 중복, 스키마, 가격과 페그 이탈값의 일치 여부를 검사한다.
 
 엑셀에는 `close price`와 `volume`이 있지만 현재 historical Signal JSON에는 거래량을
 포함하지 않았다. 현재 파일에는 1시간 종가로 만든 `price_usd`와 가격에서 계산한

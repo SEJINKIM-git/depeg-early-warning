@@ -197,7 +197,9 @@ def rows_to_signals(
 
     signals: list[dict[str, Any]] = []
     for timestamp, row in filtered_rows:
-        observed_at = normalize_timestamp(timestamp)
+        # Bitstamp's OHLC timestamp marks the beginning of the hourly candle.
+        # The close is only available after that hour has ended.
+        observed_at = normalize_timestamp(timestamp + BITSTAMP_STEP_SECONDS)
         price_usd = _normalize_price(row.get("close"))
         signals.extend(
             (
@@ -357,7 +359,13 @@ def fetch_signals_range(
         chunk_start = chunk_end
 
     price_rows = [
-        {"timestamp": signal["observed_at"], "close": signal["value"]}
+        {
+            # rows_to_signals expects the beginning of each Bitstamp candle,
+            # whereas collected signals are labelled with the candle close time.
+            "timestamp": _to_epoch_seconds(signal["observed_at"])
+            - BITSTAMP_STEP_SECONDS,
+            "close": signal["value"],
+        }
         for signal in collected
         if signal["metric"] == "price_usd"
     ]

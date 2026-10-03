@@ -45,9 +45,9 @@ def test_rows_to_signals_converts_timestamps_filters_range_and_sorts():
     )
 
     assert [signal["observed_at"] for signal in signals[::2]] == [
-        "2023-03-09T00:00:00Z",
         "2023-03-09T01:00:00Z",
         "2023-03-09T02:00:00Z",
+        "2023-03-09T03:00:00Z",
     ]
     assert [signal["value"] for signal in signals[::2]] == [0.99, 0.97, 0.98]
     assert [signal["metric"] for signal in signals] == [
@@ -96,9 +96,9 @@ def test_rows_to_signals_normalizes_mixed_timestamp_types_and_sorts():
     )
 
     assert [signal["observed_at"] for signal in signals[::2]] == [
-        "2023-03-09T00:00:00Z",
         "2023-03-09T01:00:00Z",
         "2023-03-09T02:00:00Z",
+        "2023-03-09T03:00:00Z",
     ]
 
 
@@ -167,7 +167,8 @@ def test_fetch_signals_uses_bitstamp_parameters(mock_get):
     )
     mock_get.return_value.raise_for_status.assert_called_once_with()
     assert len(signals) == 240
-    assert signals[0]["observed_at"] == START_TIME
+    assert signals[0]["observed_at"] == "2023-03-09T01:00:00Z"
+    assert signals[0]["signal_id"] == "onchain-usdc-2023-03-09T01:00:00Z-price"
 
 
 @patch("src.collectors.onchain.requests.get")
@@ -296,13 +297,16 @@ def test_historical_signals_are_complete_unique_and_schema_valid(
     ]
     assert len(signal_keys) == len(set(signal_keys))
 
+    signal_ids = [signal["signal_id"] for signal in signals]
+    assert len(signal_ids) == len(set(signal_ids))
+
     price_times = [
         signal["observed_at"]
         for signal in signals
         if signal["metric"] == "price_usd"
     ]
     expected_times = [
-        (start_time + timedelta(hours=hour)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        (start_time + timedelta(hours=hour + 1)).strftime("%Y-%m-%dT%H:%M:%SZ")
         for hour in range(expected_hours)
     ]
 
