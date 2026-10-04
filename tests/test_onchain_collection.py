@@ -95,7 +95,7 @@ def test_fetch_signals_range_chunks_without_duplicate_or_missing_hours():
     ]
     assert len(price_times) == len(set(price_times)) == 1_001
     assert price_times == [
-        _iso(START + timedelta(hours=hour)) for hour in range(1_001)
+        _iso(START + timedelta(hours=hour + 1)) for hour in range(1_001)
     ]
 
 
@@ -130,6 +130,35 @@ def test_fetch_signals_range_retries_transient_errors(transient_error):
     sleep.assert_called_once_with(0.25)
 
 
+def test_fetch_signals_range_uses_exponential_backoff_for_repeated_429s():
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    expected = _signals_for_range("USDC", start, end)
+    fetch = Mock(
+        side_effect=[
+            _http_error(429),
+            _http_error(429),
+            _http_error(429),
+            expected,
+        ]
+    )
+    sleep = Mock()
+
+    signals = fetch_signals_range(
+        "USDC",
+        start,
+        end,
+        request_delay_seconds=1.0,
+        max_retries=3,
+        fetch_fn=fetch,
+        sleep_fn=sleep,
+    )
+
+    assert signals == expected
+    assert fetch.call_count == 4
+    assert sleep.call_args_list == [call(1.0), call(2.0), call(4.0)]
+
+
 def test_fetch_signals_range_fails_after_retry_limit():
     start = _iso(START)
     end = _iso(START + timedelta(hours=1))
@@ -148,7 +177,7 @@ def test_fetch_signals_range_fails_after_retry_limit():
         )
 
     assert fetch.call_count == 3
-    assert sleep.call_args_list == [call(0.1), call(0.1)]
+    assert sleep.call_args_list == [call(0.1), call(0.2)]
 
 
 def test_fetch_signals_range_does_not_retry_regular_http_4xx():

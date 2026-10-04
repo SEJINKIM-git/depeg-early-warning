@@ -1,24 +1,6 @@
 [
   {
     "schema_version": 1,
-    "signal_id": "onchain-usdc-2023-03-09T00:00:00Z-price",
-    "source": "onchain",
-    "coin": "USDC",
-    "observed_at": "2023-03-09T00:00:00Z",
-    "metric": "price_usd",
-    "value": 0.99988
-  },
-  {
-    "schema_version": 1,
-    "signal_id": "onchain-usdc-2023-03-09T00:00:00Z-pegdev",
-    "source": "onchain",
-    "coin": "USDC",
-    "observed_at": "2023-03-09T00:00:00Z",
-    "metric": "peg_deviation_bps",
-    "value": -1.2
-  },
-  {
-    "schema_version": 1,
     "signal_id": "onchain-usdc-2023-03-09T01:00:00Z-price",
     "source": "onchain",
     "coin": "USDC",
@@ -42,7 +24,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T02:00:00Z",
     "metric": "price_usd",
-    "value": 0.99989
+    "value": 0.99988
   },
   {
     "schema_version": 1,
@@ -51,7 +33,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T02:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.1
+    "value": -1.2
   },
   {
     "schema_version": 1,
@@ -60,7 +42,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T03:00:00Z",
     "metric": "price_usd",
-    "value": 0.99987
+    "value": 0.99989
   },
   {
     "schema_version": 1,
@@ -69,7 +51,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T03:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.3
+    "value": -1.1
   },
   {
     "schema_version": 1,
@@ -150,7 +132,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T08:00:00Z",
     "metric": "price_usd",
-    "value": 0.99988
+    "value": 0.99987
   },
   {
     "schema_version": 1,
@@ -159,7 +141,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T08:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.2
+    "value": -1.3
   },
   {
     "schema_version": 1,
@@ -168,7 +150,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T09:00:00Z",
     "metric": "price_usd",
-    "value": 0.99987
+    "value": 0.99988
   },
   {
     "schema_version": 1,
@@ -177,7 +159,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T09:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.3
+    "value": -1.2
   },
   {
     "schema_version": 1,
@@ -186,7 +168,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T10:00:00Z",
     "metric": "price_usd",
-    "value": 0.99988
+    "value": 0.99987
   },
   {
     "schema_version": 1,
@@ -195,7 +177,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T10:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.2
+    "value": -1.3
   },
   {
     "schema_version": 1,
@@ -204,7 +186,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T11:00:00Z",
     "metric": "price_usd",
-    "value": 0.99983
+    "value": 0.99988
   },
   {
     "schema_version": 1,
@@ -213,7 +195,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T11:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.7
+    "value": -1.2
   },
   {
     "schema_version": 1,
@@ -222,7 +204,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T12:00:00Z",
     "metric": "price_usd",
-    "value": 0.99982
+    "value": 0.99983
   },
   {
     "schema_version": 1,
@@ -231,7 +213,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T12:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.8
+    "value": -1.7
   },
   {
     "schema_version": 1,
@@ -240,7 +222,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T13:00:00Z",
     "metric": "price_usd",
-    "value": 0.99992
+    "value": 0.99982
   },
   {
     "schema_version": 1,
@@ -249,7 +231,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T13:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.8
+    "value": -1.8
   },
   {
     "schema_version": 1,
@@ -258,7 +240,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T14:00:00Z",
     "metric": "price_usd",
-    "value": 0.99994
+    "value": 0.99992
   },
   {
     "schema_version": 1,
@@ -267,7 +249,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T14:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.6
+    "value": -0.8
   },
   {
     "schema_version": 1,
@@ -294,7 +276,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T16:00:00Z",
     "metric": "price_usd",
-    "value": 0.99993
+    "value": 0.99994
   },
   {
     "schema_version": 1,
@@ -303,7 +285,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T16:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.7
+    "value": -0.6
   },
   {
     "schema_version": 1,
@@ -312,7 +294,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T17:00:00Z",
     "metric": "price_usd",
-    "value": 0.99994
+    "value": 0.99993
   },
   {
     "schema_version": 1,
@@ -321,7 +303,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T17:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.6
+    "value": -0.7
   },
   {
     "schema_version": 1,
@@ -330,7 +312,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T18:00:00Z",
     "metric": "price_usd",
-    "value": 0.99983
+    "value": 0.99994
   },
   {
     "schema_version": 1,
@@ -339,7 +321,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T18:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.7
+    "value": -0.6
   },
   {
     "schema_version": 1,
@@ -348,7 +330,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T19:00:00Z",
     "metric": "price_usd",
-    "value": 0.99994
+    "value": 0.99983
   },
   {
     "schema_version": 1,
@@ -357,7 +339,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T19:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.6
+    "value": -1.7
   },
   {
     "schema_version": 1,
@@ -402,7 +384,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T22:00:00Z",
     "metric": "price_usd",
-    "value": 0.99992
+    "value": 0.99994
   },
   {
     "schema_version": 1,
@@ -411,7 +393,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T22:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.8
+    "value": -0.6
   },
   {
     "schema_version": 1,
@@ -420,7 +402,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T23:00:00Z",
     "metric": "price_usd",
-    "value": 0.99993
+    "value": 0.99992
   },
   {
     "schema_version": 1,
@@ -429,7 +411,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-09T23:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.7
+    "value": -0.8
   },
   {
     "schema_version": 1,
@@ -438,7 +420,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T00:00:00Z",
     "metric": "price_usd",
-    "value": 0.99994
+    "value": 0.99993
   },
   {
     "schema_version": 1,
@@ -447,7 +429,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T00:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.6
+    "value": -0.7
   },
   {
     "schema_version": 1,
@@ -456,7 +438,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T01:00:00Z",
     "metric": "price_usd",
-    "value": 0.99993
+    "value": 0.99994
   },
   {
     "schema_version": 1,
@@ -465,7 +447,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T01:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.7
+    "value": -0.6
   },
   {
     "schema_version": 1,
@@ -492,7 +474,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T03:00:00Z",
     "metric": "price_usd",
-    "value": 0.99992
+    "value": 0.99993
   },
   {
     "schema_version": 1,
@@ -501,7 +483,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T03:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.8
+    "value": -0.7
   },
   {
     "schema_version": 1,
@@ -510,7 +492,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T04:00:00Z",
     "metric": "price_usd",
-    "value": 0.99996
+    "value": 0.99992
   },
   {
     "schema_version": 1,
@@ -519,7 +501,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T04:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.4
+    "value": -0.8
   },
   {
     "schema_version": 1,
@@ -528,7 +510,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T05:00:00Z",
     "metric": "price_usd",
-    "value": 1.0
+    "value": 0.99996
   },
   {
     "schema_version": 1,
@@ -537,7 +519,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T05:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": 0.0
+    "value": -0.4
   },
   {
     "schema_version": 1,
@@ -564,7 +546,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T07:00:00Z",
     "metric": "price_usd",
-    "value": 0.99995
+    "value": 1.0
   },
   {
     "schema_version": 1,
@@ -573,7 +555,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T07:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.5
+    "value": 0.0
   },
   {
     "schema_version": 1,
@@ -582,7 +564,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T08:00:00Z",
     "metric": "price_usd",
-    "value": 0.9993
+    "value": 0.99995
   },
   {
     "schema_version": 1,
@@ -591,7 +573,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T08:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -7.0
+    "value": -0.5
   },
   {
     "schema_version": 1,
@@ -600,7 +582,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T09:00:00Z",
     "metric": "price_usd",
-    "value": 0.99997
+    "value": 0.9993
   },
   {
     "schema_version": 1,
@@ -609,7 +591,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T09:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.3
+    "value": -7.0
   },
   {
     "schema_version": 1,
@@ -618,7 +600,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T10:00:00Z",
     "metric": "price_usd",
-    "value": 1.0
+    "value": 0.99997
   },
   {
     "schema_version": 1,
@@ -627,7 +609,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T10:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": 0.0
+    "value": -0.3
   },
   {
     "schema_version": 1,
@@ -636,7 +618,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T11:00:00Z",
     "metric": "price_usd",
-    "value": 0.99999
+    "value": 1.0
   },
   {
     "schema_version": 1,
@@ -645,7 +627,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T11:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.1
+    "value": 0.0
   },
   {
     "schema_version": 1,
@@ -672,7 +654,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T13:00:00Z",
     "metric": "price_usd",
-    "value": 0.99998
+    "value": 0.99999
   },
   {
     "schema_version": 1,
@@ -681,7 +663,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T13:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.2
+    "value": -0.1
   },
   {
     "schema_version": 1,
@@ -690,7 +672,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T14:00:00Z",
     "metric": "price_usd",
-    "value": 0.99997
+    "value": 0.99998
   },
   {
     "schema_version": 1,
@@ -699,7 +681,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T14:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.3
+    "value": -0.2
   },
   {
     "schema_version": 1,
@@ -726,7 +708,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T16:00:00Z",
     "metric": "price_usd",
-    "value": 1.00002
+    "value": 0.99997
   },
   {
     "schema_version": 1,
@@ -735,7 +717,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T16:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": 0.2
+    "value": -0.3
   },
   {
     "schema_version": 1,
@@ -762,7 +744,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T18:00:00Z",
     "metric": "price_usd",
-    "value": 0.99997
+    "value": 1.00002
   },
   {
     "schema_version": 1,
@@ -771,7 +753,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T18:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -0.3
+    "value": 0.2
   },
   {
     "schema_version": 1,
@@ -798,7 +780,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T20:00:00Z",
     "metric": "price_usd",
-    "value": 0.99987
+    "value": 0.99997
   },
   {
     "schema_version": 1,
@@ -807,7 +789,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T20:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1.3
+    "value": -0.3
   },
   {
     "schema_version": 1,
@@ -816,7 +798,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T21:00:00Z",
     "metric": "price_usd",
-    "value": 0.9998
+    "value": 0.99987
   },
   {
     "schema_version": 1,
@@ -825,7 +807,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T21:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -2.0
+    "value": -1.3
   },
   {
     "schema_version": 1,
@@ -834,7 +816,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T22:00:00Z",
     "metric": "price_usd",
-    "value": 0.99799
+    "value": 0.9998
   },
   {
     "schema_version": 1,
@@ -843,7 +825,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T22:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -20.1
+    "value": -2.0
   },
   {
     "schema_version": 1,
@@ -852,7 +834,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T23:00:00Z",
     "metric": "price_usd",
-    "value": 0.99773
+    "value": 0.99799
   },
   {
     "schema_version": 1,
@@ -861,7 +843,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-10T23:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -22.7
+    "value": -20.1
   },
   {
     "schema_version": 1,
@@ -870,7 +852,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T00:00:00Z",
     "metric": "price_usd",
-    "value": 0.99666
+    "value": 0.99773
   },
   {
     "schema_version": 1,
@@ -879,7 +861,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T00:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -33.4
+    "value": -22.7
   },
   {
     "schema_version": 1,
@@ -888,7 +870,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T01:00:00Z",
     "metric": "price_usd",
-    "value": 0.99792
+    "value": 0.99666
   },
   {
     "schema_version": 1,
@@ -897,7 +879,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T01:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -20.8
+    "value": -33.4
   },
   {
     "schema_version": 1,
@@ -906,7 +888,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T02:00:00Z",
     "metric": "price_usd",
-    "value": 0.9993
+    "value": 0.99792
   },
   {
     "schema_version": 1,
@@ -915,7 +897,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T02:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -7.0
+    "value": -20.8
   },
   {
     "schema_version": 1,
@@ -924,7 +906,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T03:00:00Z",
     "metric": "price_usd",
-    "value": 0.997
+    "value": 0.9993
   },
   {
     "schema_version": 1,
@@ -933,7 +915,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T03:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -30.0
+    "value": -7.0
   },
   {
     "schema_version": 1,
@@ -942,7 +924,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T04:00:00Z",
     "metric": "price_usd",
-    "value": 0.98622
+    "value": 0.997
   },
   {
     "schema_version": 1,
@@ -951,7 +933,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T04:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -137.8
+    "value": -30.0
   },
   {
     "schema_version": 1,
@@ -960,7 +942,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T05:00:00Z",
     "metric": "price_usd",
-    "value": 0.933
+    "value": 0.98622
   },
   {
     "schema_version": 1,
@@ -969,7 +951,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T05:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -670.0
+    "value": -137.8
   },
   {
     "schema_version": 1,
@@ -978,7 +960,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T06:00:00Z",
     "metric": "price_usd",
-    "value": 0.88194
+    "value": 0.933
   },
   {
     "schema_version": 1,
@@ -987,7 +969,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T06:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1180.6
+    "value": -670.0
   },
   {
     "schema_version": 1,
@@ -996,7 +978,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T07:00:00Z",
     "metric": "price_usd",
-    "value": 0.86267
+    "value": 0.88194
   },
   {
     "schema_version": 1,
@@ -1005,7 +987,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T07:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1373.3
+    "value": -1180.6
   },
   {
     "schema_version": 1,
@@ -1014,7 +996,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T08:00:00Z",
     "metric": "price_usd",
-    "value": 0.92
+    "value": 0.86267
   },
   {
     "schema_version": 1,
@@ -1023,7 +1005,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T08:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -800.0
+    "value": -1373.3
   },
   {
     "schema_version": 1,
@@ -1032,7 +1014,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T09:00:00Z",
     "metric": "price_usd",
-    "value": 0.90205
+    "value": 0.92
   },
   {
     "schema_version": 1,
@@ -1041,7 +1023,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T09:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -979.5
+    "value": -800.0
   },
   {
     "schema_version": 1,
@@ -1050,7 +1032,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T10:00:00Z",
     "metric": "price_usd",
-    "value": 0.88364
+    "value": 0.90205
   },
   {
     "schema_version": 1,
@@ -1059,7 +1041,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T10:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -1163.6
+    "value": -979.5
   },
   {
     "schema_version": 1,
@@ -1068,7 +1050,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T11:00:00Z",
     "metric": "price_usd",
-    "value": 0.90911
+    "value": 0.88364
   },
   {
     "schema_version": 1,
@@ -1077,7 +1059,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T11:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -908.9
+    "value": -1163.6
   },
   {
     "schema_version": 1,
@@ -1086,7 +1068,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T12:00:00Z",
     "metric": "price_usd",
-    "value": 0.90446
+    "value": 0.90911
   },
   {
     "schema_version": 1,
@@ -1095,7 +1077,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T12:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -955.4
+    "value": -908.9
   },
   {
     "schema_version": 1,
@@ -1104,7 +1086,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T13:00:00Z",
     "metric": "price_usd",
-    "value": 0.91158
+    "value": 0.90446
   },
   {
     "schema_version": 1,
@@ -1113,7 +1095,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T13:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -884.2
+    "value": -955.4
   },
   {
     "schema_version": 1,
@@ -1122,7 +1104,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T14:00:00Z",
     "metric": "price_usd",
-    "value": 0.915
+    "value": 0.91158
   },
   {
     "schema_version": 1,
@@ -1131,7 +1113,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T14:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -850.0
+    "value": -884.2
   },
   {
     "schema_version": 1,
@@ -1140,7 +1122,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T15:00:00Z",
     "metric": "price_usd",
-    "value": 0.92399
+    "value": 0.915
   },
   {
     "schema_version": 1,
@@ -1149,7 +1131,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T15:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -760.1
+    "value": -850.0
   },
   {
     "schema_version": 1,
@@ -1158,7 +1140,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T16:00:00Z",
     "metric": "price_usd",
-    "value": 0.92839
+    "value": 0.92399
   },
   {
     "schema_version": 1,
@@ -1167,7 +1149,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T16:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -716.1
+    "value": -760.1
   },
   {
     "schema_version": 1,
@@ -1176,7 +1158,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T17:00:00Z",
     "metric": "price_usd",
-    "value": 0.95001
+    "value": 0.92839
   },
   {
     "schema_version": 1,
@@ -1185,7 +1167,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T17:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -499.9
+    "value": -716.1
   },
   {
     "schema_version": 1,
@@ -1194,7 +1176,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T18:00:00Z",
     "metric": "price_usd",
-    "value": 0.95359
+    "value": 0.95001
   },
   {
     "schema_version": 1,
@@ -1203,7 +1185,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T18:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -464.1
+    "value": -499.9
   },
   {
     "schema_version": 1,
@@ -1212,7 +1194,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T19:00:00Z",
     "metric": "price_usd",
-    "value": 0.9548
+    "value": 0.95359
   },
   {
     "schema_version": 1,
@@ -1221,7 +1203,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T19:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -452.0
+    "value": -464.1
   },
   {
     "schema_version": 1,
@@ -1230,7 +1212,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T20:00:00Z",
     "metric": "price_usd",
-    "value": 0.97333
+    "value": 0.9548
   },
   {
     "schema_version": 1,
@@ -1239,7 +1221,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T20:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -266.7
+    "value": -452.0
   },
   {
     "schema_version": 1,
@@ -1248,7 +1230,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T21:00:00Z",
     "metric": "price_usd",
-    "value": 0.95891
+    "value": 0.97333
   },
   {
     "schema_version": 1,
@@ -1257,7 +1239,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T21:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -410.9
+    "value": -266.7
   },
   {
     "schema_version": 1,
@@ -1266,7 +1248,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T22:00:00Z",
     "metric": "price_usd",
-    "value": 0.95002
+    "value": 0.95891
   },
   {
     "schema_version": 1,
@@ -1275,7 +1257,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T22:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -499.8
+    "value": -410.9
   },
   {
     "schema_version": 1,
@@ -1284,7 +1266,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T23:00:00Z",
     "metric": "price_usd",
-    "value": 0.96853
+    "value": 0.95002
   },
   {
     "schema_version": 1,
@@ -1293,7 +1275,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-11T23:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -314.7
+    "value": -499.8
   },
   {
     "schema_version": 1,
@@ -1302,7 +1284,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T00:00:00Z",
     "metric": "price_usd",
-    "value": 0.96763
+    "value": 0.96853
   },
   {
     "schema_version": 1,
@@ -1311,7 +1293,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T00:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -323.7
+    "value": -314.7
   },
   {
     "schema_version": 1,
@@ -1320,7 +1302,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T01:00:00Z",
     "metric": "price_usd",
-    "value": 0.985
+    "value": 0.96763
   },
   {
     "schema_version": 1,
@@ -1329,7 +1311,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T01:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -150.0
+    "value": -323.7
   },
   {
     "schema_version": 1,
@@ -1392,7 +1374,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T05:00:00Z",
     "metric": "price_usd",
-    "value": 0.98
+    "value": 0.985
   },
   {
     "schema_version": 1,
@@ -1401,7 +1383,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T05:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -200.0
+    "value": -150.0
   },
   {
     "schema_version": 1,
@@ -1410,7 +1392,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T06:00:00Z",
     "metric": "price_usd",
-    "value": 0.95737
+    "value": 0.98
   },
   {
     "schema_version": 1,
@@ -1419,7 +1401,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T06:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -426.3
+    "value": -200.0
   },
   {
     "schema_version": 1,
@@ -1428,7 +1410,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T07:00:00Z",
     "metric": "price_usd",
-    "value": 0.94757
+    "value": 0.95737
   },
   {
     "schema_version": 1,
@@ -1437,7 +1419,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T07:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -524.3
+    "value": -426.3
   },
   {
     "schema_version": 1,
@@ -1446,7 +1428,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T08:00:00Z",
     "metric": "price_usd",
-    "value": 0.95234
+    "value": 0.94757
   },
   {
     "schema_version": 1,
@@ -1455,7 +1437,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T08:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -476.6
+    "value": -524.3
   },
   {
     "schema_version": 1,
@@ -1464,7 +1446,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T09:00:00Z",
     "metric": "price_usd",
-    "value": 0.95553
+    "value": 0.95234
   },
   {
     "schema_version": 1,
@@ -1473,7 +1455,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T09:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -444.7
+    "value": -476.6
   },
   {
     "schema_version": 1,
@@ -1482,7 +1464,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T10:00:00Z",
     "metric": "price_usd",
-    "value": 0.9588
+    "value": 0.95553
   },
   {
     "schema_version": 1,
@@ -1491,7 +1473,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T10:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -412.0
+    "value": -444.7
   },
   {
     "schema_version": 1,
@@ -1500,7 +1482,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T11:00:00Z",
     "metric": "price_usd",
-    "value": 0.95789
+    "value": 0.9588
   },
   {
     "schema_version": 1,
@@ -1509,7 +1491,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T11:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -421.1
+    "value": -412.0
   },
   {
     "schema_version": 1,
@@ -1518,7 +1500,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T12:00:00Z",
     "metric": "price_usd",
-    "value": 0.95723
+    "value": 0.95789
   },
   {
     "schema_version": 1,
@@ -1527,7 +1509,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T12:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -427.7
+    "value": -421.1
   },
   {
     "schema_version": 1,
@@ -1536,7 +1518,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T13:00:00Z",
     "metric": "price_usd",
-    "value": 0.95826
+    "value": 0.95723
   },
   {
     "schema_version": 1,
@@ -1545,7 +1527,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T13:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -417.4
+    "value": -427.7
   },
   {
     "schema_version": 1,
@@ -1554,7 +1536,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T14:00:00Z",
     "metric": "price_usd",
-    "value": 0.9591
+    "value": 0.95826
   },
   {
     "schema_version": 1,
@@ -1563,7 +1545,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T14:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -409.0
+    "value": -417.4
   },
   {
     "schema_version": 1,
@@ -1572,7 +1554,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T15:00:00Z",
     "metric": "price_usd",
-    "value": 0.95904
+    "value": 0.9591
   },
   {
     "schema_version": 1,
@@ -1581,7 +1563,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T15:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -409.6
+    "value": -409.0
   },
   {
     "schema_version": 1,
@@ -1590,7 +1572,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T16:00:00Z",
     "metric": "price_usd",
-    "value": 0.95856
+    "value": 0.95904
   },
   {
     "schema_version": 1,
@@ -1599,7 +1581,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T16:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -414.4
+    "value": -409.6
   },
   {
     "schema_version": 1,
@@ -1608,7 +1590,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T17:00:00Z",
     "metric": "price_usd",
-    "value": 0.9657
+    "value": 0.95856
   },
   {
     "schema_version": 1,
@@ -1617,7 +1599,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T17:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -343.0
+    "value": -414.4
   },
   {
     "schema_version": 1,
@@ -1626,7 +1608,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T18:00:00Z",
     "metric": "price_usd",
-    "value": 0.96956
+    "value": 0.9657
   },
   {
     "schema_version": 1,
@@ -1635,7 +1617,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T18:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -304.4
+    "value": -343.0
   },
   {
     "schema_version": 1,
@@ -1644,7 +1626,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T19:00:00Z",
     "metric": "price_usd",
-    "value": 0.96731
+    "value": 0.96956
   },
   {
     "schema_version": 1,
@@ -1653,7 +1635,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T19:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -326.9
+    "value": -304.4
   },
   {
     "schema_version": 1,
@@ -1662,7 +1644,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T20:00:00Z",
     "metric": "price_usd",
-    "value": 0.9692
+    "value": 0.96731
   },
   {
     "schema_version": 1,
@@ -1671,7 +1653,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T20:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -308.0
+    "value": -326.9
   },
   {
     "schema_version": 1,
@@ -1680,7 +1662,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T21:00:00Z",
     "metric": "price_usd",
-    "value": 0.96833
+    "value": 0.9692
   },
   {
     "schema_version": 1,
@@ -1689,7 +1671,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T21:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -316.7
+    "value": -308.0
   },
   {
     "schema_version": 1,
@@ -1698,7 +1680,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T22:00:00Z",
     "metric": "price_usd",
-    "value": 0.98945
+    "value": 0.96833
   },
   {
     "schema_version": 1,
@@ -1707,7 +1689,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T22:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -105.5
+    "value": -316.7
   },
   {
     "schema_version": 1,
@@ -1716,7 +1698,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T23:00:00Z",
     "metric": "price_usd",
-    "value": 0.99153
+    "value": 0.98945
   },
   {
     "schema_version": 1,
@@ -1725,7 +1707,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-12T23:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -84.7
+    "value": -105.5
   },
   {
     "schema_version": 1,
@@ -1734,7 +1716,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T00:00:00Z",
     "metric": "price_usd",
-    "value": 0.99516
+    "value": 0.99153
   },
   {
     "schema_version": 1,
@@ -1743,7 +1725,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T00:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -48.4
+    "value": -84.7
   },
   {
     "schema_version": 1,
@@ -1752,7 +1734,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T01:00:00Z",
     "metric": "price_usd",
-    "value": 0.99409
+    "value": 0.99516
   },
   {
     "schema_version": 1,
@@ -1761,7 +1743,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T01:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -59.1
+    "value": -48.4
   },
   {
     "schema_version": 1,
@@ -1770,7 +1752,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T02:00:00Z",
     "metric": "price_usd",
-    "value": 0.99465
+    "value": 0.99409
   },
   {
     "schema_version": 1,
@@ -1779,7 +1761,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T02:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -53.5
+    "value": -59.1
   },
   {
     "schema_version": 1,
@@ -1788,7 +1770,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T03:00:00Z",
     "metric": "price_usd",
-    "value": 0.99301
+    "value": 0.99465
   },
   {
     "schema_version": 1,
@@ -1797,7 +1779,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T03:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -69.9
+    "value": -53.5
   },
   {
     "schema_version": 1,
@@ -1806,7 +1788,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T04:00:00Z",
     "metric": "price_usd",
-    "value": 0.99174
+    "value": 0.99301
   },
   {
     "schema_version": 1,
@@ -1815,7 +1797,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T04:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -82.6
+    "value": -69.9
   },
   {
     "schema_version": 1,
@@ -1824,7 +1806,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T05:00:00Z",
     "metric": "price_usd",
-    "value": 0.99028
+    "value": 0.99174
   },
   {
     "schema_version": 1,
@@ -1833,7 +1815,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T05:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -97.2
+    "value": -82.6
   },
   {
     "schema_version": 1,
@@ -1842,7 +1824,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T06:00:00Z",
     "metric": "price_usd",
-    "value": 0.99097
+    "value": 0.99028
   },
   {
     "schema_version": 1,
@@ -1851,7 +1833,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T06:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -90.3
+    "value": -97.2
   },
   {
     "schema_version": 1,
@@ -1860,7 +1842,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T07:00:00Z",
     "metric": "price_usd",
-    "value": 0.99151
+    "value": 0.99097
   },
   {
     "schema_version": 1,
@@ -1869,7 +1851,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T07:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -84.9
+    "value": -90.3
   },
   {
     "schema_version": 1,
@@ -1878,7 +1860,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T08:00:00Z",
     "metric": "price_usd",
-    "value": 0.98843
+    "value": 0.99151
   },
   {
     "schema_version": 1,
@@ -1887,7 +1869,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T08:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -115.7
+    "value": -84.9
   },
   {
     "schema_version": 1,
@@ -1896,7 +1878,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T09:00:00Z",
     "metric": "price_usd",
-    "value": 0.99036
+    "value": 0.98843
   },
   {
     "schema_version": 1,
@@ -1905,7 +1887,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T09:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -96.4
+    "value": -115.7
   },
   {
     "schema_version": 1,
@@ -1914,7 +1896,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T10:00:00Z",
     "metric": "price_usd",
-    "value": 0.99
+    "value": 0.99036
   },
   {
     "schema_version": 1,
@@ -1923,7 +1905,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T10:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -100.0
+    "value": -96.4
   },
   {
     "schema_version": 1,
@@ -1950,7 +1932,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T12:00:00Z",
     "metric": "price_usd",
-    "value": 0.99058
+    "value": 0.99
   },
   {
     "schema_version": 1,
@@ -1959,7 +1941,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T12:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -94.2
+    "value": -100.0
   },
   {
     "schema_version": 1,
@@ -1968,7 +1950,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T13:00:00Z",
     "metric": "price_usd",
-    "value": 0.99636
+    "value": 0.99058
   },
   {
     "schema_version": 1,
@@ -1977,7 +1959,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T13:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -36.4
+    "value": -94.2
   },
   {
     "schema_version": 1,
@@ -1986,7 +1968,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T14:00:00Z",
     "metric": "price_usd",
-    "value": 0.99921
+    "value": 0.99636
   },
   {
     "schema_version": 1,
@@ -1995,7 +1977,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T14:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -7.9
+    "value": -36.4
   },
   {
     "schema_version": 1,
@@ -2004,7 +1986,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T15:00:00Z",
     "metric": "price_usd",
-    "value": 0.99866
+    "value": 0.99921
   },
   {
     "schema_version": 1,
@@ -2013,7 +1995,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T15:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -13.4
+    "value": -7.9
   },
   {
     "schema_version": 1,
@@ -2022,7 +2004,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T16:00:00Z",
     "metric": "price_usd",
-    "value": 0.99793
+    "value": 0.99866
   },
   {
     "schema_version": 1,
@@ -2031,7 +2013,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T16:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -20.7
+    "value": -13.4
   },
   {
     "schema_version": 1,
@@ -2040,7 +2022,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T17:00:00Z",
     "metric": "price_usd",
-    "value": 0.99812
+    "value": 0.99793
   },
   {
     "schema_version": 1,
@@ -2049,7 +2031,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T17:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -18.8
+    "value": -20.7
   },
   {
     "schema_version": 1,
@@ -2058,7 +2040,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T18:00:00Z",
     "metric": "price_usd",
-    "value": 0.99851
+    "value": 0.99812
   },
   {
     "schema_version": 1,
@@ -2067,7 +2049,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T18:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -14.9
+    "value": -18.8
   },
   {
     "schema_version": 1,
@@ -2076,7 +2058,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T19:00:00Z",
     "metric": "price_usd",
-    "value": 0.9987
+    "value": 0.99851
   },
   {
     "schema_version": 1,
@@ -2085,7 +2067,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T19:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -13.0
+    "value": -14.9
   },
   {
     "schema_version": 1,
@@ -2094,7 +2076,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T20:00:00Z",
     "metric": "price_usd",
-    "value": 0.99732
+    "value": 0.9987
   },
   {
     "schema_version": 1,
@@ -2103,7 +2085,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T20:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -26.8
+    "value": -13.0
   },
   {
     "schema_version": 1,
@@ -2112,7 +2094,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T21:00:00Z",
     "metric": "price_usd",
-    "value": 0.99665
+    "value": 0.99732
   },
   {
     "schema_version": 1,
@@ -2121,7 +2103,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T21:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -33.5
+    "value": -26.8
   },
   {
     "schema_version": 1,
@@ -2130,7 +2112,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T22:00:00Z",
     "metric": "price_usd",
-    "value": 0.99596
+    "value": 0.99665
   },
   {
     "schema_version": 1,
@@ -2139,7 +2121,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T22:00:00Z",
     "metric": "peg_deviation_bps",
-    "value": -40.4
+    "value": -33.5
   },
   {
     "schema_version": 1,
@@ -2148,7 +2130,7 @@
     "coin": "USDC",
     "observed_at": "2023-03-13T23:00:00Z",
     "metric": "price_usd",
-    "value": 0.99553
+    "value": 0.99596
   },
   {
     "schema_version": 1,
@@ -2156,6 +2138,24 @@
     "source": "onchain",
     "coin": "USDC",
     "observed_at": "2023-03-13T23:00:00Z",
+    "metric": "peg_deviation_bps",
+    "value": -40.4
+  },
+  {
+    "schema_version": 1,
+    "signal_id": "onchain-usdc-2023-03-14T00:00:00Z-price",
+    "source": "onchain",
+    "coin": "USDC",
+    "observed_at": "2023-03-14T00:00:00Z",
+    "metric": "price_usd",
+    "value": 0.99553
+  },
+  {
+    "schema_version": 1,
+    "signal_id": "onchain-usdc-2023-03-14T00:00:00Z-pegdev",
+    "source": "onchain",
+    "coin": "USDC",
+    "observed_at": "2023-03-14T00:00:00Z",
     "metric": "peg_deviation_bps",
     "value": -44.7
   }
