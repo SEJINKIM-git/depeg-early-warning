@@ -169,6 +169,7 @@ def test_fetch_signals_uses_bitstamp_parameters(mock_get):
     assert len(signals) == 240
     assert signals[0]["observed_at"] == "2023-03-09T01:00:00Z"
     assert signals[0]["signal_id"] == "onchain-usdc-2023-03-09T01:00:00Z-price"
+    assert signals[-1]["observed_at"] == END_TIME
 
 
 @patch("src.collectors.onchain.requests.get")

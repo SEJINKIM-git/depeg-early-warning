@@ -1,5 +1,6 @@
 import json
 from datetime import datetime, timedelta, timezone
+from email.utils import format_datetime
 from pathlib import Path
 from unittest.mock import Mock, call
 
@@ -31,8 +32,10 @@ def _signals_for_range(coin: str, start: str, end: str):
     return rows_to_signals(coin, rows, start, end)
 
 
-def _http_error(status_code: int) -> requests.HTTPError:
-    response = Mock(status_code=status_code)
+def _http_error(
+    status_code: int, headers: dict[str, str] | None = None
+) -> requests.HTTPError:
+    response = Mock(status_code=status_code, headers=headers or {})
     return requests.HTTPError(f"HTTP {status_code}", response=response)
 
 
@@ -104,6 +107,7 @@ def test_fetch_signals_range_chunks_without_duplicate_or_missing_hours():
     [
         requests.ConnectionError("connection failed"),
         requests.Timeout("timed out"),
+        _http_error(408),
         _http_error(429),
         _http_error(503),
     ],
@@ -120,6 +124,7 @@ def test_fetch_signals_range_retries_transient_errors(transient_error):
         start,
         end,
         request_delay_seconds=0.25,
+        retry_delay_seconds=0.25,
         max_retries=1,
         fetch_fn=fetch,
         sleep_fn=sleep,
@@ -149,6 +154,7 @@ def test_fetch_signals_range_uses_exponential_backoff_for_repeated_429s():
         start,
         end,
         request_delay_seconds=1.0,
+        retry_delay_seconds=1.0,
         max_retries=3,
         fetch_fn=fetch,
         sleep_fn=sleep,
@@ -171,6 +177,7 @@ def test_fetch_signals_range_fails_after_retry_limit():
             start,
             end,
             request_delay_seconds=0.1,
+            retry_delay_seconds=0.1,
             max_retries=2,
             fetch_fn=fetch,
             sleep_fn=sleep,
@@ -178,6 +185,146 @@ def test_fetch_signals_range_fails_after_retry_limit():
 
     assert fetch.call_count == 3
     assert sleep.call_args_list == [call(0.1), call(0.2)]
+
+
+def test_retry_wait_is_applied_when_normal_request_delay_is_zero():
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    expected = _signals_for_range("USDC", start, end)
+    fetch = Mock(side_effect=[requests.Timeout("timed out"), expected])
+    sleep = Mock()
+
+    fetch_signals_range(
+        "USDC",
+        start,
+        end,
+        request_delay_seconds=0,
+        retry_delay_seconds=0.75,
+        max_retries=1,
+        fetch_fn=fetch,
+        sleep_fn=sleep,
+    )
+
+    sleep.assert_called_once_with(0.75)
+
+
+def test_retry_after_seconds_takes_priority_over_exponential_backoff():
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    expected = _signals_for_range("USDC", start, end)
+    fetch = Mock(side_effect=[_http_error(429, {"Retry-After": "7"}), expected])
+    sleep = Mock()
+
+    fetch_signals_range(
+        "USDC",
+        start,
+        end,
+        request_delay_seconds=0,
+        retry_delay_seconds=1,
+        max_retry_delay_seconds=10,
+        max_retries=1,
+        fetch_fn=fetch,
+        sleep_fn=sleep,
+    )
+
+    sleep.assert_called_once_with(7.0)
+
+
+def test_retry_after_http_date_is_supported():
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    retry_now = datetime(2023, 1, 1, 12, tzinfo=timezone.utc)
+    retry_at = format_datetime(retry_now + timedelta(seconds=90), usegmt=True)
+    expected = _signals_for_range("USDC", start, end)
+    fetch = Mock(side_effect=[_http_error(503, {"Retry-After": retry_at}), expected])
+    sleep = Mock()
+
+    fetch_signals_range(
+        "USDC",
+        start,
+        end,
+        request_delay_seconds=0,
+        retry_delay_seconds=1,
+        max_retry_delay_seconds=10,
+        max_retries=1,
+        fetch_fn=fetch,
+        sleep_fn=sleep,
+        retry_now_fn=lambda: retry_now,
+    )
+
+    sleep.assert_called_once_with(90.0)
+
+
+def test_rate_limit_reset_takes_priority_over_maximum_backoff():
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    retry_now = datetime(2023, 1, 1, 12, tzinfo=timezone.utc)
+    reset_at = str(int((retry_now + timedelta(seconds=120)).timestamp()))
+    expected = _signals_for_range("USDC", start, end)
+    fetch = Mock(
+        side_effect=[_http_error(429, {"X-RateLimit-Reset": reset_at}), expected]
+    )
+    sleep = Mock()
+
+    fetch_signals_range(
+        "USDC",
+        start,
+        end,
+        request_delay_seconds=0,
+        retry_delay_seconds=1,
+        max_retry_delay_seconds=30,
+        max_retries=1,
+        fetch_fn=fetch,
+        sleep_fn=sleep,
+        retry_now_fn=lambda: retry_now,
+    )
+
+    sleep.assert_called_once_with(120.0)
+
+
+def test_invalid_retry_after_uses_capped_exponential_backoff():
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    expected = _signals_for_range("USDC", start, end)
+    error = _http_error(429, {"Retry-After": "not-a-delay"})
+    fetch = Mock(side_effect=[error, error, error, expected])
+    sleep = Mock()
+
+    fetch_signals_range(
+        "USDC",
+        start,
+        end,
+        request_delay_seconds=0,
+        retry_delay_seconds=2,
+        max_retry_delay_seconds=3,
+        max_retries=3,
+        fetch_fn=fetch,
+        sleep_fn=sleep,
+    )
+
+    assert sleep.call_args_list == [call(2), call(3), call(3)]
+
+
+def test_retry_after_is_not_capped_by_maximum_backoff_delay():
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    expected = _signals_for_range("USDC", start, end)
+    fetch = Mock(side_effect=[_http_error(429, {"Retry-After": "600"}), expected])
+    sleep = Mock()
+
+    fetch_signals_range(
+        "USDC",
+        start,
+        end,
+        request_delay_seconds=0,
+        retry_delay_seconds=1,
+        max_retry_delay_seconds=30,
+        max_retries=1,
+        fetch_fn=fetch,
+        sleep_fn=sleep,
+    )
+
+    sleep.assert_called_once_with(600.0)
 
 
 def test_fetch_signals_range_does_not_retry_regular_http_4xx():

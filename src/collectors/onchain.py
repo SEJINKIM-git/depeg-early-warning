@@ -8,6 +8,7 @@ from __future__ import annotations
 import time
 from collections.abc import Iterable, Mapping
 from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from math import ceil, isfinite
 from typing import Any, Callable, Protocol
 
@@ -22,6 +23,8 @@ BITSTAMP_MAX_HOURS_PER_REQUEST = BITSTAMP_MAX_LIMIT - 1
 REQUEST_TIMEOUT_SECONDS = 30
 DEFAULT_REQUEST_DELAY_SECONDS = 1.0
 DEFAULT_MAX_RETRIES = 3
+DEFAULT_RETRY_DELAY_SECONDS = 1.0
+DEFAULT_MAX_RETRY_DELAY_SECONDS = 60.0
 SUPPORTED_COINS = frozenset({"USDC"})
 TimestampValue = str | int | float | datetime
 FetchSignals = Callable[[str, TimestampValue, TimestampValue], list[dict[str, Any]]]
@@ -128,6 +131,11 @@ def _to_epoch_seconds(value: TimestampValue) -> int:
     return int(_to_utc_datetime(value).timestamp())
 
 
+def _bitstamp_candle_start_to_observed_at(value: TimestampValue) -> str:
+    """Bitstamp의 캔들 시작 시각을 내부의 종가 확정 시각(UTC)으로 변환한다."""
+    return normalize_timestamp(_to_epoch_seconds(value) + BITSTAMP_STEP_SECONDS)
+
+
 def _validate_completed_hour_end(end: datetime, now: datetime) -> None:
     if now.tzinfo is None:
         raise ValueError("current time must include a timezone")
@@ -197,9 +205,8 @@ def rows_to_signals(
 
     signals: list[dict[str, Any]] = []
     for timestamp, row in filtered_rows:
-        # Bitstamp's OHLC timestamp marks the beginning of the hourly candle.
-        # The close is only available after that hour has ended.
-        observed_at = normalize_timestamp(timestamp + BITSTAMP_STEP_SECONDS)
+        # 거래소 원시 시각 -> 내부 표준 시각 변환은 어댑터 경계에서만 수행한다.
+        observed_at = _bitstamp_candle_start_to_observed_at(timestamp)
         price_usd = _normalize_price(row.get("close"))
         signals.extend(
             (
@@ -274,8 +281,107 @@ def _is_retryable_request_error(error: requests.RequestException) -> bool:
         return True
     if isinstance(error, requests.HTTPError) and error.response is not None:
         status_code = error.response.status_code
-        return status_code == 429 or 500 <= status_code < 600
+        return status_code in {408, 429} or 500 <= status_code < 600
     return False
+
+
+def _response_header(error: requests.RequestException, name: str) -> str | None:
+    if not isinstance(error, requests.HTTPError) or error.response is None:
+        return None
+    headers = getattr(error.response, "headers", None)
+    if not isinstance(headers, Mapping):
+        return None
+    for key, value in headers.items():
+        if str(key).lower() == name.lower():
+            return str(value).strip()
+    return None
+
+
+def _parse_retry_after_seconds(
+    error: requests.RequestException, now: datetime
+) -> float | None:
+    """서버의 재요청 지시를 초로 변환한다. 해석할 수 없으면 None을 반환한다."""
+    retry_after = _response_header(error, "Retry-After")
+    if retry_after:
+        try:
+            delay = float(retry_after)
+        except ValueError:
+            try:
+                retry_at = parsedate_to_datetime(retry_after)
+                if retry_at.tzinfo is None:
+                    retry_at = retry_at.replace(tzinfo=timezone.utc)
+                delay = (retry_at.astimezone(timezone.utc) - now).total_seconds()
+            except (TypeError, ValueError, OverflowError):
+                delay = -1
+        if isfinite(delay) and delay >= 0:
+            return delay
+
+    # 여러 API가 Retry-After 대신 Unix epoch 재개 시각을 제공한다.
+    reset_at = _response_header(error, "X-RateLimit-Reset")
+    if reset_at:
+        try:
+            delay = float(reset_at) - now.timestamp()
+        except ValueError:
+            return None
+        if isfinite(delay) and delay >= 0:
+            return delay
+    return None
+
+
+def _retry_delay_seconds(
+    error: requests.RequestException,
+    retry_number: int,
+    retry_delay_seconds: float,
+    max_retry_delay_seconds: float,
+    now: datetime,
+) -> float:
+    """서버 지시를 우선하고, 없을 때만 상한 있는 지수 백오프를 계산한다."""
+    server_delay = _parse_retry_after_seconds(error, now)
+    if server_delay is not None:
+        return max(server_delay, retry_delay_seconds)
+
+    delay = retry_delay_seconds
+    for _ in range(max(retry_number - 1, 0)):
+        delay = min(delay * 2, max_retry_delay_seconds)
+        if delay >= max_retry_delay_seconds:
+            break
+    return min(delay, max_retry_delay_seconds)
+
+
+def _signals_from_collected_prices(
+    coin: str,
+    collected: list[dict[str, Any]],
+    start: datetime,
+    end: datetime,
+) -> list[dict[str, Any]]:
+    """내부 표준 종가 시각 범위를 검증하고 Signal 쌍을 정규화한다."""
+    prices = [signal for signal in collected if signal.get("metric") == "price_usd"]
+    observed_timestamps = [_to_epoch_seconds(signal.get("observed_at")) for signal in prices]
+    expected_timestamps = list(
+        range(
+            int(start.timestamp()) + BITSTAMP_STEP_SECONDS,
+            int(end.timestamp()) + BITSTAMP_STEP_SECONDS,
+            BITSTAMP_STEP_SECONDS,
+        )
+    )
+    if observed_timestamps != expected_timestamps:
+        if len(observed_timestamps) != len(set(observed_timestamps)):
+            raise ValueError("duplicate hourly Signal timestamps")
+        if set(expected_timestamps) - set(observed_timestamps):
+            raise ValueError("missing hourly Signal timestamps")
+        raise ValueError("unexpected hourly Signal timestamps")
+
+    normalized: list[dict[str, Any]] = []
+    for timestamp, signal in zip(observed_timestamps, prices):
+        observed_at = normalize_timestamp(timestamp)
+        price_usd = _normalize_price(signal.get("value"))
+        normalized.extend(
+            (
+                to_price_signal(coin, observed_at, price_usd),
+                to_peg_deviation_signal(coin, observed_at, price_usd),
+            )
+        )
+    return normalized
 
 
 def fetch_signals_range(
@@ -285,10 +391,13 @@ def fetch_signals_range(
     *,
     request_delay_seconds: float = DEFAULT_REQUEST_DELAY_SECONDS,
     max_retries: int = DEFAULT_MAX_RETRIES,
+    retry_delay_seconds: float = DEFAULT_RETRY_DELAY_SECONDS,
+    max_retry_delay_seconds: float = DEFAULT_MAX_RETRY_DELAY_SECONDS,
     sleep_fn: Sleep = time.sleep,
     fetch_fn: FetchSignals | None = None,
     raw_response_sink: RawResponseSink | None = None,
     now_fn: UtcNow = _utc_now,
+    retry_now_fn: UtcNow = _utc_now,
 ) -> list[dict[str, Any]]:
     """긴 기간을 안전한 Bitstamp 요청으로 나눠 완전한 Signal 목록을 수집한다."""
     normalized_coin = _normalize_coin(coin)
@@ -302,10 +411,19 @@ def fetch_signals_range(
         end.timestamp()
     ) % BITSTAMP_STEP_SECONDS:
         raise ValueError("start_time and end_time must be aligned to an hour")
-    if request_delay_seconds < 0:
-        raise ValueError("request_delay_seconds must be non-negative")
+    if not isfinite(request_delay_seconds) or request_delay_seconds < 0:
+        raise ValueError("request_delay_seconds must be finite and non-negative")
     if max_retries < 0:
         raise ValueError("max_retries must be non-negative")
+    if not isfinite(retry_delay_seconds) or retry_delay_seconds <= 0:
+        raise ValueError("retry_delay_seconds must be finite and positive")
+    if (
+        not isfinite(max_retry_delay_seconds)
+        or max_retry_delay_seconds < retry_delay_seconds
+    ):
+        raise ValueError(
+            "max_retry_delay_seconds must be at least retry_delay_seconds"
+        )
     if fetch_fn is not None and raw_response_sink is not None:
         raise ValueError("raw_response_sink requires the default fetch_signals")
 
@@ -319,11 +437,10 @@ def fetch_signals_range(
 
     while chunk_start < end:
         chunk_end = min(chunk_start + max_chunk_duration, end)
+        if request_count and request_delay_seconds:
+            sleep_fn(request_delay_seconds)
         attempt = 0
         while True:
-            if request_count and request_delay_seconds:
-                delay_multiplier = 2 ** max(attempt - 1, 0)
-                sleep_fn(request_delay_seconds * delay_multiplier)
             request_count += 1
             try:
                 chunk_start_text = normalize_timestamp(chunk_start)
@@ -353,20 +470,18 @@ def fetch_signals_range(
                         f"{normalize_timestamp(chunk_end)}"
                     ) from error
                 attempt += 1
+                # 정상 요청 지연과 별개로 서버 지시를 우선하고, 자체 백오프만 제한한다.
+                retry_delay = _retry_delay_seconds(
+                    error,
+                    attempt,
+                    retry_delay_seconds,
+                    max_retry_delay_seconds,
+                    retry_now_fn(),
+                )
+                sleep_fn(retry_delay)
                 continue
             collected.extend(chunk_signals)
             break
         chunk_start = chunk_end
 
-    price_rows = [
-        {
-            # rows_to_signals expects the beginning of each Bitstamp candle,
-            # whereas collected signals are labelled with the candle close time.
-            "timestamp": _to_epoch_seconds(signal["observed_at"])
-            - BITSTAMP_STEP_SECONDS,
-            "close": signal["value"],
-        }
-        for signal in collected
-        if signal["metric"] == "price_usd"
-    ]
-    return rows_to_signals(normalized_coin, price_rows, start, end)
+    return _signals_from_collected_prices(normalized_coin, collected, start, end)

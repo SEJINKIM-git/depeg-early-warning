@@ -263,6 +263,7 @@ def test_retry_stores_only_successful_response(mock_get, status, raw_tmp_path):
         "2023-01-01T01:00:00Z",
         request_delay_seconds=0,
         max_retries=1,
+        sleep_fn=Mock(),
         raw_response_sink=RawResponseDirectory(raw_directory),
     )
 

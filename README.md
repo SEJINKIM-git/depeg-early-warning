@@ -18,14 +18,26 @@ python -m pytest -q       # 계약 테스트
 
 ## Bitstamp hourly 수집
 
-USDC/USD의 완료된 hourly candle만 Signal v1 JSON으로 표준 출력한다. 긴 기간은 Bitstamp
-요청 제한에 맞춰 자동으로 나누며, `--end`는 포함하지 않는 종료 시각이다. 성공한
-각 chunk의 원본 HTTP body는 변형 없이 `data/raw/bitstamp/usdcusd/`에 저장한다.
-`--end`는 실행 시점의 현재 UTC hour boundary보다 늦을 수 없다.
+USDC/USD의 완료된 hourly candle만 Signal v1 JSON으로 표준 출력한다. 모든 시각은
+UTC이며 `--start`와 `--end`는 **Bitstamp 캔들 시작 시각**의 반열린 구간
+`[start, end)`를 뜻한다. Signal의 `observed_at`은 종가가 확정된 캔들 종료 시각이므로
+반환 범위는 `(start, end]`다. 예를 들어 아래 요청의 첫 Signal은
+`2023-03-09T01:00:00Z`, 마지막 Signal은 `2023-03-14T00:00:00Z`다.
+
+긴 기간은 Bitstamp 요청 제한에 맞춰 자동으로 나눈다. 성공한 각 chunk의 원본 HTTP
+body는 변형 없이 `data/raw/bitstamp/usdcusd/`에 저장하며, `--end`는 실행 시점의 현재
+UTC hour boundary보다 늦을 수 없다.
 
 ```bash
 python -m scripts.collect_bitstamp_usdc --start 2023-03-09T00:00:00Z --end 2023-03-14T00:00:00Z
 ```
+
+`--request-delay`는 정상 chunk 요청 사이의 대기 시간이다. 재시도 가능한 연결 오류,
+timeout, HTTP 408·429·5xx 뒤에는 이 값과 무관하게 `--retry-delay`부터 시작하는 지수
+백오프를 적용하고 자체 계산한 대기만 `--max-retry-delay`로 제한한다. 유효한
+`Retry-After`(초 또는 HTTP 날짜)나 `X-RateLimit-Reset`이 있으면 서버 값을 우선하며
+최소 대기는 보장하되 자체 백오프의 최대치로 줄이지 않는다. 그 밖의 HTTP 4xx는 즉시
+실패한다.
 
 Raw 파일명은
 `bitstamp_usdcusd_<chunk-start>_<chunk-end>.json`이고 Windows 호환을 위해 시각의
