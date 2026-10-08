@@ -10,8 +10,10 @@ from pathlib import Path
 import requests
 
 from src.collectors.onchain import (
+    DEFAULT_MAX_RETRY_DELAY_SECONDS,
     DEFAULT_MAX_RETRIES,
     DEFAULT_REQUEST_DELAY_SECONDS,
+    DEFAULT_RETRY_DELAY_SECONDS,
     fetch_signals_range,
 )
 from src.collectors.raw_store import RawResponseDirectory
@@ -23,8 +25,22 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Collect Bitstamp USDC/USD hourly Signal v1 JSON."
     )
-    parser.add_argument("--start", required=True, help="Inclusive UTC start timestamp")
-    parser.add_argument("--end", required=True, help="Exclusive UTC end timestamp")
+    parser.add_argument(
+        "--start",
+        required=True,
+        help=(
+            "Inclusive UTC candle-start boundary; the first Signal observed_at is "
+            "one hour later"
+        ),
+    )
+    parser.add_argument(
+        "--end",
+        required=True,
+        help=(
+            "Exclusive UTC candle-start boundary; the last Signal observed_at equals "
+            "this boundary"
+        ),
+    )
     parser.add_argument(
         "--request-delay",
         type=float,
@@ -36,6 +52,18 @@ def _parser() -> argparse.ArgumentParser:
         type=int,
         default=DEFAULT_MAX_RETRIES,
         help="Retries after the initial attempt for each chunk",
+    )
+    parser.add_argument(
+        "--retry-delay",
+        type=float,
+        default=DEFAULT_RETRY_DELAY_SECONDS,
+        help="Minimum retry delay in seconds (independent of --request-delay)",
+    )
+    parser.add_argument(
+        "--max-retry-delay",
+        type=float,
+        default=DEFAULT_MAX_RETRY_DELAY_SECONDS,
+        help="Maximum delay in seconds for locally calculated retry backoff",
     )
     parser.add_argument(
         "--raw-directory",
@@ -56,6 +84,8 @@ def main(argv: list[str] | None = None) -> int:
             args.end,
             request_delay_seconds=args.request_delay,
             max_retries=args.max_retries,
+            retry_delay_seconds=args.retry_delay,
+            max_retry_delay_seconds=args.max_retry_delay,
             raw_response_sink=RawResponseDirectory(args.raw_directory),
         )
         output = json.dumps(
