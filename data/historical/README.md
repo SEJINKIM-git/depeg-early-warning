@@ -1,5 +1,7 @@
 # USDC historical hourly signals
 
+전체 수집 경로와 필드·결측 처리 요약은 [데이터 출처](../../docs/데이터_출처.md)를 참조한다.
+
 이 디렉터리의 데이터는 Bitstamp public OHLC API의 `usdcusd` 시장에서 받은
 USDC/USD 가격을 Signal v1 형식으로 변환한 결과다. 각 `price_usd` 값은 UTC 기준
 1시간 캔들의 종가이며, 같은 시각의 `peg_deviation_bps`는
