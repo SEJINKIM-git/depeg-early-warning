@@ -63,7 +63,7 @@ def _parser() -> argparse.ArgumentParser:
         "--max-retry-delay",
         type=float,
         default=DEFAULT_MAX_RETRY_DELAY_SECONDS,
-        help="Maximum delay in seconds for locally calculated retry backoff",
+        help="Maximum retry delay in seconds, including server-directed waits",
     )
     parser.add_argument(
         "--raw-directory",

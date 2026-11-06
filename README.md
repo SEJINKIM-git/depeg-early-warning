@@ -34,10 +34,13 @@ python -m scripts.collect_bitstamp_usdc --start 2023-03-09T00:00:00Z --end 2023-
 
 `--request-delay`는 정상 chunk 요청 사이의 대기 시간이다. 재시도 가능한 연결 오류,
 timeout, HTTP 408·429·5xx 뒤에는 이 값과 무관하게 `--retry-delay`부터 시작하는 지수
-백오프를 적용하고 자체 계산한 대기만 `--max-retry-delay`로 제한한다. 유효한
-`Retry-After`(초 또는 HTTP 날짜)나 `X-RateLimit-Reset`이 있으면 서버 값을 우선하며
-최소 대기는 보장하되 자체 백오프의 최대치로 줄이지 않는다. 그 밖의 HTTP 4xx는 즉시
-실패한다.
+백오프를 적용한다. 유효한 `Retry-After`(초 또는 HTTP 날짜)나
+`X-RateLimit-Reset`이 있으면 서버 값을 우선한다. `--retry-delay`는 최소 대기(기본
+1초), `--max-retry-delay`는 서버 지시와 자체 백오프 모두의 최대 대기(기본 60초)다.
+최대 대기는 최소 대기 이상이어야 한다. 그 밖의 HTTP 4xx는 즉시 실패한다.
+
+데이터의 실제 출처, 변환 규칙, 보관 범위와 확인 필요 사항은
+[데이터 출처](docs/데이터_출처.md)에 정리했다.
 
 Raw 파일명은
 `bitstamp_usdcusd_<chunk-start>_<chunk-end>.json`이고 Windows 호환을 위해 시각의

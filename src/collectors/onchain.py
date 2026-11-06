@@ -335,10 +335,10 @@ def _retry_delay_seconds(
     max_retry_delay_seconds: float,
     now: datetime,
 ) -> float:
-    """서버 지시를 우선하고, 없을 때만 상한 있는 지수 백오프를 계산한다."""
+    """서버 지시를 우선하되 모든 재시도 대기를 설정된 상한으로 제한한다."""
     server_delay = _parse_retry_after_seconds(error, now)
     if server_delay is not None:
-        return max(server_delay, retry_delay_seconds)
+        return min(max(server_delay, retry_delay_seconds), max_retry_delay_seconds)
 
     delay = retry_delay_seconds
     for _ in range(max(retry_number - 1, 0)):
@@ -470,7 +470,7 @@ def fetch_signals_range(
                         f"{normalize_timestamp(chunk_end)}"
                     ) from error
                 attempt += 1
-                # 정상 요청 지연과 별개로 서버 지시를 우선하고, 자체 백오프만 제한한다.
+                # 정상 요청 지연과 별개로 서버 지시를 우선하고 재시도 대기를 제한한다.
                 retry_delay = _retry_delay_seconds(
                     error,
                     attempt,

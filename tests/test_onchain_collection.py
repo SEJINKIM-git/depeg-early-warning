@@ -252,10 +252,10 @@ def test_retry_after_http_date_is_supported():
         retry_now_fn=lambda: retry_now,
     )
 
-    sleep.assert_called_once_with(90.0)
+    sleep.assert_called_once_with(10.0)
 
 
-def test_rate_limit_reset_takes_priority_over_maximum_backoff():
+def test_rate_limit_reset_is_capped_by_maximum_retry_delay():
     start = _iso(START)
     end = _iso(START + timedelta(hours=1))
     retry_now = datetime(2023, 1, 1, 12, tzinfo=timezone.utc)
@@ -279,7 +279,7 @@ def test_rate_limit_reset_takes_priority_over_maximum_backoff():
         retry_now_fn=lambda: retry_now,
     )
 
-    sleep.assert_called_once_with(120.0)
+    sleep.assert_called_once_with(30.0)
 
 
 def test_invalid_retry_after_uses_capped_exponential_backoff():
@@ -305,7 +305,7 @@ def test_invalid_retry_after_uses_capped_exponential_backoff():
     assert sleep.call_args_list == [call(2), call(3), call(3)]
 
 
-def test_retry_after_is_not_capped_by_maximum_backoff_delay():
+def test_retry_after_is_capped_by_maximum_retry_delay():
     start = _iso(START)
     end = _iso(START + timedelta(hours=1))
     expected = _signals_for_range("USDC", start, end)
@@ -324,7 +324,64 @@ def test_retry_after_is_not_capped_by_maximum_backoff_delay():
         sleep_fn=sleep,
     )
 
-    sleep.assert_called_once_with(600.0)
+    sleep.assert_called_once_with(30.0)
+
+
+@pytest.mark.parametrize("server_delay", ["0", "0.25", "2", "3"])
+def test_retry_after_respects_minimum_and_maximum_boundaries(server_delay):
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    expected = _signals_for_range("USDC", start, end)
+    fetch = Mock(
+        side_effect=[_http_error(429, {"Retry-After": server_delay}), expected]
+    )
+    sleep = Mock()
+
+    fetch_signals_range(
+        "USDC",
+        start,
+        end,
+        request_delay_seconds=0,
+        retry_delay_seconds=2,
+        max_retry_delay_seconds=3,
+        max_retries=1,
+        fetch_fn=fetch,
+        sleep_fn=sleep,
+    )
+
+    sleep.assert_called_once_with(max(2, float(server_delay)))
+
+
+def test_retry_after_uses_default_maximum_retry_delay():
+    start = _iso(START)
+    end = _iso(START + timedelta(hours=1))
+    expected = _signals_for_range("USDC", start, end)
+    fetch = Mock(side_effect=[_http_error(429, {"Retry-After": "600"}), expected])
+    sleep = Mock()
+
+    fetch_signals_range(
+        "USDC", start, end, request_delay_seconds=0,
+        max_retries=1, fetch_fn=fetch, sleep_fn=sleep,
+    )
+
+    sleep.assert_called_once_with(60.0)
+
+
+@pytest.mark.parametrize("maximum", [0, 1.5, float("inf"), float("nan")])
+def test_maximum_retry_delay_must_be_finite_and_at_least_minimum(maximum):
+    fetch = Mock()
+
+    with pytest.raises(ValueError, match="max_retry_delay_seconds"):
+        fetch_signals_range(
+            "USDC",
+            _iso(START),
+            _iso(START + timedelta(hours=1)),
+            retry_delay_seconds=2,
+            max_retry_delay_seconds=maximum,
+            fetch_fn=fetch,
+        )
+
+    fetch.assert_not_called()
 
 
 def test_fetch_signals_range_does_not_retry_regular_http_4xx():
