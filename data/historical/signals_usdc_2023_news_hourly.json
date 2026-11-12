@@ -8,7 +8,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -53,7 +53,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -98,7 +98,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -143,7 +143,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -197,7 +197,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -251,7 +251,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -305,7 +305,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -359,7 +359,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -413,7 +413,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -467,7 +467,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -521,7 +521,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -575,7 +575,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -629,7 +629,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -692,7 +692,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -755,7 +755,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -818,7 +818,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -881,7 +881,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -944,7 +944,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1007,7 +1007,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1070,7 +1070,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1081,7 +1081,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1142,7 +1142,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1180,7 +1180,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1241,7 +1241,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1279,7 +1279,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1313,7 +1313,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1360,7 +1360,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1394,7 +1394,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1441,7 +1441,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1475,7 +1475,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1522,7 +1522,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1556,7 +1556,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1603,7 +1603,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1637,7 +1637,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1693,7 +1693,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1727,7 +1727,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1783,7 +1783,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1808,7 +1808,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1864,7 +1864,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1889,7 +1889,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -1945,7 +1945,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -1970,7 +1970,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2026,7 +2026,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -2051,7 +2051,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2107,7 +2107,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -2132,7 +2132,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2188,7 +2188,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -2213,7 +2213,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2269,7 +2269,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -2294,7 +2294,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2359,7 +2359,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -2384,7 +2384,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2449,7 +2449,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         },
         {
@@ -2474,7 +2474,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2539,7 +2539,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         }
       ],
@@ -2555,7 +2555,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2620,7 +2620,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         }
       ],
@@ -2636,20 +2636,11 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
       "evidence": [
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
-        },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
           "outlet": "The Irish Times (Financial Times syndication)",
@@ -2710,7 +2701,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         }
       ],
@@ -2726,20 +2717,11 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
       "evidence": [
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
-        },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
           "outlet": "The Irish Times (Financial Times syndication)",
@@ -2800,7 +2782,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         }
       ],
@@ -2816,7 +2798,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -2865,15 +2847,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -2935,7 +2908,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         }
       ],
@@ -2951,7 +2924,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -3009,15 +2982,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -3079,7 +3043,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         }
       ],
@@ -3095,7 +3059,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -3153,15 +3117,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -3223,7 +3178,7 @@
           "published_at": "2023-03-09T19:33:04Z",
           "tier": "B",
           "who": "SVB",
-          "why": "fall 60%",
+          "why": "Shares of SVB Financial fall 60%",
           "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html"
         }
       ],
@@ -3239,7 +3194,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -3306,15 +3261,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -3383,7 +3329,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -3459,15 +3405,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -3509,7 +3446,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -3585,15 +3522,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -3635,7 +3563,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -3711,15 +3639,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -3752,7 +3671,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -3828,15 +3747,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -3869,7 +3779,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -3963,15 +3873,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -4004,7 +3905,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -4107,15 +4008,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -4148,7 +4040,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -4251,15 +4143,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -4283,7 +4166,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -4404,15 +4287,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -4436,7 +4310,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -4557,15 +4431,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -4589,7 +4454,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -4728,15 +4593,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -4760,7 +4616,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -4899,15 +4755,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -4931,7 +4778,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -5079,15 +4926,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -5111,7 +4949,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -5259,15 +5097,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -5291,7 +5120,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -5439,15 +5268,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         },
         {
           "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
@@ -5471,7 +5291,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -5619,15 +5439,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         }
       ],
       "watch": []
@@ -5642,7 +5453,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -5790,15 +5601,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         }
       ],
       "watch": []
@@ -5813,7 +5615,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -5961,15 +5763,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         }
       ],
       "watch": []
@@ -5984,7 +5777,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -6132,15 +5925,6 @@
           "who": "Silicon Valley Bank",
           "why": "bank failure",
           "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html"
-        },
-        {
-          "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
-          "outlet": "The Block",
-          "published_at": "2023-03-10T14:56:03Z",
-          "tier": "B",
-          "who": "Silicon Valley Bank",
-          "why": "plunges 60%",
-          "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open"
         }
       ],
       "watch": []
@@ -6155,7 +5939,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -6317,7 +6101,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -6479,7 +6263,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -6605,7 +6389,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -6722,7 +6506,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -6839,7 +6623,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -6947,7 +6731,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7046,7 +6830,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7145,7 +6929,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7244,7 +7028,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7343,7 +7127,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7424,7 +7208,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7496,7 +7280,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7568,7 +7352,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7622,7 +7406,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7676,7 +7460,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7712,7 +7496,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7748,7 +7532,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7775,7 +7559,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7802,7 +7586,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7829,7 +7613,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7856,7 +7640,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7883,7 +7667,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7910,7 +7694,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7937,7 +7721,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7964,7 +7748,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -7991,7 +7775,7 @@
     "metric": "news_risk_flag",
     "value": 0,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8008,7 +7792,7 @@
     "metric": "news_risk_flag",
     "value": 0,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8025,7 +7809,7 @@
     "metric": "news_risk_flag",
     "value": 0,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8042,7 +7826,7 @@
     "metric": "news_risk_flag",
     "value": 0,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8059,7 +7843,7 @@
     "metric": "news_risk_flag",
     "value": 0,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8076,7 +7860,7 @@
     "metric": "news_risk_flag",
     "value": 0,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8093,7 +7877,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8120,7 +7904,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8156,7 +7940,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8201,7 +7985,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8255,7 +8039,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8309,7 +8093,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8363,7 +8147,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8417,7 +8201,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8471,7 +8255,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8525,7 +8309,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8579,7 +8363,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8633,7 +8417,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8687,7 +8471,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8751,7 +8535,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8815,7 +8599,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8879,7 +8663,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -8943,7 +8727,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9007,7 +8791,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9071,7 +8855,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9135,7 +8919,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9199,7 +8983,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9263,7 +9047,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9327,7 +9111,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9391,7 +9175,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9455,7 +9239,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
@@ -9510,7 +9294,7 @@
     "metric": "news_risk_flag",
     "value": 1,
     "meta": {
-      "rubric_version": "v2",
+      "rubric_version": "v2.1",
       "window_hours": 24,
       "counterparty_report": "2023-01",
       "counterparty_banks_from": "2023-01",
