@@ -100,7 +100,7 @@ def test_news_signals_follow_contract():
     assert s["meta"]["evidence"] == [
         {
             "title": SVB["title"], "outlet": "test", "published_at": SVB["published_at"],
-            "tier": "B", "who": "Silicon Valley Bank", "why": "FDIC", "url": SVB["url"],
+            "tier": "B", "who": "Silicon Valley Bank", "why": "FDIC takes", "url": SVB["url"],
         }
     ]
 

@@ -1,17 +1,19 @@
-"""뉴스 기준표 v1 — 기사 제목을 정해진 규칙으로만 분류한다 (AI 판단 없음).
+"""뉴스 기준표 v2 — 기사 제목을 정해진 규칙으로만 분류한다 (AI 판단 없음).
 
 같은 제목 + 같은 보관처 목록에는 항상 같은 결과가 나와야 과거 데이터로 검증(백테스트)할 수 있다.
 AI는 이 분류를 바꾸지 않고, 나중에 사람이 읽을 설명 문장만 쓴다.
 
-v0(ThreatWatch-AI api/_depeg/news_rubric.py)에서 달라진 점은 하나다:
-보관처 목록이 상수가 아니라 "시각 t에 공개돼 있던 최신 Circle 보고서의 은행 목록"이다.
-(2023-03에 SVB 기사로 신호가 켜지려면, 그 시점에 SVB가 보관 은행이라고 공개돼 있었어야 한다.)
-분류 패턴(ISSUER, ISSUER_DISTRESS, BANK_DISTRESS, WATCH_ONLY)은 v0 그대로다.
+v2 = v1의 시점별 보관처 목록(REPORTS, counterparties_at)
+   + 대시보드 v0.2의 오탐 방지 규칙
+   + docs/news_leadtime_2023.md 4장의 놓친 표현·해소 표현.
+바꾼 항목은 코드보다 먼저 docs/news_rubric_v2_changes.md 에 사전 등록했다(a1~a6, b1~b8).
+그 목록 밖의 패턴은 넣지 않는다 — 같은 데이터로 계속 고치면 리드타임이 부풀려진다.
 
 등급
-  A  발행사·코인 자체의 위기   (USDC/Circle + 위기 표현)            → 신호 켜짐
-  B  준비금을 맡은 곳의 위기   (보관 은행·펀드 + 금융 위기 표현)     → 신호 켜짐
-  C  관찰만                     (USDC/Circle + 규제·감독 표현)       → 신호 꺼짐, 목록에만 표시
+  A  발행사·코인 자체의 위기   (USDC/Circle + 페그 이탈·상환 중단 등)           → 신호 켜짐
+  B  준비금을 맡은 곳의 위기   (그 시점 보관처 + 은행 위기 표현,
+                                또는 발행사 + 보관처 + 준비금 노출 표현)          → 신호 켜짐
+  C  관찰만                     (USDC/Circle + 규제·보안 사건, 또는 부정·소문·회고·해소로 하향) → 신호 꺼짐
 
 이 파일은 표준 라이브러리만 쓴다 (ThreatWatch-AI 대시보드로 그대로 복사된다).
 """
@@ -22,43 +24,85 @@ import re
 from collections.abc import Iterable, Mapping, Sequence
 from typing import Any
 
-RUBRIC_VERSION = "v1"
+RUBRIC_VERSION = "v2"
 
-# 발행사·코인
-ISSUER = [r"USDC", r"USD Coin", r"Circle Internet", r"\bCircle\b"]
+CI = re.IGNORECASE
 
-ISSUER_DISTRESS = [
-    r"de-?peg", r"lost (its|the) peg", r"loses? peg", r"below \$?1\b", r"\$0\.9\d",
-    r"redemptions? (halted|paused|suspended|delayed)", r"halts? redemptions?",
-    r"bank run", r"insolven", r"collapse", r"frozen", r"exploit", r"hack(ed)?\b",
-    r"reserve (shortfall|gap|exposure)", r"stuck at", r"trapped",
-]
 
-BANK_DISTRESS = [
-    r"bank run", r"receivership", r"\bFDIC\b", r"insolven", r"collapse", r"fail(s|ed|ure)\b",
-    r"shut(s)? down", r"seiz(e|ed|ure)", r"withdrawals? (halted|frozen|paused)",
-    r"capital (raise|shortfall)", r"emergency (sale|funding)", r"liquidity crisis",
-]
+def _rx(patterns: list[str], flags: int = CI) -> list[re.Pattern]:
+    return [re.compile(p, flags) for p in patterns]
 
-WATCH_ONLY = [
-    r"\bMiCA\b", r"\bEBA\b", r"GENIUS Act", r"\bSEC\b", r"regulat", r"supervis",
-    r"licen[cs]e", r"charter", r"\bEU\b", r"\bEEA\b", r"deadline", r"complian",
-]
 
-# 보고서에 인쇄된 기관 이름 → 기사 제목에서 찾을 표현.
-# v0에 있던 표현은 그대로 두고, 보고서에만 있던 은행 2곳(Citizens Trust, NYCB/Flagstar)을 더했다.
-# 여기에 없는 이름이 들어오면 이름 그대로(대소문자 무시) 찾는다.
+# a1 발행사·코인. "Circle"은 대소문자 구분 + USDC/스테이블코인 맥락이 같은 제목에 있을 때만.
+ISSUER_STRONG = _rx([r"\bUSDC\b", r"\bUSD Coin\b", r"\bCircle Internet\b", r"\bCRCL\b"])
+CIRCLE_WORD = re.compile(r"\bCircle\b")  # 대소문자 구분
+STABLE_CONTEXT = _rx([r"stablecoin", r"\bUSDC\b", r"\bcrypto"])
+
+# a2 + b3 + b4  발행사·코인 자체의 위기
+ISSUER_DISTRESS = _rx([
+    r"\bde-?peg(ged|s|ging)?\b", r"\b(lost|loses?|losing) (its |the )?(dollar )?peg\b",
+    r"\bbreaks? (its |the )?(dollar )?peg\b",                                       # b4
+    r"\bbelow \$1(\.00)?(?![\d.%])",
+    r"\bUSD(C| Coin)\b[^.;:]{0,25}\b(at|to|trades? at|falls? to|slips? to|drops? to|sinks? to)\s*\$?0\.(9\d|[0-8]\d)\b",
+    r"\bredemptions? (are |were |is )?(halted|paused|suspended|delayed|frozen)\b",
+    r"\b(halts?|pauses?|suspends?) (USDC )?(redemptions?|minting|withdrawals?)\b",
+    r"\b(conversions?|redemptions?) (are |were |is )?(paused|suspended|halted)\b",   # b3
+    r"\b(paus|suspend|halt)\w* [^.;:]{0,30}\b(conversions?|redemptions?)\b",        # b3 (반대 어순)
+    r"\bbank run\b", r"\binsolven(t|cy)\b", r"\breserve (shortfall|gap|hole)\b",
+    r"\b(USDC|stablecoin) (collapse|crash)\b",
+])
+
+# a5 + b1 + b2 + b5 + b6  보관처(은행·펀드)의 위기
+BANK_DISTRESS = _rx([
+    r"\bbank run\b", r"\breceivership\b", r"\bFDIC (takes|took|seiz\w*|takeover|steps in)\b",
+    r"\binsolven(t|cy)\b", r"\bcollapse[sd]?\b", r"\bbank failure\b", r"\bfail(s|ed)\b",
+    r"\bshut(s)? down\b", r"\bseiz(ed|es|ure)\b", r"\bwithdrawals? (halted|frozen|paused|suspended)\b",
+    r"\bcapital (raise|shortfall)\b", r"\bemergency (sale|funding|loan)\b", r"\bliquidity crisis\b",
+    r"\bwind(s|ing)? down\b", r"\bliquidat\w*",                                     # b1
+    r"\bshutter\w*", r"\bclosed by (\w+ ){0,2}regulators?\b",                         # b2
+    r"\b(takes?|took|taking) possession\b",                                          # b2
+    r"\b(plung|fall|fell|drop)\w* (more than |over |about |nearly )?\d+(\.\d+)?%",   # b5
+    r"\b(move|pull|withdraw)\w* (\w+ ){0,2}(money|funds|deposits|cash) (out of|from)\b",  # b6
+])
+
+# b7  발행사 + 보관처가 함께 나올 때, 준비금이 그곳에 있다는 표현
+EXPOSURE = _rx([
+    r"\breserves? (are |were |is )?(held )?(with|at)\b",
+    r"\bheld (\w+ ){0,2}reserves? (at|with)\b",
+    r"\bexposure (to|at)\b",
+])
+
+# a4 + b8  위기 단어가 있어도 A/B로 올리지 않는 표현 (부정, 소문, 회고, 해소)
+DOWNGRADE = _rx([
+    r"\b(holds?|keeps?|maintains?|regains?|restores?|back to|returns? to) (its |the )?(dollar )?peg\b",
+    r"\brumou?rs?\b", r"\bdenies\b", r"\bdenied\b", r"\bfears? (ease|eased|easing|overblown)\b",
+    r"\b(years?|months?) after\b", r"\banniversary\b", r"\blessons? from\b",
+    r"\bde-?peg (closes|closed|ends|ended|is over)\b", r"\brisk (removed|eliminated)\b",   # b8
+    r"\b(regains?|regained|restores?|restored)\b[^.;:]{0,20}\bpeg\b",                     # b8
+    r"\bback (to|toward|towards) \$?1\b",                                                   # b8
+])
+
+# a3  관찰: 규제·감독, 보안 사건(해킹 자금 동결 등)
+WATCH_ONLY = _rx([
+    r"\bMiCA\b", r"\bEBA\b", r"\bGENIUS Act\b", r"\bSEC\b", r"\bregulat\w*", r"\bsupervis\w*",
+    r"\blicen[cs]e\w*", r"\bcharter\b", r"\bEU\b", r"\bEEA\b", r"\bdeadline\b", r"\bcomplian\w*",
+    r"\bexploit\w*", r"\bhack\w*", r"\bfreez\w*", r"\bfroze(n)?\b", r"\bblacklist\w*",
+])
+
+# a6  보고서에 인쇄된 기관 이름 → 기사 제목에서 찾을 표현.
+# 여기에 없는 이름이 들어오면 이름 그대로(대소문자 무시, 단어 경계) 찾는다.
+# 빈 목록은 "이름만으로는 매칭하지 않음"이다.
 COUNTERPARTY_ALIASES: dict[str, list[str]] = {
-    "Bank of New York Mellon": [r"BNY Mellon", r"Bank of New York Mellon"],
-    "Citizens Trust Bank": [r"Citizens Trust"],
-    "Cross River Bank": [r"Cross River"],
-    "Customers Bank": [r"Customers Bank"],
-    "New York Community Bank": [r"New York Community Bank", r"\bNYCB\b", r"Flagstar"],
-    "Signature Bank": [r"Signature Bank"],
-    "Silicon Valley Bank": [r"Silicon Valley Bank", r"\bSVB\b"],
-    "Silvergate Bank": [r"Silvergate"],
-    "Circle Reserve Fund": [r"Circle Reserve Fund"],
-    "BlackRock": [r"BlackRock"],
+    "Bank of New York Mellon": [r"\bBNY Mellon\b", r"\bBank of New York Mellon\b", r"\bBNY\b(?= (bank|custod))"],
+    "Citizens Trust Bank": [r"\bCitizens Trust\b"],
+    "Cross River Bank": [r"\bCross River Bank\b"],
+    "Customers Bank": [r"\bCustomers Bank(corp)?\b"],
+    "New York Community Bank": [r"\bNew York Community Bank\b", r"\bNYCB\b", r"\bFlagstar\b"],
+    "Signature Bank": [r"\bSignature Bank\b"],
+    "Silicon Valley Bank": [r"\bSilicon Valley Bank\b", r"\bSVB\b"],
+    "Silvergate Bank": [r"\bSilvergate\b"],
+    "Circle Reserve Fund": [r"\bCircle Reserve Fund\b", r"\bUSDXX\b"],
+    "BlackRock": [],  # 흔한 BlackRock 뉴스가 B로 켜지지 않게. 펀드는 Circle Reserve Fund·USDXX로 잡는다
 }
 
 _FUND = "Circle Reserve Fund"
@@ -119,43 +163,67 @@ def counterparties_at(
     }
 
 
-def _hits(patterns: Iterable[str], text: str) -> list[str]:
-    out = []
+def _first(patterns: Iterable[re.Pattern], text: str) -> str | None:
     for p in patterns:
-        m = re.search(p, text, flags=re.IGNORECASE)
+        m = p.search(text)
         if m:
-            out.append(m.group(0))
-    return out
+            return m.group(0)
+    return None
 
 
-def counterparty_patterns(counterparties: Iterable[str]) -> list[str]:
+def _issuer(title: str) -> str | None:
+    hit = _first(ISSUER_STRONG, title)
+    if hit:
+        return hit
+    if CIRCLE_WORD.search(title) and _first(STABLE_CONTEXT, title):
+        return "Circle"
+    return None
+
+
+def counterparty_patterns(counterparties: Iterable[str]) -> list[re.Pattern]:
     """기관 이름 목록을 제목 검색용 표현 목록으로 바꾼다."""
-    patterns: list[str] = []
+    patterns: list[re.Pattern] = []
     for name in counterparties:
-        patterns.extend(COUNTERPARTY_ALIASES.get(name, [re.escape(name)]))
+        aliases = COUNTERPARTY_ALIASES.get(name)
+        if aliases is None:
+            aliases = [rf"\b{re.escape(name)}\b"]
+        patterns.extend(_rx(aliases))
     return patterns
+
+
+def _graded(tier: str, who: str, why: str, softened: str | None) -> dict[str, Any]:
+    if softened:
+        return {"tier": "C", "who": who, "why": f"{why} / {softened}"}
+    return {"tier": tier, "who": who, "why": why}
 
 
 def classify(title: str, counterparties: Iterable[str]) -> dict[str, Any] | None:
     """기사 제목 하나를 분류한다. 해당 없음이면 None.
 
     counterparties: 그 시점에 공개돼 있던 보관처 이름 목록 (counterparties_at(t)["names"]).
+    순서: 발행사 위기(A) → 보관처 위기(B) → 발행사+보관처+노출(B) → 발행사 관찰(C).
+    부정·소문·회고·해소 표현이 같이 있으면 A·B는 C로 내린다.
     """
-    issuer = _hits(ISSUER, title)
-    party = _hits(counterparty_patterns(counterparties), title)
+    issuer = _issuer(title)
+    party = _first(counterparty_patterns(counterparties), title)
+    softened = _first(DOWNGRADE, title)
 
     if issuer:
-        d = _hits(ISSUER_DISTRESS, title)
+        d = _first(ISSUER_DISTRESS, title)
         if d:
-            return {"tier": "A", "who": issuer[0], "why": d[0]}
+            return _graded("A", issuer, d, softened)
     if party:
-        d = _hits(BANK_DISTRESS, title)
+        d = _first(BANK_DISTRESS, title)
         if d:
-            return {"tier": "B", "who": party[0], "why": d[0]}
+            return _graded("B", party, d, softened)
+        if issuer:
+            e = _first(EXPOSURE, title)
+            if e:
+                return _graded("B", party, f"{issuer} + {e}", softened)
     if issuer:
-        w = _hits(WATCH_ONLY, title)
+        w = _first(WATCH_ONLY, title)
         if w:
-            return {"tier": "C", "who": issuer[0], "why": w[0]}
+            return {"tier": "C", "who": issuer, "why": w}
     return None
 
 

@@ -86,3 +86,145 @@ def test_report_table_is_sorted_and_well_formed():
     dates = [r["public_from"] for r in REPORTS]
     assert dates == sorted(dates)
     assert all(r["banks"] or not r["banks_named"] for r in REPORTS)
+
+
+# ---- v2: 대시보드 tests/test_depeg_live.py 에서 옮겨 온 사례 (2026년 보관처 목록) ----
+
+LIVE_2026 = counterparties_at("2026-11-11T00:00:00Z")["names"]
+
+
+def _tier(title, names=LIVE_2026):
+    c = classify(title, names)
+    return c and c["tier"]
+
+
+def test_dashboard_rubric_tiers():
+    assert _tier("USDC loses peg after Circle reveals $3.3B stuck at SVB") == "A"
+    assert _tier("Cross River Bank collapses as FDIC takes control") == "B"
+    # 2026년 목록에는 SVB가 없다
+    assert _tier("Silicon Valley Bank collapses as FDIC takes control") is None
+    assert _tier("Circle's USDC moves to EBA supervision under MiCA") == "C"
+    assert _tier("Bitcoin rallies past record high") is None
+    assert _tier("BNY Mellon reports quarterly earnings") is None
+
+
+def test_dashboard_news_flag_only_for_a_or_b():
+    flag, matched = news_flag([{"title": "Circle's USDC moves to EBA supervision under MiCA"}], LIVE_2026)
+    assert flag == 0 and matched[0]["tier"] == "C"
+    flag, _ = news_flag([{"title": "Customers Bank halts withdrawals amid bank run"}], LIVE_2026)
+    assert flag == 1
+
+
+def test_dashboard_rss_title():
+    assert _tier("USDC redemptions paused for EEA holders") == "A"
+
+
+def test_dashboard_real_headlines_2026_11_11():
+    assert _tier("Goldman, Citi Among Banks in $270 Million Stablecoin Backing") is None
+    assert _tier("PNC Launches USDC Payments Pilot With Coinbase") is None
+    assert _tier(
+        "Crypto News Today: Waller's Rate-Hike Warning, MARA's $1.1B Bitcoin Sale and USDC's EU Deadline"
+    ) == "C"
+
+
+def test_dashboard_review_false_positives_are_not_alarms():
+    assert _tier("Circle freezes $2M in USDC linked to Bybit exploit") == "C"
+    assert _tier("Bitcoin price collapse sends traders into USDC") is None
+    assert _tier("Trump's inner circle faces collapse after vote") is None
+    assert _tier("USDC lending yields fall below 1%") is None
+    assert _tier("USDC holds peg despite rumors of depeg") == "C"
+    assert _tier("Two years after SVB collapse, regional banks recover") is None
+    assert _tier("BlackRock bitcoin ETF fails to attract inflows") is None
+    assert _tier("Cross River State bridge collapse kills three") is None
+    assert _tier("BNY Mellon reports FDIC assessment charge") is None
+
+
+def test_dashboard_review_misses_are_caught():
+    assert _tier("USD Coin slips to 0.98 as traders rush to exit") == "A"
+    assert _tier("Circle halts USDC minting after banking partner issue") == "A"
+    assert _tier("BNY Mellon hit by bank run fears, withdrawals halted") == "B"
+
+
+# ---- v2: 사전 등록 항목(docs/news_rubric_v2_changes.md)마다 통과 1 + 오탐 방지 1 ----
+
+def test_a1_circle_needs_capital_and_stablecoin_context():
+    assert _tier("Circle stablecoin issuer hit by bank run", DEPEG_WEEK) == "A"
+    assert _tier("circle of crypto traders see bank run", DEPEG_WEEK) is None
+
+
+def test_a2_lone_collapse_is_not_issuer_distress():
+    assert _tier("USDC collapse wipes out holders") == "A"
+    assert _tier("Bitcoin collapse pushes traders into USDC") is None
+
+
+def test_a3_security_incidents_are_watch_only():
+    assert _tier("USDC hacked funds blacklisted by Circle") == "C"
+    assert _tier("Exchange hacked, $40M in ether stolen") is None
+
+
+def test_a4_negation_rumor_retrospective_downgrade():
+    assert _tier("Circle denies USDC insolvency rumors") == "C"
+    assert _tier("USDC insolvency fears grow as redemptions halted") == "A"
+
+
+def test_a5_fdic_alone_is_not_bank_distress():
+    assert _tier("FDIC takes control of Customers Bank") == "B"
+    assert _tier("Customers Bank meets with FDIC officials") is None
+
+
+def test_a6_counterparty_aliases_are_strict():
+    assert _tier("Cross River Bank fails") == "B"
+    assert _tier("Cross River flooding fails levee") is None
+    assert _tier("BlackRock fund collapses", counterparties_at("2023-01-01T00:00:00Z")["names"]) is None
+    assert _tier("Circle Reserve Fund (USDXX) seized") == "B"
+
+
+def test_b1_wind_down_liquidation():
+    assert _tier("Silvergate announces intent to wind down operations", DEPEG_WEEK) == "B"
+    assert _tier("Goldman to wind down consumer unit") is None  # 보관처 아님
+
+
+def test_b2_shutter_closed_by_regulators_takes_possession():
+    assert _tier("Silicon Valley Bank Shuttered by State Regulators", DEPEG_WEEK) == "B"
+    assert _tier("California Financial Regulator Takes Possession of Silicon Valley Bank", DEPEG_WEEK) == "B"
+    assert _tier("Silicon Valley Bank closed by California regulator", DEPEG_WEEK) == "B"
+    assert _tier("Silicon Valley Bank closed for public holiday", DEPEG_WEEK) is None
+
+
+def test_b3_conversions_paused():
+    assert _tier("USDC conversions suspended at major exchange") == "A"
+    assert _tier("Binance has temporarily suspended auto-conversion of USDC to BUSD") == "A"
+    assert _tier("USDC conversions resume after weekend") is None
+
+
+def test_b4_breaks_dollar_peg():
+    assert _tier("Stablecoin USDC breaks dollar peg after SVB exposure") == "A"
+    assert _tier("USDC breaks daily volume record") is None
+
+
+def test_b5_share_price_plunge_percent():
+    assert _tier("Shares of SVB Financial fall 60% as bank looks to raise cash", DEPEG_WEEK) == "B"
+    assert _tier("SVB Financial shares rise 5%", DEPEG_WEEK) is None
+
+
+def test_b6_advised_to_pull_money():
+    assert _tier("Venture firms are advising portfolio companies to move money out of SVB", DEPEG_WEEK) == "B"
+    assert _tier("Startups move money into SVB accounts", DEPEG_WEEK) is None
+
+
+def test_b7_issuer_and_counterparty_with_exposure():
+    assert _tier("Circle says $3.3 billion of USDC reserves are with Silicon Valley Bank", DEPEG_WEEK) == "B"
+    # 제휴·사업 뉴스는 노출 표현이 없으므로 켜지지 않는다 (승인 때 확정한 조건)
+    assert _tier("BNY Mellon named custodian for USDC reserves") is None
+
+
+def test_b8_resolution_downgrades():
+    assert _tier("$3.3 Billion of USDC Reserve Risk Removed, Dollar De-peg Closes") == "C"
+    assert _tier("USDC regains dollar peg after weekend depeg") == "C"
+    # 해소 표현이 없으면 그대로 A
+    assert _tier("USDC Stablecoin Depegs From $1; Circle Says Operations Are Normal") == "A"
+
+
+def test_rubric_version_is_v2():
+    from src.intelligence.news_rubric import RUBRIC_VERSION
+    assert RUBRIC_VERSION == "v2"

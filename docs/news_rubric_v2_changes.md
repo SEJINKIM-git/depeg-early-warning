@@ -1,6 +1,6 @@
 # 뉴스 기준표 v2 변경 목록 (사전 등록)
 
-작성: Sejin · 작성일 2026-11-12 · 상태: **승인 대기** (승인 전에는 코드를 고치지 않는다)
+작성: Sejin · 작성일 2026-11-12 · 상태: **승인됨** (2026-11-12, Sejin — b7은 노출 표현 조건 포함으로 확정)
 
 v1([src/intelligence/news_rubric.py](../src/intelligence/news_rubric.py))을 v2로 바꿀 때 고칠 항목을
 **코드보다 먼저** 여기 확정한다. 항목의 출처는 두 곳뿐이다.
@@ -41,12 +41,12 @@ v0.2의 2026년 상수 목록은 버린다.
 | b7 | 발행사 + 보관처가 한 제목에 함께 나옴 | 새 B 규칙 | 발행사(a1) **와** 그 시점 보관처가 함께 있고, **노출 표현**이 있으면 B. 노출 표현: `\breserves? (are \|were \|is )?(held )?(with\|at)\b`, `\bheld (\w+ ){0,2}reserves? (at\|with)\b`, `\bexposure (to\|at)\b` |
 | b8 | 해소 표현 (회복기에 신호가 안 꺼짐) | a4 하향 목록에 추가 | `\bde-?peg (closes\|closed\|ends\|ended\|is over)\b`, `\brisk (removed\|eliminated)\b`, `\b(regains?\|regained\|restores?\|restored)\b[^.;:]{0,20}\bpeg\b`, `\bback (to\|toward\|towards) \$?1\b` |
 
-### b7에 노출 표현 조건을 붙인 이유 (승인 시 확인 필요)
+### b7에 노출 표현 조건을 붙인 이유 (승인 때 확정)
 
 프롬프트의 문장 그대로("발행사 + 보관처가 함께 나오면 B")만 쓰면 2026년 실시간 화면에서
 "BNY Mellon named custodian for USDC reserves" 같은 **제휴·사업 뉴스가 B로 켜진다.** 그래서 4장 표의
 예시("$3.3 billion of USDC reserves are **with** Silicon Valley Bank")가 가진 "준비금이 그 은행에 있다"는
-표현을 조건으로 붙였다. 조건 없이 동시 언급만으로 B를 원하면 승인 때 알려 달라.
+표현을 조건으로 붙였다. 승인 때 이 조건을 포함하기로 확정했다.
 
 ## 분류 순서 (v2)
 
