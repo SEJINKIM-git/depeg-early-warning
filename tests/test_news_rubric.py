@@ -225,6 +225,39 @@ def test_b8_resolution_downgrades():
     assert _tier("USDC Stablecoin Depegs From $1; Circle Says Operations Are Normal") == "A"
 
 
-def test_rubric_version_is_v2():
+def test_rubric_version_is_v2_1():
+    # v2.1에서 버전 문자열만 바뀌었다 (docs/news_rubric_v2_changes.md v2.1 절)
     from src.intelligence.news_rubric import RUBRIC_VERSION
-    assert RUBRIC_VERSION == "v2"
+    assert RUBRIC_VERSION == "v2.1"
+
+
+# ---- v2.1: 실시간 오탐 1건에서 나온 c1·c2 (docs/news_rubric_v2_changes.md v2.1 절) ----
+
+def test_v2_1_live_false_positive_2026_11_12():
+    """MarketBeat 실제 제목 — 동명 펀드의 공매도 잔고 감소 기사는 보관처 위기가 아니다."""
+    assert _tier("BNY Mellon High Yield Strategies Fund (NYSE:DHF) Stock Short Interest Falls 73.8%") is None
+
+
+def test_c1_share_plunge_needs_shares_or_stock_first():
+    assert _tier("Customers Bancorp shares plunge 45% after deposit outflows") is None  # 별칭은 Customers Bank
+    assert _tier("Customers Bank stock plunges 45% after deposit outflows") == "B"
+    assert _tier("Shares of SVB Financial fall 60% as tech-focused bank looks to raise more cash", DEPEG_WEEK) == "B"
+    # 등록 때 알고 있던 변화: shares/stock 이 없으면 급락 %만으로는 켜지지 않는다
+    assert _tier("Silicon Valley Bank plunges 60% before halt", DEPEG_WEEK) is None
+
+
+def test_c1_short_interest_is_not_a_plunge():
+    assert _tier("Customers Bank stock short interest falls 40%") is None
+    assert _tier("Customers Bank stock falls 40% as short interest jumps") is None
+    # 다른 위기 표현은 short interest 와 상관없이 그대로
+    assert _tier("Customers Bank fails; short interest had soared") == "B"
+
+
+def test_c2_same_name_fund_or_other_ticker_is_not_the_custodian():
+    assert _tier("BNY Mellon Municipal Income Fund collapses") is None
+    assert _tier("BNY Mellon ETF trust shut down") is None
+    assert _tier("BNY Mellon Strategic Municipals (NYSE:LEO) falls 50% in stock price") is None
+    # BNY 자신의 티커와, 펀드가 없는 은행 위기 기사는 그대로 B
+    assert _tier("BNY Mellon (NYSE:BK) shares plunge 30% amid bank run") == "B"
+    assert _tier("BNY Mellon (NYSE:BK) stock falls 30%") == "B"
+    assert _tier("BNY Mellon placed into FDIC receivership") == "B"
