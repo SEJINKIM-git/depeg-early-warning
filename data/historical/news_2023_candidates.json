@@ -1,0 +1,1050 @@
+[
+  {
+    "published_at": "2023-03-06T09:46:54Z",
+    "outlet": "CoinDesk",
+    "title": "Crypto Banking Firm BCB Prepares U.S. Dollar Payments to Plug Silvergate Gap",
+    "url": "https://www.coindesk.com/business/2023/03/06/crypto-banking-firm-bcb-readies-us-dollar-payments-to-plug-silvergate-gap/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230311050634 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-06T09:46:54.952Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: Silvergate aftermath (SEN shutdown), low severity. URL slug says 'readies', headline says 'Prepares' -> headline probably edited after publication."
+  },
+  {
+    "published_at": "2023-03-06T19:35:58Z",
+    "outlet": "CoinDesk",
+    "title": "White House Is 'Aware of' Silvergate Situation, Spokeswoman Says",
+    "url": "https://www.coindesk.com/policy/2023/03/06/white-house-is-aware-of-silvergate-situation-spokesperson-says/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230313190321 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-06T19:35:58.788Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: Silvergate distress. <title> tag (SEO) differs: \"Crypto-Friendly Silvergate Bank's Situation Being 'Monitored' by White House, Spokesperson Says\"; slug says 'spokesperson'."
+  },
+  {
+    "published_at": "2023-03-06T20:10:37Z",
+    "outlet": "CoinDesk",
+    "title": "U.S. Banking Watchdog: You Can’t Trust Crypto Firms Until They Get Federal Oversight",
+    "url": "https://www.coindesk.com/policy/2023/03/06/us-banking-watchdog-you-cant-trust-crypto-firms-until-they-get-federal-oversight/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230313212444 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-06T20:10:37.944Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: CONTROL (regulation/banking story, no bank failure). Body not checked for USDC/Circle mentions."
+  },
+  {
+    "published_at": "2023-03-06T21:33:40Z",
+    "outlet": "The Block",
+    "title": "Crypto prices flat, Silvergate declines ahead of Powell testimony",
+    "url": "https://www.theblock.co/news/ecosystems/2023-03-06-crypto-prices-flat-silvergate-declines-ahead-of-powell-testimony-217549",
+    "time_confidence": "byline",
+    "note": "Read through WebFetch (page is Cloudflare-blocked for raw fetch). Visible byline 'March 6, 2023, 4:33PM EST'; WebFetch reported JSON-LD datePublished 2023-03-06T16:33:40-05:00, updated 4:41PM EST. Role: Silvergate distress / market wrap."
+  },
+  {
+    "published_at": "2023-03-07T22:44:37Z",
+    "outlet": "Bloomberg",
+    "title": "Silvergate Is in Talks With FDIC Officials on Ways to Salvage Bank",
+    "url": "https://www.bloomberg.com/news/articles/2023-03-07/silvergate-in-talks-with-fdic-officials-on-ways-to-salvage-bank",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230308014111 (raw HTML). Bloomberg meta iso-8601-publish-date / JSON-LD datePublished = 2023-03-07T22:44:37.431Z; visible <time> shows the same in UTC. Live page is paywalled/bot-blocked. Role: Silvergate distress (original scoop)."
+  },
+  {
+    "published_at": "2023-03-07T23:00:14Z",
+    "outlet": "CoinDesk",
+    "title": "Silvergate Talking With FDIC About How to Save Crypto-Focused Bank: Bloomberg",
+    "url": "https://www.coindesk.com/policy/2023/03/07/silvergate-talking-with-fdic-about-how-to-save-crypto-focused-bank-bloomberg",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230315001741 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-07T23:00:14.780Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: Silvergate distress."
+  },
+  {
+    "published_at": "2023-03-07T23:00:41Z",
+    "outlet": "CNBC",
+    "title": "Silvergate pops on report it's in talks with the FDIC to save the bank",
+    "url": "https://www.cnbc.com/video/2023/03/07/silvergate-pops-on-report-its-in-talks-with-the-fdic-to-save-the-bank.html",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-07T23:00:41+0000 (modified identical). This is a VIDEO clip page, not a text article. Role: Silvergate distress."
+  },
+  {
+    "published_at": "2023-03-08T00:02:19Z",
+    "outlet": "Reuters",
+    "title": "Silvergate in talks with FDIC officials on ways to salvage bank - Bloomberg News",
+    "url": "https://www.reuters.com/technology/silvergate-talks-with-fdic-officials-ways-salvage-bank-bloomberg-news-2023-03-08/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230308015137 (raw HTML). Reuters meta article:published_time 2023-03-08T00:02:19Z, modified 00:03:48Z. DOUBT: this is probably the timestamp of the updated version; a Kitco copy of the Reuters wire titled 'UPDATE 1-Silvergate in talks with FDIC officials on ways to salvage bank - Bloomberg News' carries 2023-03-07T18:36:24-05:00 (=23:36:24Z), so the first Reuters alert was earlier than 00:02Z. Role: Silvergate distress."
+  },
+  {
+    "published_at": "2023-03-08T00:39:48Z",
+    "outlet": "Cointelegraph",
+    "title": "Silvergate reportedly talks with FDIC on ways to avoid shutdown",
+    "url": "https://cointelegraph.com/news/silvergate-reportedly-talks-with-fdic-on-ways-to-avoid-shutdown",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time / JSON-LD datePublished 2023-03-08T00:39:48.000Z. Role: Silvergate distress."
+  },
+  {
+    "published_at": "2023-03-08T21:06:00Z",
+    "outlet": "PR Newswire (SVB Financial Group press release)",
+    "title": "SVB Financial Group Announces Proposed Offerings of Common Stock and Mandatory Convertible Preferred Stock",
+    "url": "https://www.prnewswire.com/news-releases/svb-financial-group-announces-proposed-offerings-of-common-stock-and-mandatory-convertible-preferred-stock-301766247.html",
+    "time_confidence": "wire",
+    "note": "Live PR Newswire page: meta name=date 2023-03-08T21:06:00Z, JSON-LD datePublished 2023-03-08T21:06:00Z (= 4:06 PM ET). This is the primary release ($1.25B common + $500M preferred offerings, plus $500M General Atlantic = $2.25B; sale of ~$21B securities with ~$1.8B after-tax loss). Same release on ir.svb.com (Cloudflare-blocked) and as 8-K Ex. 99.1: https://www.sec.gov/Archives/edgar/data/719739/000119312523064680/d430920dex991.htm (not fetched). Role: SVB trigger."
+  },
+  {
+    "published_at": "2023-03-08T21:30:00Z",
+    "outlet": "Business Wire (Silvergate Capital press release)",
+    "title": "Silvergate Capital Corporation Announces Intent to Wind Down Operations and Voluntarily Liquidate Silvergate Bank",
+    "url": "https://www.businesswire.com/news/home/20230308005795/en/Silvergate-Capital-Corporation-Announces-Intent-to-Wind-Down-Operations-and-Voluntarily-Liquidate-Silvergate-Bank",
+    "time_confidence": "wire",
+    "note": "Live page returns Access Denied to bots; read from web.archive.org snapshot 20230311223536. Business Wire wire stamp: itemprop datePublished 2023-03-08T21:30:00Z, visible 'March 08, 2023 04:30 PM Eastern Standard Time'. Role: Silvergate wind-down (primary)."
+  },
+  {
+    "published_at": "2023-03-08T21:35:12Z",
+    "outlet": "CNBC",
+    "title": "Crypto-focused bank Silvergate is shutting operations and liquidating after market meltdown",
+    "url": "https://www.cnbc.com/2023/03/08/silvergate-shutting-down-operations-and-liquidating-bank.html",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-08T21:35:12+0000 and visible published-timestamp <time> with same value; modified 2023-04-11. Headline is the visible h1; <title> tag is 'Silvergate shutting down operations, liquidating after crypto meltdown'. The headline may have been lengthened after first publication (not verified). Role: Silvergate wind-down."
+  },
+  {
+    "published_at": "2023-03-08T21:35:51Z",
+    "outlet": "Bloomberg",
+    "title": "Silvergate Plans to Wind Down Bank Operations and Liquidate",
+    "url": "https://www.bloomberg.com/news/articles/2023-03-08/silvergate-plans-to-wind-down-bank-operations-and-liquidate",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230309102417 (raw HTML). Bloomberg meta iso-8601-publish-date / JSON-LD datePublished = 2023-03-08T21:35:51.380Z; visible <time> shows the same in UTC. Live page is paywalled/bot-blocked. Title is the visible h1 in that snapshot (modified 2023-03-09T10:06Z). Alternate headlines on the same page: og:title 'Silvergate Slides on Plan to Wind Down Bank Operations and Liquidate', <title> 'Silvergate (SI) Stock Tanks on Plan to Wind Down Bank Operations and Liquidate'. Role: Silvergate wind-down."
+  },
+  {
+    "published_at": "2023-03-08T21:37:00Z",
+    "outlet": "The Block",
+    "title": "Silvergate will liquidate bank, wind down operations",
+    "url": "https://www.theblock.co/post/218223/silvergate-will-liquidate-bank-wind-down-operations",
+    "time_confidence": "byline",
+    "note": "Read through WebFetch (raw fetch is Cloudflare-blocked). Visible byline 'March 8, 2023, 4:37PM EST' -> 21:37 UTC; minute precision only, seconds set to 00. Page shows 'UPDATED: March 28, 2023, 2:51AM EDT'. Role: Silvergate wind-down."
+  },
+  {
+    "published_at": "2023-03-08T21:41:13Z",
+    "outlet": "CoinDesk",
+    "title": "Crypto Bank Silvergate Announces 'Voluntary Liquidation'",
+    "url": "https://www.coindesk.com/policy/2023/03/08/crypto-bank-silvergate-announces-voluntary-liquidation",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230308223442 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-08T21:41:13.841Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Snapshot taken ~53 min after publication, modified 22:28Z. Role: Silvergate wind-down."
+  },
+  {
+    "published_at": "2023-03-08T21:43:02Z",
+    "outlet": "Cointelegraph",
+    "title": "Silvergate Capital Corporation will ‘voluntarily liquidate’ Silvergate Bank",
+    "url": "https://cointelegraph.com/news/silvergate-capital-corporation-will-voluntarily-liquidate-silvergate-bank",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time / JSON-LD datePublished 2023-03-08T21:43:02.000Z. Role: Silvergate wind-down."
+  },
+  {
+    "published_at": "2023-03-08T22:52:45Z",
+    "outlet": "CoinDesk",
+    "title": "Bitcoin Miner Marathon Digital Terminates Credit Facility With Crypto Bank Silvergate",
+    "url": "https://www.coindesk.com/business/2023/03/08/bitcoin-miner-marathon-digital-terminates-credit-facility-with-crypto-bank-silvergate/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230311155429 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-08T22:52:45.618Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: Silvergate counterparty news."
+  },
+  {
+    "published_at": "2023-03-08T23:06:45Z",
+    "outlet": "Fox Business",
+    "title": "Silvergate Capital winding down business; will voluntarily liquidate",
+    "url": "https://www.foxbusiness.com/markets/silvergate-capital-winding-down-business-voluntarily-liquidate",
+    "time_confidence": "metadata",
+    "note": "Live page JSON-LD datePublished 2023-03-08T18:06:45-05:00 (dateModified identical). Role: Silvergate wind-down."
+  },
+  {
+    "published_at": "2023-03-09T03:49:15Z",
+    "outlet": "CoinDesk",
+    "title": "Crypto Stakeholders Say No Exposure to Shuttered Silvergate",
+    "url": "https://www.coindesk.com/business/2023/03/09/crypto-stakeholders-say-no-exposure-to-shuttered-silvergate",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230310165725 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-09T03:49:15.898Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Cross-checked on the live page via WebFetch: same headline, visible 'Published Mar 8, 2023, 10:49 p.m. EST'. Covers Binance, Coinbase, OKX, Paxos statements; the article body does NOT mention Circle or USDC. Role: Silvergate exposure statements."
+  },
+  {
+    "published_at": "2023-03-09T10:00:36Z",
+    "outlet": "Bloomberg",
+    "title": "‘Transactions at The Speed of The Internet’: Circle CEO Jeremy Allaire on Stablecoins",
+    "url": "https://www.bloomberg.com/news/articles/2023-03-09/circle-ceo-jeremy-allaire-on-us-crypto-regulation-stablecoins-usdc",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230309195802 (raw HTML). Bloomberg meta iso-8601-publish-date / JSON-LD datePublished = 2023-03-09T10:00:36.436Z; visible <time> shows the same in UTC. Live page is paywalled/bot-blocked. <title> tag: 'Circle CEO Jeremy Allaire on US Crypto Regulation, Stablecoins, USDC'. Role: CONTROL (Circle/USDC interview feature, no crisis)."
+  },
+  {
+    "published_at": "2023-03-09T10:56:39Z",
+    "outlet": "CoinDesk",
+    "title": "Crypto.com Faces Difficulty Maintaining Fiat On-Ramps in the Face of Crypto Banking Crisis",
+    "url": "https://www.coindesk.com/business/2023/03/09/cryptocom-struggles-to-maintain-fiat-on-ramps-in-the-face-of-crypto-banking-crisis/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230311202330 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-09T10:56:39.441Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Slug says 'struggles to maintain' -> headline probably edited after publication (modified 2023-03-10T09:15Z). Role: crypto banking stress (Silvergate fallout)."
+  },
+  {
+    "published_at": "2023-03-09T12:35:11Z",
+    "outlet": "CNBC",
+    "title": "Bitcoin, ether fall after go-to crypto bank Silvergate announces liquidation",
+    "url": "https://www.cnbc.com/2023/03/09/bitcoin-ether-fall-after-go-to-crypto-bank-silvergate-announces-liquidation.html",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-09T12:35:11+0000; modified 2023-03-09T21:18:53Z. Role: Silvergate wind-down market reaction."
+  },
+  {
+    "published_at": "2023-03-09T13:15:17Z",
+    "outlet": "CoinDesk",
+    "title": "First Mover Americas: Silvergate Shutters in Latest Blow to Crypto",
+    "url": "https://www.coindesk.com/markets/2023/03/09/first-mover-americas-silvergate-shutters-in-latest-blow-to-crypto",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230309132338 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-09T13:15:17.542Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Snapshot taken 8 minutes after publication. Role: Silvergate wind-down (daily newsletter)."
+  },
+  {
+    "published_at": "2023-03-09T16:08:06Z",
+    "outlet": "Bloomberg",
+    "title": "SVB Drops Most on Record as Startup Clients Face Cash Crunch",
+    "url": "https://www.bloomberg.com/news/articles/2023-03-09/svb-plunges-most-since-1998-on-stock-offering-securities-sales",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230310002958 (URL with ?cmpId=google) (raw HTML). Bloomberg meta iso-8601-publish-date / JSON-LD datePublished = 2023-03-09T16:08:06.143Z; visible <time> shows the same in UTC. Live page is paywalled/bot-blocked. HEADLINE EDITED: slug shows the original was approximately 'SVB Plunges Most Since 1998 on Stock Offering, Securities Sales'; the recorded title is the version as of the last modification 2023-03-09T21:10Z. Role: SVB stock plunge."
+  },
+  {
+    "published_at": "2023-03-09T17:00:35Z",
+    "outlet": "TechCrunch",
+    "title": "Crypto bank Silvergate’s ‘collywobbles’ could add to industry’s woes",
+    "url": "https://techcrunch.com/2023/03/09/silvergate-crypto-bank-problems/",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-09T17:00:35+00:00, parsely-pub-date 17:00:35Z, sailthru.date '2023-03-09 09:00:35' (PST). Role: Silvergate wind-down analysis."
+  },
+  {
+    "published_at": "2023-03-09T17:16:19Z",
+    "outlet": "CoinDesk",
+    "title": "Block.one Exits Silvergate Stake, Says Portfolio Firm Has No Exposure",
+    "url": "https://www.coindesk.com/business/2023/03/09/blockone-exits-silvergate-stake-says-portfolio-firm-has-no-exposure",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230310165025 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-09T17:16:19.456Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: Silvergate exposure statement."
+  },
+  {
+    "published_at": "2023-03-09T19:33:04Z",
+    "outlet": "CNBC",
+    "title": "Shares of SVB Financial fall 60% as tech-focused bank looks to raise more cash",
+    "url": "https://www.cnbc.com/2023/03/09/svb-financial-falls-more-than-50percent-as-tech-bank-looks-to-raise-more-cash.html",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-09T19:33:04+0000 and visible published-timestamp; updated 2023-03-10T01:21:04Z. HEADLINE EDITED: slug says 'falls more than 50percent', current headline says 60% (updated after the close). Role: SVB stock plunge."
+  },
+  {
+    "published_at": "2023-03-09T20:00:20Z",
+    "outlet": "TechCrunch",
+    "title": "Silvergate’s shiny hinges have rusted as the crypto bank plans to shut down",
+    "url": "https://techcrunch.com/2023/03/09/silvergates-shiny-hinges-have-rusted-as-the-crypto-bank-plans-to-shut-down/",
+    "time_confidence": "metadata",
+    "note": "Live page JSON-LD datePublished 2023-03-09T20:00:20+00:00, parsely-pub-date 20:00:20Z, sailthru.date '2023-03-09 12:00:20' (PST). Role: Silvergate wind-down analysis."
+  },
+  {
+    "published_at": "2023-03-09T20:06:13Z",
+    "outlet": "TechCrunch",
+    "title": "Silicon Valley Bank’s shares are tanking as a mess unfolds",
+    "url": "https://techcrunch.com/2023/03/09/silicon-valley-banks-shares-are-tanking-as-a-mess-unfolds/",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-09T20:06:13+00:00; visible byline '12:06 PM PST · March 9, 2023'. Role: SVB stock plunge."
+  },
+  {
+    "published_at": "2023-03-09T20:14:01Z",
+    "outlet": "CoinDesk",
+    "title": "MakerDAO Founder Calls for Rebranding of DAI Stablecoin",
+    "url": "https://www.coindesk.com/business/2023/03/09/makerdao-founder-calls-for-rebranding-of-dai-stablecoin/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230311145327 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-09T20:14:01.808Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: CONTROL (stablecoin news, no bank crisis). Body not checked for USDC mentions."
+  },
+  {
+    "published_at": "2023-03-09T20:31:52Z",
+    "outlet": "CoinDesk",
+    "title": "Bitcoin Dips Below $21K to Reach Lowest Level In 7 Weeks as Silvergate Bank Shutdown Shakes Investors",
+    "url": "https://www.coindesk.com/markets/2023/03/09/bitcoin-dips-below-21k-to-reach-lowest-level-in-7-weeks-as-silvergate-bank-shutdown-shakes-investors",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230311142847 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-09T20:31:52.423Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. The page source has a double space in 'In 7  Weeks'; normalised to one space here. Role: Silvergate wind-down market reaction."
+  },
+  {
+    "published_at": "2023-03-09T20:40:55Z",
+    "outlet": "TechCrunch",
+    "title": "Venture firms are advising portfolio companies to move money out of SVB",
+    "url": "https://techcrunch.com/2023/03/09/silicon-valley-bank-firms-reactions/",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-09T20:40:55+00:00; visible byline '12:40 PM PST · March 9, 2023'; modified 2023-03-10T22:51Z. Title is the visible h1 / JSON-LD headline; <title>/og:title is 'Silicon Valley Bank: Venture firms advise pulling money out'. Role: SVB bank run (VC advice)."
+  },
+  {
+    "published_at": "2023-03-09T20:53:52Z",
+    "outlet": "Bloomberg",
+    "title": "SVB Races to Prevent Bank Run as Funds Advise Pulling Cash",
+    "url": "https://www.bloomberg.com/news/articles/2023-03-09/svb-ceo-becker-asks-silicon-valley-bank-clients-to-stay-calm",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230315235804 (raw HTML). Bloomberg meta iso-8601-publish-date / JSON-LD datePublished = 2023-03-09T20:53:52.443Z; visible <time> shows the same in UTC. Live page is paywalled/bot-blocked. HEADLINE EDITED (evidence): snapshot 20230310005643 (modified 2023-03-10T00:01Z) shows the headline 'Thiel Fund, Venture Firms Advise Companies to Pull Money From SVB'; the slug suggests the very first version was about CEO Becker asking clients to stay calm. The recorded title is the final version (modified 2023-03-10T13:45Z, i.e. after this slice's cut-off). For as-of backtesting use the earlier headline. Role: SVB bank run."
+  },
+  {
+    "published_at": "2023-03-09T21:39:47Z",
+    "outlet": "CoinDesk",
+    "title": "Voyager Continues Liquidating Crypto Assets for Circle’s USDC Stablecoin",
+    "url": "https://www.coindesk.com/business/2023/03/09/voyager-continues-liquidating-crypto-assets-for-circles-usdc-stablecoin/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230310002300 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-09T21:39:47.143Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: CONTROL (headline names Circle/USDC, unrelated to bank crisis)."
+  },
+  {
+    "published_at": "2023-03-09T21:58:49Z",
+    "outlet": "TechCrunch",
+    "title": "Silicon Valley Bank shoots self in foot",
+    "url": "https://techcrunch.com/2023/03/09/silicon-valley-bank-shoots-self-in-foot/",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-09T21:58:49+00:00; visible byline '1:58 PM PST · March 9, 2023'. Role: SVB crisis commentary."
+  },
+  {
+    "published_at": "2023-03-09T22:11:27Z",
+    "outlet": "Bloomberg",
+    "title": "Peter Thiel’s Founders Fund Advises Companies to Withdraw Money From SVB",
+    "url": "https://www.bloomberg.com/news/articles/2023-03-09/founders-fund-advises-companies-to-withdraw-money-from-svb",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230309223412 (raw HTML). Bloomberg meta iso-8601-publish-date / JSON-LD datePublished = 2023-03-09T22:11:27.741Z; visible <time> shows the same in UTC. Live page is paywalled/bot-blocked. Snapshot taken 23 min after publication; same h1 in snapshot 20230322202613 (modified 22:24Z). <title> later became 'Peter Thiel’s Founders Fund Tells Companies to Pull Money From SVB'. Role: SVB bank run (Founders Fund)."
+  },
+  {
+    "published_at": "2023-03-09T22:29:06Z",
+    "outlet": "Axios",
+    "title": "Silicon Valley Bank spooks Silicon Valley",
+    "url": "https://www.axios.com/2023/03/09/silicon-valley-bank-svb-spooks-venture-capital",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230310001230 (raw HTML). JSON-LD datePublished 2023-03-09T22:29:06.674061Z; meta article:published_time is 2023-03-09T22:31:29.995Z (equal to modified_time, so likely a re-save). The earlier value is used. Role: SVB bank run (Coatue, Founders Fund advice)."
+  },
+  {
+    "published_at": "2023-03-09T22:47:07Z",
+    "outlet": "TechCrunch",
+    "title": "Some SVB customers are struggling to wire funds out of the bank",
+    "url": "https://techcrunch.com/2023/03/09/silicon-valley-back-withdrawal-issues/",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-09T22:47:07+00:00; visible byline '2:47 PM PST · March 9, 2023'. Role: SVB bank run."
+  },
+  {
+    "published_at": "2023-03-09T23:14:50Z",
+    "outlet": "Bloomberg",
+    "title": "Bank Bonds Weaken After SVB Says It’s Shoring Up Capital",
+    "url": "https://www.bloomberg.com/news/articles/2023-03-09/bank-bonds-weaken-after-svb-says-it-s-shoring-up-capital",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230310170838 (raw HTML). Bloomberg meta iso-8601-publish-date / JSON-LD datePublished = 2023-03-09T23:14:50.476Z; visible <time> shows the same in UTC. Live page is paywalled/bot-blocked. dateModified identical to datePublished. Role: SVB contagion to bank credit."
+  },
+  {
+    "published_at": "2023-03-10T01:08:22Z",
+    "outlet": "Fortune",
+    "title": "‘Sheer panic’ has gripped Silicon Valley VCs and founders amid worries that the startup industry’s most important bank is in trouble",
+    "url": "https://fortune.com/2023/03/09/silicon-valley-bank-panic-venture-investors-founders/",
+    "time_confidence": "metadata",
+    "note": "Live page JSON-LD datePublished 2023-03-10T01:08:22-00:00, dateModified 2023-03-10T18:33:21Z. Title is the JSON-LD headline; og:title is 'VCs and startup founders are freaking out about Silicon Valley Bank' and <title> is 'Silicon Valley Bank trouble causes panic among VCs and founders'. The visible h1 could not be isolated from the raw HTML, so which variant is displayed is not confirmed. Role: SVB bank run."
+  },
+  {
+    "published_at": "2023-03-10T02:56:29Z",
+    "outlet": "The Block",
+    "title": "Crypto VCs urge portfolio companies to pull funds from Silicon Valley Bank",
+    "url": "https://www.theblock.co/post/218664/crypto-vcs-urge-portfolio-companies-to-pull-funds-from-silicon-valley-bank",
+    "time_confidence": "byline",
+    "note": "Read through WebFetch (raw fetch is Cloudflare-blocked). Visible byline 'March 9, 2023, 9:56PM EST'; WebFetch reported JSON-LD datePublished 2023-03-09T21:56:29-05:00 (dateModified identical). Role: SVB bank run, crypto angle."
+  },
+  {
+    "published_at": "2023-03-10T03:54:18Z",
+    "outlet": "CNN",
+    "title": "Silicon Valley Bank scrambles to reassure clients after 60% stock wipe-out",
+    "url": "https://www.cnn.com/2023/03/09/investing/silicon-valley-bank/index.html",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-10T03:54:18Z, but article:modified_time is identical and JSON-LD dateCreated is 2023-03-10T03:40:47Z. DOUBT: CNN overwrites published_time on update, and the URL is dated 03/09, so first publication may have been earlier (no earlier than the 21:00Z close on 3/9, given '60% wipe-out'; lower bound not verified). Treat 03:54Z as an upper bound. Role: SVB stock plunge / bank run."
+  },
+  {
+    "published_at": "2023-03-10T10:13:39Z",
+    "outlet": "CNBC",
+    "title": "More than $70 billion wiped off crypto market in 24 hours as bitcoin drops below $20,000",
+    "url": "https://www.cnbc.com/2023/03/10/bitcoin-falls-below-20000-63-billion-wiped-off-cryptocurrency-market.html",
+    "time_confidence": "metadata",
+    "note": "Live page meta article:published_time 2023-03-10T10:13:39+0000 and visible published-timestamp; updated 2023-03-10T21:11:32Z. HEADLINE EDITED: slug says '63 billion', current headline says $70 billion. Meta description cites 'issues at Silicon Valley Bank'; keywords include Silvergate. Role: crypto market reaction to Silvergate + SVB."
+  },
+  {
+    "published_at": "2023-03-10T10:29:41Z",
+    "outlet": "The Irish Times (Financial Times syndication)",
+    "title": "Startup world spooked as Silicon Valley Bank races to prevent bank run",
+    "url": "https://www.irishtimes.com/business/financial-services/2023/03/10/startup-world-spooked-as-silicon-valley-bank-races-to-prevent-bank-run",
+    "time_confidence": "metadata",
+    "note": "Live page JSON-LD datePublished 2023-03-10T10:29:41.969Z (dateModified identical). This is the Irish Times time for a syndicated piece; the original FT article (not fetched, paywalled) was published earlier. Role: SVB bank run."
+  },
+  {
+    "published_at": "2023-03-10T10:50:42Z",
+    "outlet": "Bloomberg",
+    "title": "SVB Shares Halted for Pending News After Sinking Another 69%",
+    "url": "https://www.bloomberg.com/news/articles/2023-03-10/svb-financial-sivb-slumps-again-as-clients-threaten-to-pull-cash",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230315235640 (raw HTML). Bloomberg meta iso-8601-publish-date / JSON-LD datePublished = 2023-03-10T10:50:42.623Z; visible <time> shows the same in UTC. Live page is paywalled/bot-blocked. HEADLINE EDITED: the recorded title is the final version (modified 2023-03-10T13:48Z; the trading halt came ~13:35Z, AFTER this slice's 12:00Z cut-off). The headline at 10:50Z was different; the slug and the BNN Bloomberg syndicated copy (title 'SVB shares slump again as clients threaten to pull cash', seen only in search results, not fetched) indicate roughly 'SVB Shares Slump Again as Clients Threaten to Pull Cash'. No pre-12:00Z snapshot exists (only one capture). Do not use the 'Halted' wording as of 10:50Z. Role: SVB premarket plunge."
+  },
+  {
+    "published_at": "2023-03-10T11:52:52Z",
+    "outlet": "CoinDesk",
+    "title": "Replacing Silvergate’s Network Is a Challenge for Crypto Industry: JPMorgan",
+    "url": "https://www.coindesk.com/business/2023/03/10/replacing-silvergates-network-is-a-challenge-for-crypto-industry-jpmorgan-jpmorgan/",
+    "time_confidence": "archive",
+    "note": "Live page blocks bots; taken from web.archive.org snapshot 20230311091754 (raw HTML). CoinDesk meta article:published_time / JSON-LD datePublished = 2023-03-10T11:52:52.995Z (UTC). Title as shown in the March 2023 snapshot, live page not re-checked. Role: Silvergate aftermath (analyst note)."
+  },
+  {
+    "published_at": "2023-03-10T13:08:00Z",
+    "outlet": "CoinDesk",
+    "title": "Cathie Wood's Ark Invest Buys $22M in Coinbase Shares",
+    "url": "https://www.coindesk.com/business/2023/03/10/cathie-woods-ark-purchases-over-350k-coinbase-shares-in-biggest-buy-of-2023",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 8:08 a.m. EST'. Minute resolution only. EST=UTC-5. CONTROL item (no crisis wording). Page also shows 'Updated May 9, 2023, 12:10 a.m. EDT' (site-wide bulk update, not editorial)."
+  },
+  {
+    "published_at": "2023-03-10T13:35:00Z",
+    "outlet": "CoinDesk",
+    "title": "Bitcoin Bounces as U.S. Adds 311K Jobs in February, Beating Expectations",
+    "url": "https://www.coindesk.com/business/2023/03/10/bitcoin-bounces-as-us-adds-311k-jobs-in-march-beating-expectations",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 8:35 a.m. EST'. Minute resolution only. EST=UTC-5. CONTROL item. 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update)."
+  },
+  {
+    "published_at": "2023-03-10T13:53:47Z",
+    "outlet": "Reuters",
+    "title": "SVB is largest bank failure since 2008 financial crisis",
+    "url": "https://www.reuters.com/business/finance/global-markets-banks-wrapup-1-2023-03-10/",
+    "time_confidence": "archive",
+    "note": "reuters.com is not fetchable. Time and title come from Reuters' own embedded JSON (related-articles block: published_time 2023-03-10T13:53:47.821Z, updated_time 2023-03-11T16:55:00.796Z) inside a Wayback snapshot of another Reuters page captured 2023-03-11 22:37:51Z. LIVE-UPDATED wrap-up: the URL was first published 13:53Z (before the closure was announced ~16:45Z), so the headline shown is the updated one as of 2023-03-11; the original 13:53Z headline is unknown. Article page itself was not opened."
+  },
+  {
+    "published_at": "2023-03-10T13:59:26Z",
+    "outlet": "CNN Business",
+    "title": "Silicon Valley Bank collapses after failing to raise capital",
+    "url": "https://www.cnn.com/2023/03/10/investing/svb-bank/index.html",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-10T13:59:26Z, dateModified 2023-03-11T04:08:41Z (raw HTML). LIVE-UPDATED: first published before the closure announcement, so the current headline is an updated version; original headline unknown."
+  },
+  {
+    "published_at": "2023-03-10T14:37:26Z",
+    "outlet": "Decrypt",
+    "title": "Embattled Silicon Valley Bank Seeking Outside Acquisition: Report",
+    "url": "https://decrypt.co/123145/silicon-valley-bank-seeking-outside-acquisition-report",
+    "time_confidence": "metadata",
+    "note": "article:published_time '2023-03-10T14:37:26' (no timezone suffix; treated as UTC - Decrypt's suffix-less times match the UTC HHMMSS in Yahoo syndication URLs for another article), modified '2023-03-10T17:46:47'."
+  },
+  {
+    "published_at": "2023-03-10T14:56:03Z",
+    "outlet": "The Block",
+    "title": "Silicon Valley Bank plunges 60% before halt, Signature trading stopped shortly after open",
+    "url": "https://www.theblock.co/post/218783/silicon-valley-bank-plunges-60-before-halt-signature-trading-stopped-shortly-after-open",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-10T09:56:03-05:00 (= visible 'March 10, 2023, 9:56AM EST'), dateModified identical. Read via WebFetch. Covers the SIVB Nasdaq halt and Signature volatility halt."
+  },
+  {
+    "published_at": "2023-03-10T15:56:00Z",
+    "outlet": "CoinDesk",
+    "title": "Signature Bank Stock Down 12% in Volatile Action as Sell-Off Continues",
+    "url": "https://www.coindesk.com/markets/2023/03/10/signature-bank-stock-down-12-in-volatile-action-as-bank-selloff-continues",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 10:56 a.m. EST'. Minute resolution only. EST=UTC-5. Updated Mar 10, 2023, 12:59 p.m. EST (17:59Z) - headline may reflect the update."
+  },
+  {
+    "published_at": "2023-03-10T16:01:46Z",
+    "outlet": "CNBC",
+    "title": "Crypto bank Signature slides on Friday amid troubles at Silicon Valley Bank, Silvergate",
+    "url": "https://www.cnbc.com/2023/03/10/crypto-bank-signature-slides-on-friday-amid-troubles-at-silicon-valley-bank-silvergate.html",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-10T16:01:46+0000 ('Published Fri, Mar 10 2023 11:01 AM EST'), dateModified 2023-03-10T21:04:09+0000. Title is the visible H1; <title> tag has a shorter variant 'Crypto bank Signature slides amid Silicon Valley Bank, Silvergate woes'."
+  },
+  {
+    "published_at": "2023-03-10T16:46:09Z",
+    "outlet": "CNBC",
+    "title": "Silicon Valley Bank is shut down by regulators in biggest bank failure since global financial crisis",
+    "url": "https://www.cnbc.com/2023/03/10/silicon-valley-bank-is-shut-down-by-regulators-fdic-to-protect-insured-deposits.html",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-10T16:46:09+0000 ('Published Fri, Mar 10 2023 11:46 AM EST'), dateModified 2023-03-11T01:41:17+0000. LIVE-UPDATED: URL slug ('...shut-down-by-regulators-fdic-to-protect-insured-deposits') shows the original headline differed from the current H1."
+  },
+  {
+    "published_at": "2023-03-10T16:46:33Z",
+    "outlet": "FDIC (press release)",
+    "title": "FDIC Creates a Deposit Insurance National Bank of Santa Clara to Protect Insured Depositors of Silicon Valley Bank, Santa Clara, California",
+    "url": "https://www.fdic.gov/news/press-releases/2023/pr23016.html",
+    "time_confidence": "archive",
+    "note": "UPPER BOUND, not the release time. The live page shows only the date 'March 10, 2023' (and 'Last updated: March 12, 2023'), no time of day. 16:46:33Z is the earliest Wayback capture (CDX timestamp 20230310164633, HTTP 200), so the release was online by then; CNBC's story citing it is stamped 16:46:09Z. The label 'PR-16-2023' is not displayed on the current page (URL id pr23016)."
+  },
+  {
+    "published_at": "2023-03-10T16:50:00Z",
+    "outlet": "CoinDesk",
+    "title": "Silicon Valley Bank Shuttered by State Regulators",
+    "url": "https://www.coindesk.com/policy/2023/03/10/silicon-valley-bank-shuttered-by-state-regulators",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 11:50 a.m. EST'. Minute resolution only. EST=UTC-5. Updated Mar 10, 2023, 4:51 p.m. EST. Footer notes: 'UPDATE (March 10, 2023, 17:00 UTC): Adds additional detail.' and 'UPDATE (March 10, 17:25 UTC): Adds context from FDIC press release and notes SVB's failure compared to Washington Mutual.'"
+  },
+  {
+    "published_at": "2023-03-10T16:51:04Z",
+    "outlet": "Semafor",
+    "title": "Silicon Valley Bank shut down by regulators",
+    "url": "https://www.semafor.com/article/03/10/2023/silicon-valley-bank-shut-down-by-regulators",
+    "time_confidence": "metadata",
+    "note": "DOUBT: page carries two different publish times - JSON-LD datePublished 2023-03-10T16:51:04Z vs meta article:published_time 2023-03-10T17:04:17Z (modified 17:09:21Z). Earlier one recorded; true time is within 16:51-17:04Z."
+  },
+  {
+    "published_at": "2023-03-10T16:51:47Z",
+    "outlet": "California DFPI (press release)",
+    "title": "California Financial Regulator Takes Possession of Silicon Valley Bank",
+    "url": "https://dfpi.ca.gov/2023/03/10/california-financial-regulator-takes-possession-of-silicon-valley-bank/",
+    "time_confidence": "archive",
+    "note": "UPPER BOUND, not the release time. Live page returns HTTP 403; title read from Wayback snapshot 20230312020913. Page shows date 'Mar 10, 2023' and 'Last updated: Mar 10, 2023 @ 11:17 am' (timezone not stated; if Pacific = 19:17Z, i.e. a later edit). 16:51:47Z is the earliest Wayback capture (CDX 20230310165147, HTTP 200), so the release was online by then."
+  },
+  {
+    "published_at": "2023-03-10T16:55:48Z",
+    "outlet": "Fortune (AP wire copy, byline The Associated Press / Ken Sweet)",
+    "title": "Silicon Valley Bank has officially failed after less than a day of panicked selling as the federal government takes it over",
+    "url": "https://fortune.com/2023/03/10/silicon-valley-bank-seized-regulators-bank-failure/",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-10T16:55:48-00:00, dateModified 2023-03-10T17:51:49-00:00. This is Fortune's copy of the AP story, used because apnews.com is not fetchable; AP's own headline/time were NOT verified. Title is the JSON-LD/og headline; the <title> tag reads 'Silicon Valley Bank seized by bank regulators'."
+  },
+  {
+    "published_at": "2023-03-10T16:56:00Z",
+    "outlet": "CoinDesk",
+    "title": "DeFi Stablecoin Exchange mStable Expects 4 Buyout Bids: Source",
+    "url": "https://www.coindesk.com/business/2023/03/10/defi-stablecoin-exchange-mstable-expects-4-buyout-bids-source",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 11:56 a.m. EST'. Minute resolution only. EST=UTC-5. CONTROL item (contains the word 'stablecoin' but no crisis wording). 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update)."
+  },
+  {
+    "published_at": "2023-03-10T16:56:10Z",
+    "outlet": "The Block",
+    "title": "Silicon Valley Bank closed by California regulator",
+    "url": "https://www.theblock.co/post/218838/silicon-valley-bank-closed-by-california-regulator",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-10T11:56:10-05:00 (visible 'March 10, 2023, 11:56AM EST'), dateModified 2023-03-10T13:05:21-05:00. Read via WebFetch."
+  },
+  {
+    "published_at": "2023-03-10T16:57:44Z",
+    "outlet": "Decrypt",
+    "title": "California Financial Regulator Shutters Silicon Valley Bank",
+    "url": "https://decrypt.co/123164/california-financial-regulator-shutters-silicon-valley-bank",
+    "time_confidence": "metadata",
+    "note": "article:published_time '2023-03-10T16:57:44' (no timezone suffix; treated as UTC), modified '2023-03-10T17:23:51'."
+  },
+  {
+    "published_at": "2023-03-10T17:04:52Z",
+    "outlet": "Cointelegraph",
+    "title": "Silicon Valley Bank shut down by California regulator",
+    "url": "https://cointelegraph.com/news/silicon-valley-bank-shut-down-by-california-regulator",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-10T17:04:52.000Z. (modified_time is a 2026 site migration stamp, ignore.)"
+  },
+  {
+    "published_at": "2023-03-10T19:35:00Z",
+    "outlet": "CoinDesk",
+    "title": "Scrutiny Falls on $43B USDC Stablecoin’s Cash Reserves at Failed Silicon Valley Bank",
+    "url": "https://www.coindesk.com/markets/2023/03/10/scrutiny-falls-on-43b-usdc-stablecoins-cash-reserves-at-failed-silicon-valley-bank",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 2:35 p.m. EST'. Minute resolution only. EST=UTC-5. Updated Mar 10, 2023, 8:11 p.m. EST. Footer: 'UPDATE (Mar. 10, 20:20 UTC): Adds comment from Simon Dixon, CEO of BnkToTheFuture, investor in Circle.' and 'UPDATE (Mar. 11, 01:05 UTC): Adds comment from Circle spokesperson. Adds latest data about USDC reserves in cash.' Earliest item found tying USDC reserves to SVB."
+  },
+  {
+    "published_at": "2023-03-10T19:50:00Z",
+    "outlet": "CoinDesk",
+    "title": "Crypto Wallets Withdraw $902M USDC From Centralized Exchanges in Past 24 Hours Amid SVB, Silvergate Shutdowns",
+    "url": "https://www.coindesk.com/business/2023/03/10/crypto-wallets-withdraw-902m-usdc-from-centralized-exchanges-in-past-24-hours-amid-svb-silvergate-shutdowns",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 2:50 p.m. EST'. Minute resolution only. EST=UTC-5. 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update)."
+  },
+  {
+    "published_at": "2023-03-10T20:53:13Z",
+    "outlet": "TechCrunch",
+    "title": "Uncertainty stands around multibillion USDC empire as issuer Circle held reserves at Silicon Valley Bank",
+    "url": "https://techcrunch.com/2023/03/10/uncertainty-stands-around-multi-billion-usdc-empire-as-issuer-circle-held-reserves-at-silicon-valley-bank/",
+    "time_confidence": "metadata",
+    "note": "article:published_time 2023-03-10T20:53:13+00:00, modified 2023-03-11T15:29:21+00:00 (so text/headline may have been edited after the depeg)."
+  },
+  {
+    "published_at": "2023-03-10T21:50:02Z",
+    "outlet": "Nasdaq (GlobeNewswire release, read on TipRanks copy)",
+    "title": "Nasdaq Halts SVB Financial Group",
+    "url": "https://www.tipranks.com/news/press-releases/nasdaq-halts-svb-financial-group",
+    "time_confidence": "wire",
+    "note": "Syndicated copy of the GlobeNewswire release (original globenewswire.com page not reachable). Copy's structured data: 2023-03-10T21:50:02.000Z; dateline 'NEW YORK, March 10, 2023 (GLOBE NEWSWIRE)'. NOTE the release went out hours after the event: its text gives the halt itself as 08:35:18 Eastern Time (= 13:35:18Z) on March 10 for 'news dissemination'. Read via WebFetch."
+  },
+  {
+    "published_at": "2023-03-10T22:51:00Z",
+    "outlet": "CoinDesk",
+    "title": "DeFi Protocol Curve's $500M Stablecoin Pool Hammered as Traders Flee USDC",
+    "url": "https://www.coindesk.com/business/2023/03/10/defi-protocol-curves-500m-stablecoin-pool-hammered-as-traders-flee-usdc",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 5:51 p.m. EST'. Minute resolution only. EST=UTC-5. 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update)."
+  },
+  {
+    "published_at": "2023-03-10T22:57:48Z",
+    "outlet": "The Block",
+    "title": "Stablecoin issuers seek to diversify banking partners in the wake of Silicon Valley Bank's meltdown",
+    "url": "https://www.theblock.co/post/218862/stablecoin-issuers-seek-to-diversify-banking-partners-in-the-wake-of-silicon-valley-banks-meltdown",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-10T17:57:48-05:00 (visible 'March 10, 2023, 5:57PM EST'), dateModified 2023-03-10T18:58:09-05:00. Body quotes Circle: 'Silicon Valley Bank is one of six banking partners Circle uses for managing the ~25% portion of USDC reserves held in cash.' Read via WebFetch."
+  },
+  {
+    "published_at": "2023-03-10T22:59:00Z",
+    "outlet": "CoinDesk",
+    "title": "Crypto VC Firm Pantera Used Silicon Valley Bank as a Custodian",
+    "url": "https://www.coindesk.com/business/2023/03/10/crypto-vc-firm-pantera-used-silicon-valley-bank-as-a-custodian",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 5:59 p.m. EST'. Minute resolution only. EST=UTC-5. 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update)."
+  },
+  {
+    "published_at": "2023-03-11T00:01:00Z",
+    "outlet": "CoinDesk",
+    "title": "USDC Stablecoin Depegs From $1; Circle Says Operations Are Normal",
+    "url": "https://www.coindesk.com/markets/2023/03/11/usdc-stablecoin-depegs-from-1-circle-says-operations-are-normal",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 7:01 p.m. EST'. Minute resolution only. EST=UTC-5. Updated Mar 13, 2023, 3:59 p.m. EDT. Footer: 'UPDATE (March 11, 2023, 02:54 UTC): Updates to reflect new low price.' Headline could have been touched by that update. Earliest 'depeg' headline found."
+  },
+  {
+    "published_at": "2023-03-11T00:05:00Z",
+    "outlet": "CoinDesk",
+    "title": "USDC Issuer Circle Says It 'Awaits Clarity' From FDIC on Silicon Valley Bank Collapse",
+    "url": "https://www.coindesk.com/business/2023/03/11/usdc-issuer-circle-says-it-awaits-clarity-from-fdic-on-silicon-valley-bank-collapse",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 7:05 p.m. EST'. Minute resolution only. EST=UTC-5. 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update)."
+  },
+  {
+    "published_at": "2023-03-11T00:22:05Z",
+    "outlet": "Decrypt",
+    "title": "As Silicon Valley Bank Falls, Crypto Firms Brace for 'Extinction-Level' Tech Startup Turmoil",
+    "url": "https://decrypt.co/123197/silicon-valley-banks-crypto-extinction-level-tech-startup-turmoil",
+    "time_confidence": "metadata",
+    "note": "article:published_time '2023-03-11T00:22:05' (no timezone suffix; treated as UTC), modified '2023-03-11T02:16:54'."
+  },
+  {
+    "published_at": "2023-03-11T01:01:00Z",
+    "outlet": "CoinDesk",
+    "title": "Circle’s USDC Endured $1B of Net Redemptions Since Silicon Valley Bank's Shutdown",
+    "url": "https://www.coindesk.com/markets/2023/03/11/circles-usdc-endured-1b-of-net-redemptions-since-silicon-valley-banks-shutdown",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 8:01 p.m. EST'. Minute resolution only. EST=UTC-5. Updated Mar 13, 2023, 11:17 a.m. EDT."
+  },
+  {
+    "published_at": "2023-03-11T01:12:14Z",
+    "outlet": "Binance (tweet, @binance)",
+    "title": "Binance has temporarily suspended auto-conversion of USDC to BUSD due to current market conditions, specifically related to high inflows & the increasing burden to support the conversion. This is a normal risk-management procedural step to take while we monitor the situation.",
+    "url": "https://twitter.com/binance/status/1634361554543030273",
+    "time_confidence": "metadata",
+    "note": "Tweet not opened directly. Time decoded from the tweet's snowflake ID ((id>>22)+1288834974657 ms), which is Twitter's own creation timestamp; tweet URL and text taken from embeds in Cointelegraph and Decrypt articles. 'title' is the tweet text as quoted there."
+  },
+  {
+    "published_at": "2023-03-11T01:52:42Z",
+    "outlet": "FXStreet",
+    "title": "Breaking: $3.3 billion of Circle's USDC reserves stuck at Silicon Valley Bank",
+    "url": "https://www.fxstreet.com/cryptocurrencies/news/breaking-binance-suspends-conversion-of-usdc-after-circles-banking-partner-silicon-valley-bank-collapses-202303110152",
+    "time_confidence": "metadata",
+    "note": "article:published_time and modified_time both 2023-03-11T01:52:42Z. DOUBT: HEADLINE WAS REWRITTEN after publication - the URL slug ('breaking-binance-suspends-conversion-of-usdc-after-circles-banking-partner-silicon-valley-bank-collapses', stamped 202303110152) shows the 01:52Z headline was about Binance suspending conversion; the $3.3B fact was not public until 03:11Z. Do not treat the current title as existing at 01:52Z."
+  },
+  {
+    "published_at": "2023-03-11T03:11:15Z",
+    "outlet": "Circle (tweet, @circle)",
+    "title": "1/ Following the confirmation at the end of today that the wires initiated on Thursday to remove balances were not yet processed, $3.3 billion of the ~$40 billion of USDC reserves remain at SVB.",
+    "url": "https://twitter.com/circle/status/1634391505988206592",
+    "time_confidence": "metadata",
+    "note": "Tweet not opened directly. Time decoded from the tweet's snowflake ID ((id>>22)+1288834974657 ms), which is Twitter's own creation timestamp; tweet URL and text taken from embeds in Cointelegraph, Decrypt and CNBC articles. Confirms the ~03:11 UTC time. The 2/ tweet of the thread (status 1634391708837330945, 'Circle joins calls for continuity of this important bank...') decodes to 03:12:03Z."
+  },
+  {
+    "published_at": "2023-03-11T03:26:00Z",
+    "outlet": "The Block",
+    "title": "Circle says $3.3 billion of USDC reserves are with Silicon Valley Bank",
+    "url": "https://www.theblock.co/post/218971/circle-says-3-3-billion-of-usdc-reserves-are-with-silicon-valley-bank",
+    "time_confidence": "byline",
+    "note": "Visible byline 'March 10, 2023, 10:26PM EST' (minute resolution), 'UPDATED: March 10, 2023, 11:12PM EST'. Read via WebFetch. First article found reporting the disclosure (15 min after the tweet)."
+  },
+  {
+    "published_at": "2023-03-11T03:41:09Z",
+    "outlet": "Coinbase (tweet, @coinbase)",
+    "title": "We are temporarily pausing USDC:USD conversions over the weekend while banks are closed. During periods of heightened activity, conversions rely on USD transfers from the banks that clear during normal banking hours. When banks open on Monday, we plan to re-commence conversions.",
+    "url": "https://twitter.com/coinbase/status/1634399032767307776",
+    "time_confidence": "metadata",
+    "note": "Tweet not opened directly. Time decoded from the tweet's snowflake ID ((id>>22)+1288834974657 ms), which is Twitter's own creation timestamp; tweet URL and text taken from embeds in the Cointelegraph article. 'title' is the tweet text as quoted there."
+  },
+  {
+    "published_at": "2023-03-11T03:52:00Z",
+    "outlet": "CoinDesk",
+    "title": "Circle Confirms $3.3B of USDC's Cash Reserves Stuck at Failed Silicon Valley Bank",
+    "url": "https://www.coindesk.com/business/2023/03/11/circle-confirms-33b-of-usdcs-cash-reserves-stuck-at-failed-silicon-valley-bank",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 10:52 p.m. EST'. Minute resolution only. EST=UTC-5. 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update)."
+  },
+  {
+    "published_at": "2023-03-11T03:59:21Z",
+    "outlet": "The Block",
+    "title": "Coinbase halts conversion feature between U.S. dollars and USDC",
+    "url": "https://www.theblock.co/post/218979/coinbase-halts-conversion-feature-between-u-s-dollars-and-usdc",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-10T22:59:21-05:00 (visible 'March 10, 2023, 10:59PM EST'), dateModified 2023-03-11T00:15:26-05:00. Read via WebFetch."
+  },
+  {
+    "published_at": "2023-03-11T04:07:58Z",
+    "outlet": "Cointelegraph",
+    "title": "Breaking: Circle discloses $3.3B tied up at Silicon Valley Bank",
+    "url": "https://cointelegraph.com/news/circle-discloses-3-3b-tied-up-at-silicon-valley-bank",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-11T04:07:58.000Z. Body also reports the Binance and Coinbase pauses."
+  },
+  {
+    "published_at": "2023-03-11T04:10:25Z",
+    "outlet": "Fortune",
+    "title": "Circle reveals it has $3.3 billion stuck at Silicon Valley Bank as USDC wobbles against its peg",
+    "url": "https://fortune.com/crypto/2023/03/10/circle-reveals-3-3-billion-stuck-silicon-valley-bank-usdc-wobbles-against-peg/",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-11T04:10:25-00:00, dateModified 2023-03-11T05:20:41-00:00 (URL date is 03/10 US local)."
+  },
+  {
+    "published_at": "2023-03-11T04:14:00Z",
+    "outlet": "CoinDesk",
+    "title": "Coinbase Pauses Conversions Between USDC and U.S. Dollars as Banking Crisis Roils Crypto",
+    "url": "https://www.coindesk.com/business/2023/03/11/coinbase-pauses-conversions-between-usdc-and-us-dollars-as-banking-crisis-roils-crypto",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 10, 2023, 11:14 p.m. EST'. Minute resolution only. EST=UTC-5. 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update). Cross-check: Yahoo syndication URL suffix 041446986 = 04:14:46 UTC."
+  },
+  {
+    "published_at": "2023-03-11T05:04:25Z",
+    "outlet": "Decrypt",
+    "title": "Coinbase, Binance Suspend USDC Conversions as Dollar Peg Wobbles",
+    "url": "https://decrypt.co/123208/coinbase-binance-suspend-usdc-conversions-as-dollar-peg-wobbles",
+    "time_confidence": "metadata",
+    "note": "article:published_time '2023-03-11T05:04:25' (no timezone suffix), modified identical. UTC confirmed by the Yahoo syndication URL suffix 050425006 (= 05:04:25 UTC). Falls 4 minutes AFTER the 05:00Z threshold."
+  },
+  {
+    "published_at": "2023-03-11T05:05:14Z",
+    "outlet": "Cointelegraph",
+    "title": "USDC depegs as Circle confirms $3.3B stuck with Silicon Valley Bank",
+    "url": "https://cointelegraph.com/news/usdc-depegs-as-circle-confirms-3-3b-stuck-with-silicon-valley-bank",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-11T05:05:14.000Z. Meta description mentions a price of $0.8774, which USDC only reached later, so the body (possibly headline) was updated after publication; no reliable updated time available (modified_time is a 2026 migration stamp)."
+  },
+  {
+    "published_at": "2023-03-11T05:51:00Z",
+    "outlet": "CoinDesk",
+    "title": "USDC Stablecoin Depegs, Crypto Market Goes Haywire After Silicon Valley Bank Collapses",
+    "url": "https://www.coindesk.com/markets/2023/03/11/usdc-stablecoin-and-crypto-market-go-haywire-after-silicon-valley-bank-collapses",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 11, 2023, 12:51 a.m. EST'. Minute resolution only. EST=UTC-5. Updated Mar 13, 2023, 11:09 a.m. EDT. Footer: 'UPDATE (March 11, 2023, 18:07 UTC): Updates prices and adds DAI's depegging.' URL slug lacks 'depegs', so the headline was probably edited."
+  },
+  {
+    "published_at": "2023-03-11T07:26:23Z",
+    "outlet": "Reuters",
+    "title": "Circle assures market after stablecoin USDC breaks dollar peg",
+    "url": "https://www.reuters.com/business/crypto-firm-circle-reveals-33-bln-exposure-silicon-valley-bank-2023-03-11/",
+    "time_confidence": "archive",
+    "note": "reuters.com not fetchable; read from Wayback snapshot 20230311223751. Reuters JSON in the snapshot: published_time 2023-03-11T07:26:23.713Z (first publication of this URL), display/updated 2023-03-11T21:32:11Z ('March 11, 2023 9:32 PM UTC'). LIVE-UPDATED: title recorded is the headline as of 21:32Z; the ORIGINAL headline (per URL slug and Kitco's Reuters copy) was 'Crypto firm Circle reveals $3.3 bln exposure to Silicon Valley Bank'. The Reuters wire flash may have preceded the 07:26Z web time; not verifiable."
+  },
+  {
+    "published_at": "2023-03-11T07:42:53Z",
+    "outlet": "Cointelegraph",
+    "title": "USDC investor shells out $2M to receive $0.05 USDT trying to evade crash",
+    "url": "https://cointelegraph.com/news/usdc-investor-shells-out-2m-to-receive-0-05-usdt-trying-to-evade-crash",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-11T07:42:53.000Z."
+  },
+  {
+    "published_at": "2023-03-11T10:10:40Z",
+    "outlet": "The Block",
+    "title": "USDC remains at about $0.90 following Circle's disclosure of funds at SVB",
+    "url": "https://www.theblock.co/post/218993/usdc-and-dai-remain-at-about-0-90-following-circles-disclosure-of-funds-at-svb",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-11T05:10:40-05:00 (visible 'March 11, 2023, 5:10AM EST'), dateModified 2023-03-11T05:24:21-05:00. Slug says 'usdc-and-dai-remain...', so headline was trimmed. Read via WebFetch."
+  },
+  {
+    "published_at": "2023-03-11T10:24:00Z",
+    "outlet": "CoinDesk",
+    "title": "DAI Depegs to Lifetime Lows as Stablecoin Rout Plagues Crypto",
+    "url": "https://www.coindesk.com/markets/2023/03/11/dai-depegs-as-stablecoin-rout-plagues-crypto",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 11, 2023, 5:24 a.m. EST'. Minute resolution only. EST=UTC-5. Updated Mar 13, 2023, 11:33 a.m. EDT."
+  },
+  {
+    "published_at": "2023-03-11T10:44:00Z",
+    "outlet": "Cointelegraph",
+    "title": "Circle’s USDC instability causes domino effect on DAI, USDD stablecoins",
+    "url": "https://cointelegraph.com/news/circle-s-usdc-instability-causes-domino-effect-on-dai-usdd-stablecoins",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-11T10:44:00.000Z."
+  },
+  {
+    "published_at": "2023-03-11T11:02:00Z",
+    "outlet": "CoinDesk",
+    "title": "Traders Bet on USD Coin Rebound as USDC Falls to 90 Cents",
+    "url": "https://www.coindesk.com/markets/2023/03/11/traders-bet-on-usd-coin-rebound-as-usdc-falls-to-90-cents",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 11, 2023, 6:02 a.m. EST'. Minute resolution only. EST=UTC-5. Updated Mar 14, 2023, 10:53 a.m. EDT."
+  },
+  {
+    "published_at": "2023-03-11T13:22:48Z",
+    "outlet": "Cointelegraph",
+    "title": "MakerDAO files emergency proposal addressing 3.1B USDC exposure",
+    "url": "https://cointelegraph.com/news/maker-dao-files-emergency-proposal-addressing-3-1b-usdc-exposure",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-11T13:22:48.000Z."
+  },
+  {
+    "published_at": "2023-03-11T14:27:59Z",
+    "outlet": "Decrypt",
+    "title": "USDC Stablecoin Falls to 87 Cents After Circle Discloses Exposure to Silicon Valley Bank",
+    "url": "https://decrypt.co/123211/usdc-stablecoin-depegs-90-cents-circle-exposure-silicon-valley-bank",
+    "time_confidence": "metadata",
+    "note": "article:published_time '2023-03-11T14:27:59' (no timezone suffix; treated as UTC), modified '2023-03-11T14:35:08'. DOUBT: post ID 123211 sits right after 123208 (05:04Z) and the slug says 'depegs-90-cents', so this was very likely first published around 05Z with a '...90 cents' headline and RE-STAMPED at 14:27Z when updated to 87 cents. Original time/headline not recoverable from the page."
+  },
+  {
+    "published_at": "2023-03-11T16:03:23Z",
+    "outlet": "CNBC",
+    "title": "Stablecoin USDC breaks dollar peg after firm reveals it has $3.3 billion in SVB exposure",
+    "url": "https://www.cnbc.com/2023/03/11/stablecoin-usdc-breaks-dollar-peg-after-firm-reveals-it-has-3point3-billion-in-svb-exposure.html",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-11T16:03:23+0000 ('Published Sat, Mar 11 2023 11:03 AM EST'), dateModified 2023-03-12T01:52:06+0000. Describes the 'record low Saturday morning'."
+  },
+  {
+    "published_at": "2023-03-11T20:15:49Z",
+    "outlet": "Circle (CEO Jeremy Allaire tweet announcing Circle blog post 'An Update on USDC and Silicon Valley Bank')",
+    "title": "Sharing an Update on USDC and Silicon Valley Bank.",
+    "url": "https://twitter.com/jerallaire/status/1634649346535833601",
+    "time_confidence": "metadata",
+    "note": "Tweet not opened directly. Time decoded from the tweet's snowflake ID ((id>>22)+1288834974657 ms), which is Twitter's own creation timestamp; tweet URL and text taken from embeds in Cointelegraph and Decrypt articles. The blog post itself (https://www.circle.com/blog/an-update-on-usdc-and-silicon-valley-bank, the 'cover any shortfall' / Monday-operations statement) could NOT be opened: the URL now redirects to Circle's blog index and no Wayback capture was found, so the blog's own timestamp is unverified; this tweet time is the earliest verified public pointer to it."
+  },
+  {
+    "published_at": "2023-03-11T20:52:38Z",
+    "outlet": "Cointelegraph",
+    "title": "Circle plans to cover missing liquidity in Silicon Valley Bank with corporate funds",
+    "url": "https://cointelegraph.com/news/circle-plans-to-cover-missing-liquidity-in-silicon-valley-bank-with-corporate-funds",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-11T20:52:38.000Z."
+  },
+  {
+    "published_at": "2023-03-11T20:54:02Z",
+    "outlet": "The Block",
+    "title": "USDC will remain redeemable 1 for 1 with U.S. dollar, Circle says",
+    "url": "https://www.theblock.co/post/219075/usdc-will-remain-redeemable-1-for-1-with-u-s-dollar-circle-says",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-11T15:54:02-05:00 (visible 'March 11, 2023, 3:54PM EST'), dateModified 2023-03-11T16:45:10-05:00. Read via WebFetch."
+  },
+  {
+    "published_at": "2023-03-11T20:58:00Z",
+    "outlet": "CoinDesk",
+    "title": "Circle to ‘Cover Any Shortfall’ in USDC Reserves, Sparking Stablecoin Rally",
+    "url": "https://www.coindesk.com/business/2023/03/11/circle-to-cover-any-shortfall-in-usdc-reserves-sparking-stablecoin-rally",
+    "time_confidence": "byline",
+    "note": "Visible byline on live page (via WebFetch; no machine metadata exposed): 'Published Mar 11, 2023, 3:58 p.m. EST'. Minute resolution only. EST=UTC-5. 'Updated May 9, 2023, 12:10 a.m. EDT' (bulk update)."
+  },
+  {
+    "published_at": "2023-03-11T22:26:44Z",
+    "outlet": "Decrypt",
+    "title": "Circle To ‘Stand Behind’ USDC, Cover $3.3 Billion Shortfall Held in Silicon Valley Bank",
+    "url": "https://decrypt.co/123224/circle-to-stand-behind-usdc-cover-3-3-billion-shortfall-held-in-silicon-valley-bank",
+    "time_confidence": "metadata",
+    "note": "article:published_time '2023-03-11T22:26:44' (no timezone suffix; treated as UTC), modified '2023-03-11T22:31:13'."
+  },
+  {
+    "published_at": "2023-03-12",
+    "outlet": "New York DFS (press release)",
+    "title": "Superintendent Adrienne A. Harris Announces New York Department of Financial Services Takes Possession of Signature Bank",
+    "url": "https://www.dfs.ny.gov/reports_and_publications/press_releases/pr20230312",
+    "time_confidence": "date_only",
+    "note": "Live page returns 403 to curl; read via web.archive.org snapshot 20240113192024. Body shows 'Press Release / March 12, 2023', no hour given. Oddity: the snapshot's <title>/og:title say 'Press Release- March 10, 2023: ...' while the body and meta description say March 12, 2023. Hour unknown (must precede the 22:15Z joint statement that references the closure, but not recorded)."
+  },
+  {
+    "published_at": "2023-03-12T22:15:00Z",
+    "outlet": "Federal Reserve Board (joint press release)",
+    "title": "Joint Statement by Treasury, Federal Reserve, and FDIC",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20230312b.htm",
+    "time_confidence": "wire",
+    "note": "Visible on page: 'March 12, 2023' and 'For release at 6:15 p.m. EDT' (EDT=UTC-4). Same statement on Treasury (home.treasury.gov/news/press-releases/jy1337, titled 'Joint Statement by the Department of the Treasury, Federal Reserve, and FDIC', <time datetime=2023-03-12T17:47:47-04:00> which is earlier than the release time and is probably a CMS draft time, not used) and FDIC (pr23017, date only)."
+  },
+  {
+    "published_at": "2023-03-12T22:24:20Z",
+    "outlet": "CNBC",
+    "title": "Regulators close crypto-focused Signature Bank, citing systemic risk",
+    "url": "https://www.cnbc.com/2023/03/12/regulators-close-new-yorks-signature-bank-citing-systemic-risk.html",
+    "time_confidence": "metadata",
+    "note": "article:published_time 2023-03-12T22:24:20+0000; visible 'Published Sun, Mar 12 2023 6:24 PM EDT'. Updated Mon, Mar 13 2023 9:22 AM EDT, so headline may have been revised (URL slug says 'new-yorks-signature-bank')."
+  },
+  {
+    "published_at": "2023-03-12T22:25:00Z",
+    "outlet": "CoinDesk",
+    "title": "Crypto-Friendly Signature Bank Shut Down by State Regulators",
+    "url": "https://www.coindesk.com/policy/2023/03/12/crypto-friendly-signature-bank-shut-down-by-state-regulators-fed",
+    "time_confidence": "byline",
+    "note": "Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Visible byline 'Published Mar 12, 2023, 6:25 p.m. EDT' (minute precision only); 'Updated Mar 14, 2023, 11:01 a.m. EDT'. URL slug ends '-fed', so the headline was probably shortened after publication."
+  },
+  {
+    "published_at": "2023-03-12T22:33:00Z",
+    "outlet": "Cointelegraph",
+    "title": "Breaking: Signature Bank closed by New York regulators, citing ‘systemic risk’",
+    "url": "https://cointelegraph.com/news/signature-bank-closed-by-new-york-banking-authorities",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-12T22:33:00.000Z. Slug differs from headline ('closed-by-new-york-banking-authorities'), so headline likely updated after first publication."
+  },
+  {
+    "published_at": "2023-03-12T22:42:28Z",
+    "outlet": "Reuters (copy hosted on Kitco News)",
+    "title": "Regulators close Signature bank, announce plan to make depositors whole",
+    "url": "https://www.kitco.com/news/off-the-wire/2023-03-12/regulators-close-signature-bank-announce-plan-make-depositors-whole",
+    "time_confidence": "metadata",
+    "note": "reuters.com returns 401, so this is the Kitco 'off the wire' copy of the Reuters story (dateline 'March 12 (Reuters)'). Time is Kitco's article:published_time 2023-03-12T18:42:28-04:00, i.e. Kitco's ingestion time of the wire item, not Reuters' own timestamp; modified 2023-03-13T09:10:08-04:00."
+  },
+  {
+    "published_at": "2023-03-12T23:05:51Z",
+    "outlet": "Fortune (Bloomberg syndicated)",
+    "title": "NYC-based Signature Bank fails, and banking regulators invoke ‘systemic risk exception’ for all depositors being made whole",
+    "url": "https://fortune.com/2023/03/12/nyc-based-signature-bank-fails-closed-by-regulators-fdic-treasury/",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-12T23:05:51-00:00, dateModified 2023-03-13T12:48:25-00:00. Headline taken from JSON-LD/og:title; the <title> tag reads 'Signature Bank fails, closed by New York state regulators | Fortune'. Bloomberg-credited story republished by Fortune; Bloomberg's own page (bloomberg.com/news/articles/2023-03-12/signature-bank-closed-by-new-state-regulators-fdic-says) is bot-walled and was not read."
+  },
+  {
+    "published_at": "2023-03-12T23:29:42Z",
+    "outlet": "The Block",
+    "title": "State regulator takes control of Signature Bank, federal regulators guarantee deposits",
+    "url": "https://www.theblock.co/post/219119/state-regulator-takes-control-of-signature-bank-federal-regulators-guarantee-deposits",
+    "time_confidence": "metadata",
+    "note": "Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Structured data datePublished 2023-03-12T19:29:42-04:00; visible 'March 12, 2023, 7:29PM EDT'; updated 8:23PM EDT."
+  },
+  {
+    "published_at": "2023-03-12T23:46:43Z",
+    "outlet": "The Block",
+    "title": "Circle USDC operations will resume when U.S. banks open Monday: CEO Allaire",
+    "url": "https://www.theblock.co/post/219133/circle-usdc-operations-will-resume-at-open-monday-allaire",
+    "time_confidence": "metadata",
+    "note": "Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Structured data datePublished 2023-03-12T19:46:43-04:00; visible 'March 12, 2023, 7:46PM EDT'; updated 8:07PM EDT."
+  },
+  {
+    "published_at": "2023-03-13T00:16:43Z",
+    "outlet": "The Block",
+    "title": "USDC, crypto rallies on news that SVB, Signature Bank deposits are safe",
+    "url": "https://www.theblock.co/post/219128/usdc-crypto-rallies-on-news-that-svb-signature-bank-deposits-are-safe",
+    "time_confidence": "metadata",
+    "note": "Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Structured data datePublished 2023-03-12T20:16:43-04:00; visible 'March 12, 2023, 8:16PM EDT'; updated 8:40PM EDT."
+  },
+  {
+    "published_at": "2023-03-13T00:24:00Z",
+    "outlet": "Cointelegraph",
+    "title": "USDC bounces back toward $1 peg after Fed announcement",
+    "url": "https://cointelegraph.com/news/usdc-bounces-back-towards-1-peg-after-fed-announcement",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-13T00:24:00.000Z."
+  },
+  {
+    "published_at": "2023-03-13T01:55:00Z",
+    "outlet": "CoinDesk",
+    "title": "Circle Scrambles to Right USDC After Signature Bank Failure",
+    "url": "https://www.coindesk.com/policy/2023/03/12/circle-scrambles-to-right-usdc-after-signature-bank-failure/",
+    "time_confidence": "byline",
+    "note": "Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Visible byline 'Published Mar 12, 2023, 9:55 p.m. EDT' (minute precision only); 'Updated Mar 16, 2023, 11:12 a.m. EDT'."
+  },
+  {
+    "published_at": "2023-03-13T03:21:37Z",
+    "outlet": "Reuters (copy hosted on Kitco News)",
+    "title": "UPDATE 2-Circle says $3.3 bln USDC reserves to be fully available on Monday",
+    "url": "https://www.kitco.com/news/off-the-wire/2023-03-12/update-2-circle-says-33-bln-usdc-reserves-be-fully-available-monday",
+    "time_confidence": "metadata",
+    "note": "reuters.com returns 401; Kitco 'off the wire' copy, dateline 'March 12 (Reuters)', '(Adds details from Circle statement, background)'. Time is Kitco's article:published_time 2023-03-12T23:21:37-04:00 (visible 'Mar 13, 2023 - 3:21 AM' in UTC), i.e. Kitco ingestion of the second update; the first Reuters take was earlier and its time was not found. A later Kitco copy without the UPDATE prefix exists at .../2023-03-13/circle-says-33-bln-usdc-reserves-be-fully-available-monday (2023-03-13T08:39:13-04:00)."
+  },
+  {
+    "published_at": "2023-03-13T03:56:37Z",
+    "outlet": "Fortune",
+    "title": "Circle adds Cross River as banking partner and expands BNY ties, USDC peg closes",
+    "url": "https://fortune.com/crypto/2023/03/12/circle-adds-cross-river-as-banking-partner-and-expands-bny-ties-usdc-peg-closes/",
+    "time_confidence": "metadata",
+    "note": "JSON-LD datePublished 2023-03-13T03:56:37-00:00 (URL date 03/12 is US local date); dateModified 2023-03-13T16:16:11-00:00."
+  },
+  {
+    "published_at": "2023-03-13T07:06:20Z",
+    "outlet": "CNBC",
+    "title": "HSBC pays £1 to rescue UK arm of Silicon Valley Bank after all-night talks",
+    "url": "https://www.cnbc.com/2023/03/13/hsbc-buys-silicon-valley-bank-uk-protecting-deposits-.html",
+    "time_confidence": "metadata",
+    "note": "article:published_time 2023-03-13T07:06:20+0000; visible 'Published Mon, Mar 13 2023 3:06 AM EDT', 'Updated Mon, Mar 13 2023 12:42 PM EDT' - headline likely rewritten after first publication (slug: 'hsbc-buys-silicon-valley-bank-uk-protecting-deposits')."
+  },
+  {
+    "published_at": "2023-03-13T07:52:00Z",
+    "outlet": "CoinDesk",
+    "title": "HSBC Subsidiary to Acquire Silicon Valley Bank's UK Unit for 1 British Pound",
+    "url": "https://www.coindesk.com/business/2023/03/13/hsbc-subsidiary-to-acquire-silicon-valley-banks-uk-unit-for-1",
+    "time_confidence": "byline",
+    "note": "Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Visible byline 'Published Mar 13, 2023, 3:52 a.m. EDT' (minute precision only); 'Updated May 9, 2023, 12:10 a.m. EDT'."
+  },
+  {
+    "published_at": "2023-03-13T10:00:00Z",
+    "outlet": "Circle (press release via PR Newswire)",
+    "title": "$3.3 Billion of USDC Reserve Risk Removed, Dollar De-peg Closes",
+    "url": "https://www.prnewswire.com/news-releases/3-3-billion-of-usdc-reserve-risk-removed-dollar-de-peg-closes-301769820.html",
+    "time_confidence": "wire",
+    "note": "PR Newswire meta date / JSON-LD datePublished 2023-03-13T10:00:00Z; visible 'Mar 13, 2023, 06:00 ET'. CAUTION: this is the wire distribution time only. The release body is datelined 'BOSTON - March 12, 2023' and Circle's own copy (https://www.circle.com/pressroom/3-3-billion-of-usdc-reserve-risk-removed-dollar-de-peg-closes) shows 'March 13, 2023' with no hour; its content (Cross River, BNY Mellon, 100% of SVB deposits available) was already being reported by Reuters/Fortune by ~03:20-03:56Z on 03-13, so the statement was public hours before the wire time. The exact first-publication time on circle.com was not found."
+  },
+  {
+    "published_at": "2023-03-13T11:11:44Z",
+    "outlet": "CNBC",
+    "title": "Stablecoin USDC nearly regains $1 peg after Circle says $3.3 billion held with SVB will be available",
+    "url": "https://www.cnbc.com/2023/03/13/usdc-nearly-regains-1-peg-after-circle-says-svb-deposit-is-available.html",
+    "time_confidence": "metadata",
+    "note": "article:published_time 2023-03-13T11:11:44+0000; visible 'Published Mon, Mar 13 2023 7:11 AM EDT'; no update stamp. Title is the on-page H1/og:title; the <title> tag has a shorter variant: 'USDC nearly regains $1 peg after Circle says SVB deposit is available'."
+  },
+  {
+    "published_at": "2023-03-13T11:47:05Z",
+    "outlet": "Cointelegraph",
+    "title": "Circle taps Cross River as banking partner, expands ties with BNY Mellon",
+    "url": "https://cointelegraph.com/news/circle-taps-cross-river-as-banking-partner-expands-ties-with-bny",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-13T11:47:05.000Z."
+  },
+  {
+    "published_at": "2023-03-13T14:09:00Z",
+    "outlet": "CoinDesk",
+    "title": "USDC Stablecoin Regains Dollar Peg After Silicon Valley Bank-Induced Chaos",
+    "url": "https://www.coindesk.com/business/2023/03/13/usdc-stablecoin-regains-dollar-peg-after-silicon-valley-bank-induced-chaos",
+    "time_confidence": "byline",
+    "note": "Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Visible byline 'Published Mar 13, 2023, 10:09 a.m. EDT' (minute precision only); 'Updated May 9, 2023, 12:10 a.m. EDT'."
+  },
+  {
+    "published_at": "2023-03-13T14:34:41Z",
+    "outlet": "Decrypt",
+    "title": "Investor Mints $407.8M in USDC as Stablecoin Recovers Dollar Peg",
+    "url": "https://decrypt.co/123299/investor-mints-407-8m-usdc-stablecoin-recovers-dollar-peg",
+    "time_confidence": "metadata",
+    "note": "<time dateTime=\"2023-03-13T14:34:41Z\"> on page; article:published_time 2023-03-13T14:34:41 (no zone suffix)."
+  },
+  {
+    "published_at": "2023-03-13T21:28:51Z",
+    "outlet": "The Block",
+    "title": "Meta announces plans to stop working on NFTs",
+    "url": "https://www.theblock.co/post/219462/meta-announces-plans-to-stop-working-on-nfts",
+    "time_confidence": "metadata",
+    "note": "CONTROL (generic crypto headline, unrelated to the depeg). Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Structured data datePublished 2023-03-13T17:28:51-04:00; visible 'March 13, 2023, 5:28PM EDT'; updated 5:41PM EDT."
+  },
+  {
+    "published_at": "2023-03-13T22:41:25Z",
+    "outlet": "Cointelegraph",
+    "title": "Meta pulling the plug on NFTs across Instagram and Facebook",
+    "url": "https://cointelegraph.com/news/meta-pulling-the-plug-on-nfts-across-instagram-and-facebook",
+    "time_confidence": "metadata",
+    "note": "CONTROL (generic crypto headline, unrelated to the depeg). article:published_time / JSON-LD datePublished 2023-03-13T22:41:25.000Z."
+  },
+  {
+    "published_at": "2023-03-13T23:40:14Z",
+    "outlet": "Bloomberg News (copy hosted on BNN Bloomberg)",
+    "title": "Stablecoin USDC Sees Redemptions Even as Crypto Market Rebounds",
+    "url": "https://www.bnnbloomberg.ca/stablecoin-usdc-sees-redemptions-even-as-crypto-market-rebounds-1.1895050",
+    "time_confidence": "archive",
+    "note": "Live URL now serves the BNN homepage; read from web.archive.org snapshot 20230321053005 (https://web.archive.org/web/20230321053005/https://www.bnnbloomberg.ca/stablecoin-usdc-sees-redemptions-even-as-crypto-market-rebounds-1.1895050). article:published_time 2023-03-13T19:40:14-04:00, article:author 'Bloomberg News'. This is BNN's posting time of the syndicated story; Bloomberg's own original (paywalled, not read) may carry an earlier time and a different headline."
+  },
+  {
+    "published_at": "2023-03-14T08:52:29Z",
+    "outlet": "CNBC (video)",
+    "title": "Circle's CEO discusses the 'precautions' the company took after SVB's collapse",
+    "url": "https://www.cnbc.com/video/2023/03/14/circle-ceo-discusses-precautions-the-company-took-after-svb-collapse.html",
+    "time_confidence": "metadata",
+    "note": "article:published_time / parsely-pub-date 2023-03-14T08:52:29+0000. Video clip page (Jeremy Allaire interview), not a text article. <title> tag variant: \"Circle CEO discusses 'precautions' the company took after SVB collapse\"."
+  },
+  {
+    "published_at": "2023-03-14T12:15:04Z",
+    "outlet": "Decrypt",
+    "title": "SVB Collapse Meant Protecting 'a Digital Dollar From the Banking System': Circle CEO",
+    "url": "https://decrypt.co/123435/svb-collapse-meant-protecting-digital-dollar-banking-system-circle-ceo",
+    "time_confidence": "metadata",
+    "note": "article:published_time / JSON-LD datePublished 2023-03-14T12:15:04 with no zone suffix; treated as UTC because Decrypt's <time dateTime> on the sibling article 123299 carries the same value with 'Z'. Small residual doubt on zone."
+  },
+  {
+    "published_at": "2023-03-14T12:57:49Z",
+    "outlet": "Cointelegraph",
+    "title": "Bitcoin price sees new 2023 high as CPI sends BTC price above $26K",
+    "url": "https://cointelegraph.com/news/bitcoin-price-sees-new-2023-high-as-cpi-sends-btc-price-above-26k",
+    "time_confidence": "metadata",
+    "note": "CONTROL (generic crypto market headline). article:published_time / JSON-LD datePublished 2023-03-14T12:57:49.000Z."
+  },
+  {
+    "published_at": "2023-03-14T21:53:45Z",
+    "outlet": "The Block",
+    "title": "Biggest USDC burn on record just occurred, net redemptions since Friday reach $4.5 billion",
+    "url": "https://www.theblock.co/post/219887/biggest-usdc-burn-on-record-just-occurred-net-redemptions-since-friday-reach-4-5-billion",
+    "time_confidence": "metadata",
+    "note": "Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Structured data datePublished 2023-03-14T17:53:45-04:00; visible 'March 14, 2023, 5:53PM EDT'; 'UPDATED: March 15, 2023, 5:25AM EDT', so figures/headline may have been revised the next morning."
+  },
+  {
+    "published_at": "2023-03-14T23:55:00Z",
+    "outlet": "CoinDesk",
+    "title": "Bitcoin Gains Early, Fades Late to Trade Below $25K",
+    "url": "https://www.coindesk.com/markets/2023/03/14/bitcoin-gains-early-fades-late-to-trade-below-25k",
+    "time_confidence": "byline",
+    "note": "CONTROL (generic crypto market headline). Raw HTML blocked to curl (bot wall); values read through the WebFetch tool's page extraction, not inspected by hand in raw HTML. Visible byline 'Published Mar 14, 2023, 7:55 p.m. EDT' (minute precision only); 'Updated Mar 15, 2023, 11:52 a.m. EDT'."
+  }
+]

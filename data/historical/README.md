@@ -137,3 +137,15 @@ Bitstamp는 중앙화 거래소다. 이 데이터는 거래소의 USDC/USD 체�
 가격이며 블록체인 상태나 DEX 거래를 직접 관측한 엄밀한 온체인 데이터가 아니다.
 따라서 온체인 유동성, 준비금 상태, 다른 거래소와의 가격 차이를 단독으로 설명할
 수 없다.
+
+## 2023-03 뉴스 신호 (오프체인)
+
+| 파일 | 내용 |
+| --- | --- |
+| `news_2023_handpicked.json` | 2023-03-06~03-14 기사 60건(발행 시각 UTC, 매체, 제목, URL, 시각 확인 방법). 사람이 읽는 표는 `docs/news_2023_handpicked.md` |
+| `news_2023_candidates.json` | 60건으로 추리기 전 후보 131건. 신호 계산에는 쓰지 않는다 |
+| `signals_usdc_2023_news_hourly.json` | 위 60건으로 만든 시간별 `news_risk_flag` Signal 120개. 시각 축은 `signals_usdc_2023_depeg_hourly.json`과 같다 |
+
+기사는 사람이 기사 페이지와 웹 아카이브에서 옮긴 것이라 보관할 HTTP 원본 응답이 없다. 대신 기사별
+URL과 시각 확인 방법을 `note`에 남겼다. 신호 파일은 `python -m src.intelligence.build_news_signals`로
+다시 만들고, `--check`로 기사 표와 일치하는지 확인한다(테스트에 포함).
