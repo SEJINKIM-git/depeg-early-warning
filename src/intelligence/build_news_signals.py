@@ -13,6 +13,7 @@ import json
 import sys
 from pathlib import Path
 
+from src.intelligence.news_input_policy import POLICY_VERSION
 from src.intelligence.news_signal import hourly_axis, hourly_news_signals, lead_time_summary
 
 ARTICLES = Path("data/historical/news_2023_handpicked.json")
@@ -31,7 +32,13 @@ def main(argv: list[str] | None = None) -> int:
     prices = json.loads(PRICES.read_text(encoding="utf-8"))
     axis = sorted({s["observed_at"] for s in prices})
 
-    signals = hourly_news_signals("USDC", axis, articles)
+    stale = [a["url"] for a in articles if a.get("input_policy") != POLICY_VERSION]
+    if stale:
+        print(f"{ARTICLES} 의 {len(stale)}행에 {POLICY_VERSION} 이 없습니다. "
+              "python -m scripts.apply_news_input_policy 를 먼저 실행하세요.")
+        return 1
+
+    signals = hourly_news_signals("USDC", axis, articles, POLICY_VERSION)
     text = json.dumps(signals, ensure_ascii=False, indent=2) + "\n"
     if opts.check:
         if OUTPUT.read_text(encoding="utf-8") != text:
@@ -40,12 +47,44 @@ def main(argv: list[str] | None = None) -> int:
     else:
         OUTPUT.write_text(text, encoding="utf-8")
 
-    scan = hourly_news_signals("USDC", hourly_axis(SCAN_FROM, axis[-1]), articles)
-    summary = lead_time_summary(scan, prices)
-    summary["hours_flag_on_in_file"] = sum(s["value"] for s in signals)
-    summary["hours_in_file"] = len(signals)
-    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    print(json.dumps(sensitivity_table(articles, prices, axis), ensure_ascii=False, indent=2))
     return 0
+
+
+def _is_date_only(article: dict) -> bool:
+    return article.get("available_basis") == "date_only_ny_eod" or len(article["published_at"]) == 10
+
+
+def _is_silvergate(article: dict) -> bool:
+    return "silvergate" in article["title"].lower()
+
+
+def sensitivity_table(articles: list[dict], prices: list[dict], axis: list[str]) -> dict:
+    """전체 / 날짜만 있는 행(#47) 제외 / Silvergate 제목 제외 조합별 리드타임 요약."""
+    variants = {
+        "all": articles,
+        "without_date_only": [a for a in articles if not _is_date_only(a)],
+        "without_silvergate": [a for a in articles if not _is_silvergate(a)],
+        "without_date_only_and_silvergate": [
+            a for a in articles if not _is_date_only(a) and not _is_silvergate(a)
+        ],
+    }
+    scan_axis = hourly_axis(SCAN_FROM, axis[-1])
+    out = {}
+    for name, rows in variants.items():
+        summary = lead_time_summary(hourly_news_signals("USDC", scan_axis, rows), prices)
+        summary.pop("news_first_evidence")
+        if summary["streak_start"]:
+            summary["streak_lead_before_low_hours"] = (
+                summary["streak_lead_before_breach_hours"] + summary["price_only_lead_hours"]
+            )
+        summary["hours_flag_on_in_file"] = sum(
+            s["value"] for s in hourly_news_signals("USDC", axis, rows)
+        )
+        summary["hours_in_file"] = len(axis)
+        summary["articles_used"] = sum(1 for a in rows if not a.get("excluded"))
+        out[name] = summary
+    return out
 
 
 if __name__ == "__main__":

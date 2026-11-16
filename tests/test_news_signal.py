@@ -11,6 +11,7 @@ from src.intelligence.news_signal import (
     hourly_axis,
     hourly_news_signals,
     lead_time_summary,
+    signal_time,
     to_news_signal,
     usable_from,
 )
@@ -58,7 +59,7 @@ def test_adding_future_articles_never_changes_past_signals():
     """t 이후 기사를 아무리 더해도 t까지의 신호는 바뀌지 않는다."""
     cutoff = "2023-03-10T12:00:00Z"
     axis = hourly_axis("2023-03-06T01:00:00Z", cutoff)
-    past_only = [a for a in ARTICLES if usable_from(a["published_at"]) < cutoff]
+    past_only = [a for a in ARTICLES if not a.get("excluded") and signal_time(a) < cutoff]
     assert len(past_only) < len(ARTICLES)
     assert hourly_news_signals("USDC", axis, past_only) == hourly_news_signals("USDC", axis, ARTICLES)
 
@@ -66,7 +67,7 @@ def test_adding_future_articles_never_changes_past_signals():
 def test_evidence_in_saved_signals_predates_observation():
     for s in NEWS:
         for e in s["meta"]["evidence"] + s["meta"]["watch"]:
-            assert usable_from(e["published_at"]) < s["observed_at"]
+            assert usable_from(e["published_at"]) <= e["available_at"] < s["observed_at"]
 
 
 def test_counterparty_list_is_as_of_observation_time():
@@ -100,6 +101,7 @@ def test_news_signals_follow_contract():
     assert s["meta"]["evidence"] == [
         {
             "title": SVB["title"], "outlet": "test", "published_at": SVB["published_at"],
+            "available_at": SVB["published_at"], "available_basis": "published",
             "tier": "B", "who": "Silicon Valley Bank", "why": "FDIC takes", "url": SVB["url"],
         }
     ]

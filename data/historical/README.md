@@ -146,6 +146,11 @@ Bitstamp는 중앙화 거래소다. 이 데이터는 거래소의 USDC/USD 체�
 | `news_2023_candidates.json` | 60건으로 추리기 전 후보 131건. 신호 계산에는 쓰지 않는다 |
 | `signals_usdc_2023_news_hourly.json` | 위 60건으로 만든 시간별 `news_risk_flag` Signal 120개. 시각 축은 `signals_usdc_2023_depeg_hourly.json`과 같다 |
 
+`news_2023_handpicked.json`에는 입력 시각 정책(`policy-2026-11-16`)이 적용돼 있다: `available_at`(신호용,
+정수 초), `source_published_at`(원시값), `available_basis`(`published` / `archive_capture` /
+`date_only_ny_eod`), `evidence_url`. 기존 `published_at`은 그대로다. 정책은
+`python -m scripts.apply_news_input_policy`로 적용하고 `--check`로 확인한다.
+
 기사는 사람이 기사 페이지와 웹 아카이브에서 옮긴 것이라 보관할 HTTP 원본 응답이 없다. 대신 기사별
 URL과 시각 확인 방법을 `note`에 남겼다. 신호 파일은 `python -m src.intelligence.build_news_signals`로
 다시 만들고, `--check`로 기사 표와 일치하는지 확인한다(테스트에 포함).
