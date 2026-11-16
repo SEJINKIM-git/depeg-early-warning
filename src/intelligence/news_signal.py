@@ -5,6 +5,8 @@
 - 발행 시각이 날짜까지만 확인된 기사는 그 날짜의 다음 날 00:00Z부터 쓸 수 있다고 본다
   (하루 중 언제 나왔는지 모르므로 가장 늦은 쪽으로 가정 — 신호가 실제보다 일찍 켜지지 않는다).
 - 보관처 목록도 t 시점에 공개돼 있던 보고서 것만 쓴다 (news_rubric.counterparties_at).
+- 기사 행에 available_at(입력 정책이 정한 사용 시각)이 있으면 published_at 대신 그것을 쓴다.
+  excluded 로 표시된 행은 쓰지 않는다 (news_input_policy.py).
 """
 
 from __future__ import annotations
@@ -32,6 +34,13 @@ def usable_from(published_at: str) -> str:
     return _parse(published_at).strftime(_TS)  # 형식 검증 겸 정규화
 
 
+def signal_time(article: Mapping[str, Any]) -> str:
+    """이 기사를 신호에 쓰기 시작하는 시각: available_at 이 있으면 그것, 없으면 published_at 기준."""
+    if article.get("available_at"):
+        return _parse(article["available_at"]).strftime(_TS)
+    return usable_from(article["published_at"])
+
+
 def articles_in_window(
     articles: Iterable[Mapping[str, Any]], observed_at: str, window_hours: int = WINDOW_HOURS
 ) -> list[dict[str, Any]]:
@@ -39,7 +48,9 @@ def articles_in_window(
     start = (_parse(observed_at) - timedelta(hours=window_hours)).strftime(_TS)
     out = []
     for a in articles:
-        seen = usable_from(a["published_at"])
+        if a.get("excluded"):
+            continue
+        seen = signal_time(a)
         if start <= seen < observed_at:
             out.append({**a, "seen": seen})
     return out
@@ -50,6 +61,8 @@ def _evidence(m: Mapping[str, Any]) -> dict[str, Any]:
         "title": m["title"],
         "outlet": m.get("outlet", ""),
         "published_at": m["published_at"],
+        "available_at": m["seen"],
+        "available_basis": m.get("available_basis", "published"),
         "tier": m["tier"],
         "who": m["who"],
         "why": m["why"],
@@ -58,11 +71,18 @@ def _evidence(m: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def to_news_signal(
-    coin: str, observed_at: str, articles: Iterable[Mapping[str, Any]]
+    coin: str,
+    observed_at: str,
+    articles: Iterable[Mapping[str, Any]],
+    input_policy: str | None = None,
 ) -> dict[str, Any]:
-    """관측 시각 t의 news_risk_flag Signal 하나를 만든다 (schemas/signal.schema.json)."""
+    """관측 시각 t의 news_risk_flag Signal 하나를 만든다 (schemas/signal.schema.json).
+
+    input_policy: 기사 입력에 적용한 시각 정책 버전. 주면 meta 에 남긴다.
+    """
     parties = counterparties_at(observed_at)
     flag, matched = news_flag(articles_in_window(articles, observed_at), parties["names"])
+    policy_meta = {"input_policy": input_policy} if input_policy else {}
     return {
         "schema_version": SIGNAL_SCHEMA_VERSION,
         "signal_id": f"offchain-{coin.lower()}-{observed_at}-news",
@@ -73,6 +93,7 @@ def to_news_signal(
         "value": flag,
         "meta": {
             "rubric_version": RUBRIC_VERSION,
+            **policy_meta,
             "window_hours": WINDOW_HOURS,
             "counterparty_report": parties["report"],
             "counterparty_banks_from": parties["banks_from"],
@@ -84,10 +105,13 @@ def to_news_signal(
 
 
 def hourly_news_signals(
-    coin: str, observed_ats: Iterable[str], articles: Sequence[Mapping[str, Any]]
+    coin: str,
+    observed_ats: Iterable[str],
+    articles: Sequence[Mapping[str, Any]],
+    input_policy: str | None = None,
 ) -> list[dict[str, Any]]:
     """주어진 시각 축의 각 t마다 Signal을 만든다."""
-    return [to_news_signal(coin, t, articles) for t in observed_ats]
+    return [to_news_signal(coin, t, articles, input_policy) for t in observed_ats]
 
 
 def hourly_axis(first: str, last: str) -> list[str]:

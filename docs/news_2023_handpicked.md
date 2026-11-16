@@ -9,6 +9,10 @@
 
 - 기계가 읽는 원본: [data/historical/news_2023_handpicked.json](../data/historical/news_2023_handpicked.json)
   (이 표와 같은 60건. 기사별 시각 확인 방법 전문은 JSON의 `note`에 있다)
+- **입력 시각 정책(policy-2026-11-16)**: JSON 각 행에 `available_at`(신호에 쓰는 시각),
+  `source_published_at`(원시 발행 시각), `available_basis`, `evidence_url`이 붙었다. 아래 표의 시각과 제목은
+  정책 적용 전 기록 그대로이며, #11·24·41의 초기 제목, #10·15의 캡처 시각, #43 제외, #47의 사용 시각은
+  JSON과 [리드타임 문서 9장](news_leadtime_2023.md#9-입력-정책-반영-후-policy-2026-11-16)에 있다.
 - 추리기 전 후보 전체 131건: [data/historical/news_2023_candidates.json](../data/historical/news_2023_candidates.json)
 
 ## 1. 어떻게 모았나
